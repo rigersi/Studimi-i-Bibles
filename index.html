@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bible Study Workspace</title>
+<style>
+:root{--bg:#f6f8fb;--fg:#1c2430;--mut:#5b6675;--card:#fff;--line:#dde3ec;--ac:#1e3a6e;--on:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1520;--fg:#e8edf5;--mut:#9aa7ba;--card:#172033;--line:#26324a;--ac:#8fb0ff;--on:#0f1520;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1520;--fg:#e8edf5;--mut:#9aa7ba;--card:#172033;--line:#26324a;--ac:#8fb0ff;--on:#0f1520;color-scheme:dark}
+html{height:100%}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,"Times New Roman",serif}
+h1,h2,h3,button,select,input,textarea,label,nav a,.btn{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+h1{font-size:1.9rem;margin:.2em 0}h2{font-size:1.15rem;margin:.2em 0}
+a{color:var(--ac)}.mut{color:var(--mut);font-size:.9rem}
+header{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;justify-content:space-between;padding:.7rem 1rem;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+.logo{font:700 1.1rem system-ui;text-decoration:none;color:var(--fg)}.logo b{color:var(--ac)}
+nav{display:flex;gap:.2rem;flex-wrap:wrap}nav a{padding:.35rem .7rem;border-radius:8px;text-decoration:none;color:var(--fg);font-size:.95rem}
+nav a[aria-current=page]{background:var(--ac);color:var(--on)}
+.tools{display:flex;gap:.4rem}
+main{max-width:860px;margin:0 auto;padding:1rem}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+button,.btn,select,input,textarea{font-size:.95rem;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);padding:.45rem .7rem}
+button,.btn{cursor:pointer;background:var(--ac);color:var(--on);border-color:var(--ac);text-decoration:none;display:inline-block}
+button.alt,.tools button{background:var(--card);color:var(--fg);border-color:var(--line)}
+button:disabled{opacity:.5;cursor:not-allowed}
+textarea{width:100%;min-height:4.5rem;font-family:inherit}
+.card,.sel,details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem;margin:1rem 0}
+.hero{padding:1.5rem 0}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.g label{display:flex;flex-direction:column;font-size:.85rem;gap:.2rem;color:var(--mut)}
+.bk{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
+.bk a{padding:.5rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--card);text-decoration:none;color:var(--fg);font-family:system-ui;font-size:.92rem}
+.lab{font:600 1.2rem system-ui;margin:.6rem 0 0}.err{color:#b3261e;min-height:1.2em;margin:.2rem 0}
+:root[data-theme="dark"] .err{color:#ffb4ab}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#ffb4ab}}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+summary{cursor:pointer}details label{display:block;margin:.8rem 0 .2rem;font-weight:600;font-size:.95rem}
+progress{width:100%;height:10px}
+dt{font:600 .95rem system-ui;margin-top:.8rem}dd{margin:0;color:var(--mut);font-style:italic}
+.item{border-top:1px solid var(--line);padding:.6rem 0}.item:first-child{border-top:0}
+.warn{border-left:4px solid var(--ac);padding:.4rem .8rem;background:var(--card)}
+#st{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:.4rem 1rem;border-radius:20px;font:.9rem system-ui}
+#st:empty{display:none}
+footer{text-align:center;padding:2rem 1rem}
+html{-webkit-text-size-adjust:100%}body{font-size:clamp(16px,1.2vw + 12px,19px);overflow-x:hidden}
+main{width:100%;max-width:960px;padding:clamp(.75rem,3vw,2rem)}h1{font-size:clamp(1.5rem,4vw,2.3rem)}
+button,.btn,select,input,textarea{min-height:44px;max-width:100%}input[type=checkbox],input[type=radio]{min-height:0;width:1.2rem;height:1.2rem}
+nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:thin}nav a{white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.row input[type=search],.row input:not([type]){flex:1 1 200px}svg,img,table{max-width:100%;height:auto}
+@media (max-width:640px){header{padding:.5rem .75rem}nav{order:3;width:100%}.row>*{flex:1 1 100%}.g{grid-template-columns:1fr 1fr}.card,.sel,details{padding:.8rem}}
+@media (min-width:900px){.g{grid-template-columns:repeat(5,1fr)}.bk{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
+@media (min-width:1400px){main{max-width:1100px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style></head>
+<body>
+<header><a class="logo" href="#/home">✝ <b>Bible</b>Study</a><nav id="nv" aria-label="Main"></nav>
+<div class="tools"><select id="lg" aria-label="Language"><option value="en">English</option><option value="sq">Shqip</option></select><button id="th" class="alt" aria-label="Theme">◐</button></div></header>
+<main id="app"></main><div id="st" role="status" aria-live="polite"></div>
+<footer class="mut" id="ft"></footer>
+<script>
+"use strict";
+/* ---------- Reference metadata (NO Bible text). id|English|Albanian|chapters. Albanian names: please verify against your preferred translation. ---------- */
+const B="Gen|Genesis|Zanafilla|50;Exod|Exodus|Eksodi|40;Lev|Leviticus|Levitiku|27;Num|Numbers|Numrat|36;Deut|Deuteronomy|Ligji i Përtërirë|34;Josh|Joshua|Jozueu|24;Judg|Judges|Gjyqtarët|21;Ruth|Ruth|Rutha|4;1Sam|1 Samuel|1 Samueli|31;2Sam|2 Samuel|2 Samueli|24;1Kgs|1 Kings|1 Mbretërve|22;2Kgs|2 Kings|2 Mbretërve|25;1Chr|1 Chronicles|1 Kronikave|29;2Chr|2 Chronicles|2 Kronikave|36;Ezra|Ezra|Esdra|10;Neh|Nehemiah|Nehemia|13;Esth|Esther|Estera|10;Job|Job|Jobi|42;Ps|Psalms|Psalmet|150;Prov|Proverbs|Fjalët e urta|31;Eccl|Ecclesiastes|Eklisiastiu|12;Song|Song of Solomon|Kënga e Këngëve|8;Isa|Isaiah|Isaia|66;Jer|Jeremiah|Jeremia|52;Lam|Lamentations|Vajtimet|5;Ezek|Ezekiel|Ezekieli|48;Dan|Daniel|Danieli|12;Hos|Hosea|Osea|14;Joel|Joel|Joeli|3;Amos|Amos|Amosi|9;Obad|Obadiah|Abdia|1;Jonah|Jonah|Jona|4;Mic|Micah|Mikea|7;Nah|Nahum|Nahumi|3;Hab|Habakkuk|Habakuku|3;Zeph|Zephaniah|Sofonia|3;Hag|Haggai|Hagai|2;Zech|Zechariah|Zakaria|14;Mal|Malachi|Malakia|4;Matt|Matthew|Mateu|28;Mark|Mark|Marku|16;Luke|Luke|Luka|24;John|John|Gjoni|21;Acts|Acts|Veprat e Apostujve|28;Rom|Romans|Romakëve|16;1Cor|1 Corinthians|1 Korintasve|16;2Cor|2 Corinthians|2 Korintasve|13;Gal|Galatians|Galatasve|6;Eph|Ephesians|Efesianëve|6;Phil|Philippians|Filipianëve|4;Col|Colossians|Kolosianëve|4;1Thess|1 Thessalonians|1 Selanikasve|5;2Thess|2 Thessalonians|2 Selanikasve|3;1Tim|1 Timothy|1 Timoteut|6;2Tim|2 Timothy|2 Timoteut|4;Titus|Titus|Titit|3;Phlm|Philemon|Filemonit|1;Heb|Hebrews|Hebrenjve|13;Jas|James|Jakobi|5;1Pet|1 Peter|1 Pjetrit|5;2Pet|2 Peter|2 Pjetrit|3;1John|1 John|1 Gjonit|5;2John|2 John|2 Gjonit|1;3John|3 John|3 Gjonit|1;Jude|Jude|Juda|1;Rev|Revelation|Zbulesa|22".split(";").map((s,i)=>{const[id,en,sq,c]=s.split("|");return{id,en,sq,ch:+c,nt:i>=39}});
+const bk=id=>B.find(b=>b.id===id)||B[0];
+/* ---------- Study structure (editable data; en|sq titles). Prompts are structural categories only, no answers. ---------- */
+const S=[["Observation|Vëzhgimi","What does the passage say?|Çfarë thotë pjesa?","o1|Repeated words or phrases|Fjalë ose fraza që përsëriten;o2|Contrasts and comparisons|Kontraste dhe krahasime;o3|Who is mentioned?|Kush përmendet?;o4|What is mentioned?|Çfarë përmendet?;o5|Quotations and references|Citime dhe referenca;o6|When (time)|Kur (koha);o7|Where (places)|Ku (vendet);o8|Other notable details|Detaje të tjera të rëndësishme;o9|Main observations and conclusions|Vëzhgimet dhe përfundimet kryesore"],
+["Interpretation|Interpretimi","What does the passage mean?|Çfarë do të thotë pjesa?","i1|The author’s intended message and purpose|Mesazhi dhe qëllimi i autorit;i2|Original audience|Lexuesit origjinalë;i3|Key words and themes|Fjalë dhe tema kyç;i4|Literary genres and devices|Zhanre dhe figura letrare;i5|Words and phrases needing definition|Fjalë dhe fraza që kërkojnë përkufizim;i6|Difficult sayings and questions|Thënie dhe pyetje të vështira;i7|Cross-references and broader context|Referenca të tjera dhe konteksti më i gjerë;i8|Primary message to the original readers|Mesazhi kryesor për lexuesit origjinalë"],
+["Application|Zbatimi","How does it apply to me?|Si zbatohet për mua?","a1|Commands to obey|Urdhërime për t’u zbatuar;a2|Promises to believe|Premtime për t’u besuar;a3|Warnings to heed|Paralajmërime për t’u marrë parasysh;a4|Reasons to give thanks or rejoice|Arsye për falënderim dhe gëzim;a5|Repentance and reproof|Pendim dhe qortim;a6|Correction and training in righteousness|Korrigjim dhe stërvitje në drejtësi;a7|Truths about identity in Christ|Të vërteta për identitetin në Krisht;a8|Christlike characteristics to emulate|Karakteristika të ngjashme me Krishtin;a9|Practical responses and next steps|Përgjigje praktike dhe hapat e radhës;a10|Final conclusion|Përfundimi"]]
+.map(([n,q,l])=>({n,q,l:l.split(";").map(x=>{const[id,en,sq]=x.split("|");return{id,en,sq}})}));
+const FK="author,date,background,setting,audience,purpose,hthemes,tthemes,structure,outline,challenges,locations,resources,refs,notes".split(",");const FIELDS="Author and authorship|Autori dhe autorësia;Date of composition|Koha e shkrimit;Historical background|Konteksti historik;Historical setting|Rrethanat historike;Original audience|Lexuesit origjinalë;Purpose of writing|Qëllimi i shkrimit;Historical themes|Tema historike;Theological themes|Tema teologjike;Literary structure and genre|Struktura letrare dhe zhanri;Outline|Skema;Interpretive challenges|Sfida interpretimi;Important locations|Vende të rëndësishme;Related resources|Burime të lidhura;Related references|Referenca të lidhura;Additional notes|Shënime shtesë".split(";").map((x,i)=>{const[en,sq]=x.split("|");return{en,sq,k:FK[i]}});
+/* ---------- Interface strings (fallback: missing key in a language falls back to English) ---------- */
+const I={en:{home:"Home",books:"Books",study:"Study",notes:"My notes",app:"Bible Study Workspace",
+intro:"Study Scripture by reference. Choose a passage here, read it in your own Bible, and record your observations, interpretation and application.",
+start:"Start studying",nobible:"This site contains no Bible text. It works with references only.",pick:"Choose a passage",book:"Book",chapter:"Chapter",verse:"Verse (optional)",tochap:"To chapter (optional)",toverse:"To verse (optional)",
+bm:"Bookmark",addnote:"Write a note",recent:"Recently studied",none:"Nothing here yet.",feat:"Featured resources",newr:"New resources",wait:"Awaiting content.",ot:"Old Testament",nt:"New Testament",
+done:"answered",saved:"Saved on this device",e_chap:"Chapter is out of range for this book.",e_verse:"Verses must be whole numbers, 1 or more.",e_range:"The end of the range must come after the start.",
+vnote:"Verse numbers are not yet checked against each chapter’s verse count (metadata pending).",ph:"Your response…",save:"Save note",tags:"Tags (comma separated)",search:"Search my notes",
+exp:"Export backup",imp:"Import backup",allb:"All books",del:"Delete",priv:"Everything you write stays in this browser on this device. Nothing is uploaded and nothing syncs between devices, so export a backup regularly.",
+never:"You have not exported a backup yet.",last:"Last backup: ",bad:"This file is not a valid backup.",conf:"Merge {n} items into your local data? Newer versions are kept.",impd:"Imported {n} items.",
+bmarks:"Bookmarks",nlist:"Notes",chs:"chapters",nodb:"Local storage is unavailable in this browser; nothing will be saved.",notes_ph:"Your private note…",bmd:"Bookmarked",ready:"Selected passage"},
+sq:{home:"Kreu",books:"Librat",study:"Studimi",notes:"Shënimet e mia",app:"Hapësira e Studimit Biblik",
+intro:"Studio Shkrimin sipas referencave. Zgjidh një pjesë këtu, lexoje në Biblën tënde dhe shkruaj vëzhgimet, interpretimin dhe zbatimin.",
+start:"Fillo studimin",nobible:"Kjo faqe nuk përmban tekst biblik. Punon vetëm me referenca.",pick:"Zgjidh një pjesë",book:"Libri",chapter:"Kapitulli",verse:"Vargu (opsional)",tochap:"Deri në kapitullin (opsional)",toverse:"Deri në vargun (opsional)",
+bm:"Ruaje në faqeshënues",addnote:"Shkruaj një shënim",recent:"Studiuar së fundmi",none:"Ende asgjë këtu.",feat:"Burime të veçanta",newr:"Burime të reja",wait:"Në pritje të përmbajtjes.",ot:"Besëlidhja e Vjetër",nt:"Besëlidhja e Re",
+done:"të plotësuara",saved:"U ruajt në këtë pajisje",e_chap:"Kapitulli është jashtë kufijve për këtë libër.",e_verse:"Vargjet duhet të jenë numra të plotë, 1 ose më shumë.",e_range:"Fundi i intervalit duhet të vijojë pas fillimit.",
+vnote:"Numrat e vargjeve ende nuk kontrollohen me numrin e vargjeve të kapitullit (të dhënat në pritje).",ph:"Përgjigjja jote…",save:"Ruaj shënimin",tags:"Etiketa (të ndara me presje)",search:"Kërko te shënimet e mia",
+exp:"Eksporto kopjen rezervë",imp:"Importo kopjen rezervë",allb:"Të gjithë librat",del:"Fshi",priv:"Gjithçka që shkruan mbetet në këtë shfletues, në këtë pajisje. Asgjë nuk ngarkohet dhe asgjë nuk sinkronizohet mes pajisjeve, prandaj eksporto rregullisht një kopje rezervë.",
+never:"Ende nuk ke eksportuar kopje rezervë.",last:"Kopja e fundit: ",bad:"Ky skedar nuk është kopje rezervë e vlefshme.",conf:"Të bashkohen {n} elementë me të dhënat lokale? Mbahen versionet më të reja.",impd:"U importuan {n} elementë.",
+bmarks:"Faqeshënuesit",nlist:"Shënimet",chs:"kapituj",nodb:"Ruajtja lokale nuk është e disponueshme; asgjë nuk do të ruhet.",notes_ph:"Shënimi yt privat…",bmd:"U ruajt në faqeshënues",ready:"Pjesa e zgjedhur"}};
+/* ---------- Helpers ---------- */
+const $=s=>document.querySelector(s),ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){}};
+let lang=ls("lang")||((navigator.language||"").startsWith("sq")?"sq":"en");
+const t=k=>I[lang][k]??I.en[k]??k,bn=b=>b[lang]||b.en,pick=o=>o[lang]||o.en;
+const dual=s=>{const[a,b]=s.split("|");return lang==="sq"?b||a:a};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const toast=m=>{const e=$("#st");e.textContent=m;clearTimeout(toast.i);toast.i=setTimeout(()=>e.textContent="",2200)};
+/* ---------- IndexedDB (versioned; add cases in onupgradeneeded for future migrations) ---------- */
+let db=null,items=[];
+const open=()=>new Promise(r=>{try{const q=indexedDB.open("bible-study",1);
+q.onupgradeneeded=e=>{if(e.oldVersion<1)q.result.createObjectStore("items",{keyPath:"id"})};
+q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)}catch(e){r(null)}});
+const tx=(m,f)=>new Promise((r,j)=>{const q=f(db.transaction("items",m).objectStore("items"));q.onsuccess=()=>r(q.result);q.onerror=()=>j(q.error)});
+const all=()=>db?tx("readonly",s=>s.getAll()):Promise.resolve([]),put=x=>db?tx("readwrite",s=>s.put(x)):Promise.resolve(),del=id=>db?tx("readwrite",s=>s.delete(id)):Promise.resolve();
+/* ---------- References ---------- */
+let R={b:"Gen",c1:"1",v1:"",c2:"",v2:""};
+const key=(r=R)=>[r.b,r.c1,r.v1,r.c2,r.v2].join(".");
+function chk(r=R){const m=bk(r.b).ch,c1=+r.c1,c2=r.c2?+r.c2:0,v1=r.v1===""?0:+r.v1,v2=r.v2===""?0:+r.v2;
+if(c1<1||c1>m||(c2&&(c2<c1||c2>m)))return"e_chap";
+for(const v of[r.v1,r.v2])if(v!==""&&(!Number.isInteger(+v)||+v<1))return"e_verse";
+const vc=(CONTENT.verses||{})[r.b];if(vc){const mx=c=>vc[c-1];if(v1&&mx(c1)&&v1>mx(c1))return"e_verse";if(v2&&mx(c2||c1)&&v2>mx(c2||c1))return"e_verse"}if(v2&&!v1)return"e_range";if(c2>c1&&v1&&!v2)return"e_range";if(v2&&v1&&(!c2||c2===c1)&&v2<v1)return"e_range";return""}
+function lab(r=R){const c2=r.c2&&+r.c2!==+r.c1?r.c2:"";let s=bn(bk(r.b))+" "+r.c1;
+if(r.v1){s+=":"+r.v1;if(c2)s+="–"+c2+":"+r.v2;else if(r.v2&&+r.v2!==+r.v1)s+="–"+r.v2}else if(c2)s+="–"+c2;return s}
+const co=(n,blank)=>(blank?'<option value="">—</option>':"")+Array.from({length:n},(_,i)=>`<option>${i+1}</option>`).join("");
+function Sel(m,cb){
+m.innerHTML=`<fieldset class="sel"><legend>${t("pick")}</legend><div class="g">
+<label>${t("book")}<select id="sb">${B.map(b=>`<option value="${b.id}">${esc(bn(b))}</option>`).join("")}</select></label>
+<label>${t("chapter")}<select id="c1"></select></label><label>${t("verse")}<input id="v1" type="number" min="1" inputmode="numeric"></label>
+<label>${t("tochap")}<select id="c2"></select></label><label>${t("toverse")}<input id="v2" type="number" min="1" inputmode="numeric"></label></div>
+<p class="lab" id="lab" aria-live="polite"></p><p class="err" id="err" role="alert"></p><p class="mut">${t("vnote")}</p>
+<div class="row"><button id="bmk">${t("bm")}</button><a class="btn alt" href="#/notes" style="background:var(--card);color:var(--fg);border-color:var(--line)">${t("addnote")}</a></div></fieldset>`;
+const fill=()=>{const n=bk(R.b).ch;$("#c1").innerHTML=co(n);$("#c2").innerHTML=co(n,true);$("#sb").value=R.b;$("#c1").value=R.c1;$("#c2").value=R.c2;$("#v1").value=R.v1;$("#v2").value=R.v2};
+const upd=()=>{const e=chk();$("#lab").textContent=lab();$("#err").textContent=e?t(e):"";$("#bmk").disabled=!!e;cb&&cb(!e)};
+fill();upd();
+m.querySelector("fieldset").addEventListener("input",ev=>{const i=ev.target.id;
+if(i==="sb"){R={b:ev.target.value,c1:"1",v1:"",c2:"",v2:""};fill()}else R[i]=ev.target.value;upd()});
+$("#bmk").onclick=async()=>{await put({id:"bm:"+key(),type:"bookmark",ref:{...R},label:lab(),t:Date.now()});toast(t("bmd"))}}
+/* ---------- Pages ---------- */
+const openRef=id=>{const x=items.find(i=>i.id===id);if(x&&x.ref){R={...x.ref};location.hash="#/study"}};
+function Home(m){const rec=items.filter(i=>i.type==="recent").sort((a,b)=>b.t-a.t).slice(0,8),bms=items.filter(i=>i.type==="bookmark").sort((a,b)=>b.t-a.t).slice(0,8);
+const L=a=>a.length?a.map(i=>`<div class="item"><a href="#/study" data-open="${esc(i.id)}">${esc(i.label)}</a></div>`).join(""):`<p class="mut">${t("none")}</p>`;
+m.innerHTML=`<section class="hero"><h1>${t("app")}</h1><p>${t("intro")}</p><a class="btn" href="#/study">${t("start")}</a><p class="warn mut">${t("nobible")}</p></section>
+<div class="card"><h2>${t("recent")}</h2>${L(rec)}</div><div class="card"><h2>${t("bmarks")}</h2>${L(bms)}</div>
+<div class="card"><h2>${t("feat")}</h2><p class="mut">${t("wait")}</p></div><div class="card"><h2>${t("newr")}</h2><p class="mut">${t("wait")}</p></div>`}
+function Books(m){const g=nt=>`<div class="bk">${B.filter(b=>b.nt===nt).map(b=>`<a href="#/book/${b.id}">${esc(bn(b))}</a>`).join("")}</div>`;
+m.innerHTML=`<h1>${t("books")}</h1><h2>${t("ot")} (39)</h2>${g(false)}<h2 style="margin-top:1.5rem">${t("nt")} (27)</h2>${g(true)}`}
+function Book(m,id){const b=bk(id);R={b:b.id,c1:"1",v1:"",c2:"",v2:""};
+m.innerHTML=`<p><a href="#/books">← ${t("allb")}</a></p><h1>${esc(bn(b))}</h1><p class="mut">${t(b.nt?"nt":"ot")} · ${b.ch} ${t("chs")}</p><a class="btn" href="#/study">${t("study")}: ${esc(bn(b))}</a>
+<div class="card"><dl>${FIELDS.map(f=>`<dt>${esc(pick(f))}</dt>${(()=>{const v=((CONTENT.books||{})[b.id]||{})[f.k];return v&&loc(v)?`<dd style="font-style:normal;color:var(--fg);white-space:pre-wrap">${esc(loc(v))}</dd>`:`<dd>${t("wait")}</dd>`})()}`).join("")}</dl></div>`}
+function Study(m){m.innerHTML=`<h1>${t("study")}</h1><div id="sl"></div><div id="sb2"></div>`;
+const tot=S.reduce((n,s)=>n+s.l.length,0);
+const prog=()=>{const k=key(),n=items.filter(i=>i.type==="answer"&&i.k===k).length;const p=$("#pg");if(p){p.value=n;$("#pn").textContent=`${n}/${tot} ${t("done")}`}};
+const draw=ok=>{const k=key(),A={};items.filter(i=>i.type==="answer"&&i.k===k).forEach(i=>A[i.q]=i.text);
+$("#sb2").innerHTML=`<p><progress id="pg" max="${tot}" value="0" aria-label="${t("done")}"></progress> <span id="pn" class="mut"></span></p>`+S.map(s=>`<details open><summary><h2 style="display:inline">${esc(dual(s.n))} — ${esc(dual(s.q))}</h2></summary>${s.l.map(q=>`<label for="q_${q.id}">${esc(pick(q))}</label><textarea id="q_${q.id}" data-q="${q.id}" placeholder="${t("ph")}" ${ok?"":"disabled"}>${esc(A[q.id])}</textarea>`).join("")}</details>`).join("");prog()};
+Sel($("#sl"),draw);let tm;
+$("#sb2").addEventListener("input",ev=>{const q=ev.target.dataset.q;if(!q||chk())return;clearTimeout(tm);const k=key(),v=ev.target.value,r={...R},l=lab();
+tm=setTimeout(async()=>{const id=`ans:${k}:${q}`;if(v.trim())await put({id,type:"answer",k,q,ref:r,label:l,text:v,t:Date.now()});else await del(id);
+await put({id:"rc:"+k,type:"recent",ref:r,label:l,t:Date.now()});items=await all();prog();toast(t("saved"))},500)})}
+function Notes(m){const days=(()=>{const x=+ls("lastExport");return x?Math.floor((Date.now()-x)/864e5):null})();
+m.innerHTML=`<h1>${t("notes")}</h1><p class="warn">${t("priv")} ${days===null?t("never"):t("last")+days+"d"}${days!==null&&days>30?" ⚠":""}</p><div id="sl"></div>
+<div class="card"><label for="nt" class="mut">${t("notes_ph")}</label><textarea id="nt"></textarea><label for="tg" class="mut">${t("tags")}</label><input id="tg" style="width:100%"><div class="row"><button id="sv">${t("save")}</button></div></div>
+<div class="row"><input id="q" type="search" placeholder="${t("search")}" aria-label="${t("search")}"><select id="fb" aria-label="${t("book")}"><option value="">${t("allb")}</option>${B.map(b=>`<option value="${b.id}">${esc(bn(b))}</option>`).join("")}</select></div>
+<div class="card" id="ls"></div>
+<div class="row"><button id="ex" class="alt">${t("exp")}</button><label class="btn alt" style="background:var(--card);color:var(--fg);border-color:var(--line)">${t("imp")}<input id="im" type="file" accept="application/json" hidden></label></div>`;
+Sel($("#sl"),ok=>$("#sv").disabled=!ok);
+const list=()=>{const q=$("#q").value.toLowerCase(),f=$("#fb").value;
+const a=items.filter(i=>(i.type==="note"||i.type==="bookmark")&&(!f||i.ref.b===f)&&(!q||[i.text,i.label,(i.tags||[]).join(" ")].join(" ").toLowerCase().includes(q))).sort((x,y)=>y.t-x.t);
+$("#ls").innerHTML=a.length?a.map(i=>`<div class="item"><a href="#/study" data-open="${esc(i.id)}"><strong>${esc(i.label)}</strong></a> <span class="mut">${t(i.type==="note"?"nlist":"bmarks")} · ${new Date(i.t).toLocaleDateString()}</span>${i.text?`<p style="white-space:pre-wrap;margin:.3rem 0">${esc(i.text)}</p>`:""}${(i.tags||[]).map(g=>`<span class="mut">#${esc(g)} </span>`).join("")}<div><button class="alt" data-del="${esc(i.id)}">${t("del")}</button></div></div>`).join(""):`<p class="mut">${t("none")}</p>`};
+list();$("#q").oninput=list;$("#fb").onchange=list;
+$("#sv").onclick=async()=>{const x=$("#nt").value.trim();if(!x||chk())return;
+await put({id:"n:"+crypto.randomUUID(),type:"note",ref:{...R},label:lab(),text:x,tags:$("#tg").value.split(",").map(s=>s.trim()).filter(Boolean),t:Date.now()});
+items=await all();$("#nt").value="";$("#tg").value="";list();toast(t("saved"))};
+$("#ls").onclick=async ev=>{const d=ev.target.dataset.del;if(d){await del(d);items=await all();list()}};
+$("#ex").onclick=()=>{const b=new Blob([JSON.stringify({app:"bible-study",schema:1,exportedAt:new Date().toISOString(),items},null,1)],{type:"application/json"});
+const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="bible-study-backup.json";a.click();ls("lastExport",Date.now())};
+$("#im").onchange=async ev=>{const f=ev.target.files[0];if(!f)return;
+try{const j=JSON.parse(await f.text());if(j.app!=="bible-study"||j.schema!==1||!Array.isArray(j.items))throw 0;
+const S2=x=>x==null||typeof x==="string",clean=[];
+for(const x of j.items){if(!x||typeof x.id!=="string"||!["note","bookmark","answer","recent","highlight","xref"].includes(x.type)||typeof x.t!=="number"||!x.ref||!B.some(b=>b.id===x.ref.b)||![x.label,x.text,x.k,x.q].every(S2)||(x.tags!=null&&!(Array.isArray(x.tags)&&x.tags.every(s=>typeof s==="string"))))throw 0;
+const r=x.ref;clean.push({id:x.id,type:x.type,t:x.t,ref:{b:r.b,c1:String(r.c1??"1"),v1:String(r.v1??""),c2:String(r.c2??""),v2:String(r.v2??"")},label:x.label||"",text:x.text||"",tags:x.tags||[],k:x.k||"",q:x.q||"",color:/^#[0-9a-f]{3,8}$/i.test(x.color||"")?x.color:"#f2d544",to:x.to&&B.some(b=>b.id===x.to.b)?{b:x.to.b,c1:String(x.to.c1??"1"),v1:String(x.to.v1??""),c2:String(x.to.c2??""),v2:String(x.to.v2??"")}:null})}
+if(!confirm(t("conf").replace("{n}",clean.length)))return;
+for(const c of clean){const o=items.find(i=>i.id===c.id);if(!o||o.t<c.t)await put(c)}
+items=await all();list();toast(t("impd").replace("{n}",clean.length))}catch(e){alert(t("bad"))}ev.target.value=""}}
+/* ---------- Content layer: loaded from content.json (separate from the app); validated ---------- */
+let CONTENT={resources:[],quizzes:[],crossrefs:[],verses:null};
+const XT="quotation|allusion|prophecy|parallel|theme|historical|word|other".split("|");
+Object.assign(I.en,{lib:"Library",quiz:"Quizzes",links:"Connections",gs:"Search",adm:"Checks",demo:"Load technical demo data (not real content)",empty:"No published content yet. Add it to content.json.",type:"Type",submit:"Submit",retry:"Try again",score:"Score",hl:"Highlights",color:"Colour",hlbtn:"Highlight this reference",xr:"My private connections",xrbtn:"Add private connection",xtype:"Connection type",focus:"Focus on selected book"});
+Object.assign(I.sq,{lib:"Biblioteka",quiz:"Kuize",links:"Lidhjet",gs:"Kërko",adm:"Kontrolle",demo:"Ngarko të dhëna demo teknike (jo përmbajtje reale)",empty:"Ende nuk ka përmbajtje të publikuar. Shtoje te content.json.",type:"Lloji",submit:"Dorëzo",retry:"Provo përsëri",score:"Rezultati",hl:"Theksime",color:"Ngjyra",hlbtn:"Thekso këtë referencë",xr:"Lidhjet e mia private",xrbtn:"Shto lidhje private",xtype:"Lloji i lidhjes",focus:"Përqendrohu te libri i zgjedhur"});
+Object.assign(I.en,{official:"Official",yours:"Yours",nolinks:"No connected passages for this reference yet.",linkhint:"Choose a passage to see the passages connected to it. Official connections are added by the site owner and cannot be deleted. You can add your own private connections, stored only on your device."});
+Object.assign(I.sq,{official:"Zyrtare",yours:"Të tuat",nolinks:"Ende nuk ka pasazhe të lidhura për këtë referencë.",linkhint:"Zgjidh një pasazh për të parë pasazhet e lidhura me të. Lidhjet zyrtare i shton pronari i faqes dhe nuk mund të fshihen. Mund të shtosh lidhjet e tua private, të ruajtura vetëm në pajisjen tënde."});
+const st=r=>[+r.c1,r.v1?+r.v1:0],en=r=>[+(r.c2||r.c1),r.v2?+r.v2:(r.v1?+r.v1:9999)],cmp=(a,b)=>a[0]-b[0]||a[1]-b[1];
+const ovl=(a,b)=>a.b===b.b&&cmp(st(a),en(b))<=0&&cmp(st(b),en(a))<=0;
+const DEMO={resources:[{id:"demo-r1",status:"published",type:"table",title:{en:"DEMO resource (technical test only)"},desc:{en:"Placeholder that proves filtering works."},tags:["demo"],refs:[{b:"Ruth",c1:"1"}]}],
+quizzes:[{id:"demo-q1",status:"published",title:{en:"DEMO quiz (technical test only)"},questions:[{id:"d1",type:"mc",text:{en:"Pick the second option."},options:[{en:"A"},{en:"B"},{en:"C"}],answer:1,explanation:{en:"Demo explanation."}},{id:"d2",type:"tf",text:{en:"Select True."},answer:true},{id:"d3",type:"short",text:{en:"Type: ok"},answer:["ok"]}]}],
+crossrefs:[{id:"demo-x1",status:"published",from:{b:"Ruth",c1:"1"},to:{b:"Hag",c1:"1"},type:"other",desc:{en:"DEMO connection, not research."}},{id:"demo-x2",status:"published",from:{b:"Ruth",c1:"1"},to:{b:"Jonah",c1:"2"},type:"other",desc:{en:"DEMO connection, not research."}}]};
+const loc=o=>typeof o==="string"?o:!o?"":o[lang]||(o.en?o.en+" ·EN":"");
+const demoBtn=()=>`<button class="alt" data-demo>${t("demo")}</button>`;
+function validate(c){const e=[],ids=new Set(),L=(o,p)=>{if(!o||typeof o!=="object"||!(o.en||o.sq))e.push(p+": needs en or sq text")};
+const uid=(x,k)=>{if(!x.id||ids.has(x.id))e.push(k+": missing or duplicate id "+x.id);ids.add(x.id)};
+for(const r of c.resources||[]){uid(r,"resource");L(r.title,"resource "+r.id+" title");if(r.url&&!/^https?:\/\//.test(r.url))e.push("resource "+r.id+": url must be http(s)")}
+for(const z of c.quizzes||[]){uid(z,"quiz");L(z.title,"quiz "+z.id+" title");for(const q of z.questions||[]){L(q.text,"question "+q.id);if(!["mc","tf","short"].includes(q.type))e.push("question "+q.id+": unknown type");if(q.answer===undefined)e.push("question "+q.id+": no answer")}}
+for(const x of c.crossrefs||[]){uid(x,"crossref");if(!B.some(b=>b.id===(x.from||{}).b)||!B.some(b=>b.id===(x.to||{}).b))e.push("crossref "+x.id+": unknown book");if(!XT.includes(x.type))e.push("crossref "+x.id+": unknown type")}
+for(const k of Object.keys(c.books||{}))if(!B.some(b=>b.id===k))e.push("books: unknown book id "+k);
+for(const s of c.study||[])if(!s.n||!s.q||!Array.isArray(s.l)||s.l.some(p=>!p.id||!p.en))e.push("study stage "+s.n+": needs n, q and l[{id,en}]");
+return e}
+const grade=(q,a)=>q.type==="short"?(q.answer||[]).some(x=>String(x).trim().toLowerCase()===String(a??"").trim().toLowerCase()):a===q.answer;
+const score=(z,A)=>z.questions.reduce((s,q)=>s+(grade(q,A[q.id])?(q.points||1):0),0);
+function Library(m){const rs=(CONTENT.resources||[]).filter(r=>r.status==="published"),ty=[...new Set(rs.map(r=>r.type))];
+m.innerHTML=`<h1>${t("lib")}</h1>`+(rs.length?`<div class="row"><input id="rq" type="search" placeholder="${t("gs")}" aria-label="${t("gs")}"><select id="rt" aria-label="${t("type")}"><option value="">${t("type")}</option>${ty.map(x=>`<option>${esc(x)}</option>`).join("")}</select></div><div id="rl"></div>`:`<div class="card"><p class="mut">${t("empty")}</p>${demoBtn()}</div>`);
+if(!rs.length)return;const d=()=>{const q=$("#rq").value.toLowerCase(),f=$("#rt").value;
+$("#rl").innerHTML=rs.filter(r=>(!f||r.type===f)&&(!q||[loc(r.title),loc(r.desc),(r.tags||[]).join(" ")].join(" ").toLowerCase().includes(q))).map(r=>`<div class="card"><h2>${esc(loc(r.title))}</h2><p class="mut">${esc(r.type)}${(r.refs||[]).length?" · "+r.refs.map(x=>esc(lab(x))).join(", "):""}</p><p>${esc(loc(r.desc))}</p>${r.source?`<p class="mut">${esc(r.source)} ${esc(r.license||"")}</p>`:""}${r.url?`<a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${esc(r.url)}</a>`:""}</div>`).join("")};
+d();$("#rq").oninput=d;$("#rt").onchange=d}
+function Quiz(m,id){const zs=(CONTENT.quizzes||[]).filter(z=>z.status==="published"),z=zs.find(x=>x.id===id);
+if(!z){m.innerHTML=`<h1>${t("quiz")}</h1>`+(zs.length?zs.map(x=>`<div class="item"><a href="#/quiz/${esc(x.id)}">${esc(loc(x.title))}</a> <span class="mut">${esc(ls("last:"+x.id)||"")}</span></div>`).join(""):`<div class="card"><p class="mut">${t("empty")}</p>${demoBtn()}</div>`);return}
+const tot=z.questions.reduce((s,q)=>s+(q.points||1),0),tf=[["true","True","E vërtetë"],["false","False","E rreme"]];
+const inp=q=>q.type==="short"?`<input name="${esc(q.id)}" aria-label="answer">`:(q.type==="tf"?tf.map(([v,a,b])=>`<label><input type="radio" name="${esc(q.id)}" value="${v}"> ${lang==="sq"?b:a}</label>`):q.options.map((o,i)=>`<label><input type="radio" name="${esc(q.id)}" value="${i}"> ${esc(loc(o))}</label>`)).join("<br>");
+m.innerHTML=`<p><a href="#/quiz">←</a></p><h1>${esc(loc(z.title))}</h1>`+z.questions.map(q=>`<fieldset class="sel"><legend>${esc(loc(q.text))}</legend>${q.type==="short"?inp(q):inp(q)}<div id="r_${esc(q.id)}" aria-live="polite"></div></fieldset>`).join("")+`<button id="go">${t("submit")}</button> <strong id="rs"></strong>`;
+$("#go").onclick=()=>{const A={};z.questions.forEach(q=>{const el=document.querySelector(q.type==="short"?`[name="${q.id}"]`:`[name="${q.id}"]:checked`);let v=el?el.value:undefined;if(v!==undefined&&q.type==="tf")v=v==="true";else if(v!==undefined&&q.type==="mc")v=+v;A[q.id]=v;$("#r_"+q.id).textContent=(grade(q,v)?"✔ ":"✘ ")+(q.explanation?loc(q.explanation):"")});
+const s=score(z,A);$("#rs").textContent=`${t("score")}: ${s}/${tot}`;ls("last:"+z.id,s+"/"+tot);$("#go").textContent=t("retry");$("#go").onclick=()=>Quiz(m,id)}}
+function graph(E){const ns=[...new Set(E.flatMap(e=>[lab(e.from),lab(e.to)]))].slice(0,30),P=ns.map((n,i)=>{const a=2*Math.PI*i/ns.length;return[160+110*Math.cos(a),160+110*Math.sin(a)]});
+return`<svg viewBox="0 0 320 320" role="img" aria-label="${t("links")}" style="width:100%;max-width:480px">`+E.map(e=>{const a=P[ns.indexOf(lab(e.from))],b=P[ns.indexOf(lab(e.to))];return a&&b?`<path d="M${a} Q160,160 ${b}" fill="none" stroke="${e.priv?"var(--mut)":"var(--ac)"}" stroke-width="1.5" ${e.priv?'stroke-dasharray="4"':""}/>`:""}).join("")+ns.map((n,i)=>`<circle cx="${P[i][0]}" cy="${P[i][1]}" r="5" fill="var(--ac)"><title>${esc(n)}</title></circle><text x="${P[i][0]}" y="${P[i][1]-8}" font-size="8" text-anchor="middle" fill="currentColor">${esc(n)}</text>`).join("")+"</svg>"}
+function Links(m){const pub=(CONTENT.crossrefs||[]).filter(x=>x.status==="published"),mine=items.filter(i=>i.type==="xref").map(i=>({id:i.id,from:i.ref,to:i.to,type:"private",priv:1,desc:i.text})),hl=items.filter(i=>i.type==="highlight");
+const CL=[["#f2d544","Yellow","E verdhë"],["#8fd19e","Green","E gjelbër"],["#8ec5f0","Blue","Blu"],["#f0a5c0","Pink","Rozë"]],bo=B.map(b=>`<option value="${b.id}">${esc(bn(b))}</option>`).join("");
+m.innerHTML=`<h1>${t("links")}</h1><p class="mut">${t("linkhint")}</p><div id="sl"></div><div id="gv"></div><div id="ll"></div><div class="card"><h2>${t("hl")}</h2><div class="row"><select id="hc" aria-label="${t("color")}">${CL.map(c=>`<option value="${c[0]}">${lang==="sq"?c[2]:c[1]}</option>`).join("")}</select><button id="hb">${t("hlbtn")}</button></div><div id="hs"></div></div>
+<div class="card"><h2>${t("xr")}</h2><div class="row"><select id="tb" aria-label="${t("book")}">${bo}</select><input id="tc" type="number" min="1" value="1" aria-label="${t("chapter")}" style="width:6rem"><input id="tv" type="number" min="1" aria-label="${t("verse")}" placeholder="${t("verse")}" style="width:8rem"><input id="tx" placeholder="${t("notes_ph")}"><button id="xb">${t("xrbtn")}</button></div></div>
+`;
+const d=()=>{const E=[...pub,...mine].filter(e=>ovl(e.from,R)||ovl(e.to,R));
+$("#gv").innerHTML=E.length?graph(E.map(e=>({from:R,to:ovl(e.from,R)?e.to:e.from,priv:e.priv}))):`<p class="mut">${t("nolinks")}</p>`;
+$("#ll").innerHTML=E.map(e=>`<div class="item"><strong>${esc(lab(ovl(e.from,R)?e.to:e.from))}</strong> <span class="mut">${esc(e.type)} · ${t(e.priv?"yours":"official")}</span><p style="margin:.2rem 0">${esc(loc(e.desc))}</p>${e.priv?`<button class="alt" data-del="${esc(e.id)}">${t("del")}</button>`:""}</div>`).join("");
+$("#hs").innerHTML=hl.map(h=>`<div class="item"><span style="background:${esc(h.color)};padding:0 .6rem">&nbsp;</span> ${esc(h.label)} <button class="alt" data-del="${esc(h.id)}">${t("del")}</button></div>`).join("")};
+Sel($("#sl"),ok=>{$("#hb").disabled=!ok;$("#xb").disabled=!ok;d()});
+$("#hb").onclick=async()=>{await put({id:"hl:"+key(),type:"highlight",ref:{...R},label:lab(),color:$("#hc").value,t:Date.now()});items=await all();Links(m)};
+$("#xb").onclick=async()=>{const c=+$("#tc").value,b=$("#tb").value;if(chk())return;const to={b,c1:String(c),v1:$("#tv").value,c2:"",v2:""};if(chk(to))return toast(t(chk(to)));
+await put({id:"x:"+crypto.randomUUID(),type:"xref",ref:{...R},to,label:lab(),text:$("#tx").value,t:Date.now()});items=await all();Links(m)};
+m.onclick=async ev=>{const x=ev.target.dataset.del;if(x){await del(x);items=await all();Links(m)}}}
+function Search(m){m.innerHTML=`<h1>${t("gs")}</h1><input id="gq" type="search" style="width:100%" aria-label="${t("gs")}"><div id="gr"></div>`;
+$("#gq").oninput=e=>{const q=e.target.value.trim().toLowerCase();if(!q){$("#gr").innerHTML="";return}const has=s=>String(s||"").toLowerCase().includes(q),P=x=>x.status==="published",tg=a=>(a||[]).some(has);
+const G=[[t("books"),B.filter(b=>has(b.en)||has(b.sq)).map(b=>[bn(b),"#/book/"+b.id])],[t("lib"),(CONTENT.resources||[]).filter(r=>P(r)&&(has(loc(r.title))||has(loc(r.desc))||tg(r.tags))).map(r=>[loc(r.title),"#/library"])],
+[t("quiz"),(CONTENT.quizzes||[]).filter(z=>P(z)&&has(loc(z.title))).map(z=>[loc(z.title),"#/quiz/"+z.id])],[t("links"),(CONTENT.crossrefs||[]).filter(x=>P(x)&&(has(loc(x.desc))||has(lab(x.from))||has(lab(x.to)))).map(x=>[lab(x.from)+" → "+lab(x.to),"#/links"])],
+[t("notes"),items.filter(i=>["note","xref"].includes(i.type)&&(has(i.text)||has(i.label)||tg(i.tags))).map(i=>[i.label,"#/notes"])]];
+$("#gr").innerHTML=G.filter(g=>g[1].length).map(g=>`<div class="card"><h2>${esc(g[0])}</h2>${g[1].slice(0,20).map(([l,h])=>`<div class="item"><a href="${h}">${esc(l)}</a></div>`).join("")}</div>`).join("")||`<p class="mut">${t("none")}</p>`}}
+function runTests(){const T=[],a=(n,v)=>T.push([n,!!v]),L0=lang;lang="en";const r=o=>({b:"John",c1:"3",v1:"",c2:"",v2:"",...o});
+a("66 books, 39 OT / 27 NT",B.length===66&&B.filter(b=>!b.nt).length===39);a("1,189 chapters in total",B.reduce((n,b)=>n+b.ch,0)===1189);
+a("John 3:16 valid",chk(r({v1:"16"}))==="");a("John 22 out of range",chk(r({c1:"22"}))==="e_chap");a("verse range reversed is invalid",chk(r({v1:"16",v2:"5"}))==="e_range");
+a("cross-chapter John 3:16–4:2 valid",chk(r({v1:"16",c2:"4",v2:"2"}))===""&&lab(r({v1:"16",c2:"4",v2:"2"}))==="John 3:16–4:2");
+a("label Romans 8:28–39",lab({b:"Rom",c1:"8",v1:"28",c2:"",v2:"39"})==="Romans 8:28–39");
+const z=DEMO.quizzes[0];a("quiz scoring (all right = 3)",score(z,{d1:1,d2:true,d3:" OK "})===3);a("quiz scoring (all wrong = 0)",score(z,{d1:0,d2:false,d3:"no"})===0);
+a("demo content validates",validate(DEMO).length===0);a("validator rejects bad data",validate({resources:[{id:"x"},{id:"x",title:{en:"t"},url:"javascript:1"}]}).length>=3);
+a("every English UI string has Albanian",Object.keys(I.en).every(k=>k in I.sq));
+a("connections match overlapping passages only",ovl({b:"John",c1:"3",v1:"16"},{b:"John",c1:"3"})&&!ovl({b:"John",c1:"3",v1:"16"},{b:"John",c1:"4"})&&!ovl({b:"John",c1:"3",v1:"16"},{b:"Luke",c1:"3"}));const S0=CONTENT.verses;CONTENT.verses={John:[0,0,10]};a("verse-count hook rejects 3:11 when metadata says 10",chk(r({v1:"11"}))==="e_verse");CONTENT.verses=S0;lang=L0;return T}
+function Admin(m){const e=validate(CONTENT),ms=[],f=(o,n)=>{if(o&&!(o.en&&o.sq))ms.push(n)};(CONTENT.resources||[]).forEach(r=>f(r.title,"resource "+r.id));(CONTENT.quizzes||[]).forEach(z=>f(z.title,"quiz "+z.id));
+m.innerHTML=`<h1>${t("adm")}</h1><div class="card"><h2>Content validation</h2>${e.length?"<ul>"+e.map(x=>`<li>${esc(x)}</li>`).join("")+"</ul>":"<p>OK</p>"}<h2>Missing translations</h2>${ms.length?"<ul>"+ms.map(x=>`<li>${esc(x)}</li>`).join("")+"</ul>":"<p>—</p>"}</div><div class="card"><h2>Self-tests</h2>${runTests().map(([n,ok])=>`<div>${ok?"✔":"✘"} ${esc(n)}</div>`).join("")}</div>`}
+document.addEventListener("click",ev=>{if(ev.target.dataset&&ev.target.dataset.demo!==undefined){CONTENT={...CONTENT,...DEMO};go()}});
+let CERR=[];const loadC=()=>fetch("content.json").then(r=>r.ok?r.json():null).then(c=>{if(!c)return;const er=validate(c);if(er.length){CERR=er;console.error(er);return}CONTENT={...CONTENT,...c};if(Array.isArray(c.study)&&c.study.length)S.splice(0,S.length,...c.study.map(s=>({n:s.n,q:s.q,l:s.l})))}).catch(()=>{});
+/* ---------- Shell ---------- */
+async function go(){const[,p,a]=(location.hash||"#/home").split("/");
+document.documentElement.lang=lang;$("#lg").value=lang;items=await all();
+$("#nv").innerHTML=[["home","home"],["books","books"],["study","study"],["library","lib"],["quiz","quiz"],["links","links"],["notes","notes"],["search","gs"]].map(([h,k])=>`<a href="#/${h}" ${(p===h||(p==="book"&&h==="books"))?'aria-current="page"':""}>${t(k)}</a>`).join("");
+$("#ft").innerHTML=(db?"":`<p class="err">${t("nodb")}</p>`)+(CERR.length?`<p class="err">content.json: ${esc(CERR.slice(0,3).join("; "))}</p>`:"")+t("nobible");
+({home:Home,books:Books,book:Book,study:Study,notes:Notes,library:Library,quiz:Quiz,links:Links,search:Search,checks:Admin}[p]||Home)($("#app"),a);scrollTo(0,0)}
+document.addEventListener("click",ev=>{const o=ev.target.closest("[data-open]");if(o){openRef(o.dataset.open)}});
+$("#lg").onchange=e=>{lang=e.target.value;ls("lang",lang);go()};
+let cur=ls("theme")||(typeof matchMedia==="function"&&matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");$("#th").onclick=()=>{cur=cur==="dark"?"light":"dark";document.documentElement.dataset.theme=cur;ls("theme",cur)};
+const th=ls("theme");if(th)document.documentElement.dataset.theme=th;
+addEventListener("hashchange",go);
+Promise.all([open(),loadC()]).then(([d])=>{db=d;go()});
+</script></body></html>

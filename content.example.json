@@ -1,0 +1,53 @@
+{
+  "books": {
+    "Obad": {
+      "author": { "en": "EXAMPLE: write the authorship text here", "sq": "SHEMBULL: shkruaj tekstin këtu" },
+      "date": { "en": "EXAMPLE: date of composition" },
+      "outline": { "en": "EXAMPLE outline, line one\nline two" }
+    }
+  },
+  "resources": [
+    {
+      "id": "my-first-resource",
+      "status": "draft",
+      "type": "map",
+      "title": { "en": "EXAMPLE title", "sq": "SHEMBULL titulli" },
+      "desc": { "en": "EXAMPLE description" },
+      "tags": ["example"],
+      "refs": [{ "b": "Obad", "c1": "1" }],
+      "source": "Who made it / where it came from",
+      "license": "License or permission",
+      "url": "https://example.com/my-map"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "my-first-quiz",
+      "status": "draft",
+      "title": { "en": "EXAMPLE quiz", "sq": "SHEMBULL kuizi" },
+      "questions": [
+        { "id": "q1", "type": "mc", "text": { "en": "EXAMPLE question" }, "options": [{ "en": "A" }, { "en": "B" }], "answer": 0, "points": 1, "explanation": { "en": "optional" } },
+        { "id": "q2", "type": "tf", "text": { "en": "EXAMPLE true/false" }, "answer": true },
+        { "id": "q3", "type": "short", "text": { "en": "EXAMPLE short answer" }, "answer": ["accepted answer", "another accepted answer"] }
+      ]
+    }
+  ],
+  "crossrefs": [
+    {
+      "id": "my-first-connection",
+      "status": "draft",
+      "from": { "b": "Obad", "c1": "1", "v1": "1" },
+      "to": { "b": "Jonah", "c1": "1" },
+      "type": "other",
+      "desc": { "en": "EXAMPLE: your own explanation of the connection" }
+    }
+  ],
+  "study": [
+    {
+      "n": "Observation|Vëzhgimi",
+      "q": "What does the passage say?|Çfarë thotë pjesa?",
+      "l": [{ "id": "o1", "en": "EXAMPLE prompt", "sq": "SHEMBULL pyetje" }]
+    }
+  ],
+  "verses": { "Obad": [21] }
+}
