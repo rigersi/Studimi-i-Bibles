@@ -41,7 +41,7 @@ dt{font:600 .95rem system-ui;margin-top:.8rem}dd{margin:0;color:var(--mut);font-
 #st{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:.4rem 1rem;border-radius:20px;font:.9rem system-ui}
 #st:empty{display:none}
 footer{text-align:center;padding:2rem 1rem}
-html{-webkit-text-size-adjust:100%}body{font-size:clamp(16px,1.2vw + 12px,19px);overflow-x:hidden}
+html{-webkit-text-size-adjust:100%}html{font-size:calc(100% * var(--fs,1))}body{font-size:clamp(1rem,1.2vw + .75rem,1.19rem);overflow-x:hidden}
 main{width:100%;max-width:960px;padding:clamp(.75rem,3vw,2rem)}h1{font-size:clamp(1.5rem,4vw,2.3rem)}
 button,.btn,select,input,textarea{min-height:44px;max-width:100%}input[type=checkbox],input[type=radio]{min-height:0;width:1.2rem;height:1.2rem}
 nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:thin}nav a{white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
@@ -49,11 +49,15 @@ nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-
 @media (max-width:640px){header{padding:.5rem .75rem}nav{order:3;width:100%}.row>*{flex:1 1 100%}.g{grid-template-columns:1fr 1fr}.card,.sel,details{padding:.8rem}}
 @media (min-width:900px){.g{grid-template-columns:repeat(5,1fr)}.bk{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
 @media (min-width:1400px){main{max-width:1100px}}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0}
+.big a{display:flex;flex-direction:column;justify-content:center;gap:.3rem;min-height:120px;padding:1.4rem;border-radius:16px;background:var(--ac);color:var(--on);text-decoration:none;font-family:system-ui}
+.big b{font-size:1.4rem}.big span{font-size:1rem;opacity:.92}
+.sub{display:flex;gap:.3rem;margin-bottom:1rem;border-bottom:1px solid var(--line);padding-bottom:.6rem;flex-wrap:wrap;overflow:visible}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style></head>
 <body>
 <header><a class="logo" href="#/home">✝ <b>Bible</b>Study</a><nav id="nv" aria-label="Main"></nav>
-<div class="tools"><select id="lg" aria-label="Language"><option value="en">English</option><option value="sq">Shqip</option></select><button id="th" class="alt" aria-label="Theme">◐</button></div></header>
+<div class="tools"><select id="lg" aria-label="Language"><option value="en">English</option><option value="sq">Shqip</option></select><button id="fm" class="alt" aria-label="Smaller text">A−</button><button id="fp" class="alt" aria-label="Larger text">A+</button><button id="th" class="alt" aria-label="Theme">◐</button></div></header>
 <main id="app"></main><div id="st" role="status" aria-live="polite"></div>
 <footer class="mut" id="ft"></footer>
 <script>
@@ -68,7 +72,7 @@ const S=[["Observation|Vëzhgimi","What does the passage say?|Çfarë thotë pje
 .map(([n,q,l])=>({n,q,l:l.split(";").map(x=>{const[id,en,sq]=x.split("|");return{id,en,sq}})}));
 const FK="author,date,background,setting,audience,purpose,hthemes,tthemes,structure,outline,challenges,locations,resources,refs,notes".split(",");const FIELDS="Author and authorship|Autori dhe autorësia;Date of composition|Koha e shkrimit;Historical background|Konteksti historik;Historical setting|Rrethanat historike;Original audience|Lexuesit origjinalë;Purpose of writing|Qëllimi i shkrimit;Historical themes|Tema historike;Theological themes|Tema teologjike;Literary structure and genre|Struktura letrare dhe zhanri;Outline|Skema;Interpretive challenges|Sfida interpretimi;Important locations|Vende të rëndësishme;Related resources|Burime të lidhura;Related references|Referenca të lidhura;Additional notes|Shënime shtesë".split(";").map((x,i)=>{const[en,sq]=x.split("|");return{en,sq,k:FK[i]}});
 /* ---------- Interface strings (fallback: missing key in a language falls back to English) ---------- */
-const I={en:{home:"Home",books:"Books",study:"Study",notes:"My notes",app:"Bible Study Workspace",
+const I={en:{home:"Home",books:"Bible books",study:"Study",notes:"Notes",app:"Bible Study Workspace",
 intro:"Study Scripture by reference. Choose a passage here, read it in your own Bible, and record your observations, interpretation and application.",
 start:"Start studying",nobible:"This site contains no Bible text. It works with references only.",pick:"Choose a passage",book:"Book",chapter:"Chapter",verse:"Verse (optional)",tochap:"To chapter (optional)",toverse:"To verse (optional)",
 bm:"Bookmark",addnote:"Write a note",recent:"Recently studied",none:"Nothing here yet.",feat:"Featured resources",newr:"New resources",wait:"Awaiting content.",ot:"Old Testament",nt:"New Testament",
@@ -77,7 +81,7 @@ vnote:"Verse numbers are not yet checked against each chapter’s verse count (m
 exp:"Export backup",imp:"Import backup",allb:"All books",del:"Delete",priv:"Everything you write stays in this browser on this device. Nothing is uploaded and nothing syncs between devices, so export a backup regularly.",
 never:"You have not exported a backup yet.",last:"Last backup: ",bad:"This file is not a valid backup.",conf:"Merge {n} items into your local data? Newer versions are kept.",impd:"Imported {n} items.",
 bmarks:"Bookmarks",nlist:"Notes",chs:"chapters",nodb:"Local storage is unavailable in this browser; nothing will be saved.",notes_ph:"Your private note…",bmd:"Bookmarked",ready:"Selected passage"},
-sq:{home:"Kreu",books:"Librat",study:"Studimi",notes:"Shënimet e mia",app:"Hapësira e Studimit Biblik",
+sq:{home:"Kreu",books:"Librat e Biblës",study:"Studio",notes:"Shënimet",app:"Hapësira e Studimit Biblik",
 intro:"Studio Shkrimin sipas referencave. Zgjidh një pjesë këtu, lexoje në Biblën tënde dhe shkruaj vëzhgimet, interpretimin dhe zbatimin.",
 start:"Fillo studimin",nobible:"Kjo faqe nuk përmban tekst biblik. Punon vetëm me referenca.",pick:"Zgjidh një pjesë",book:"Libri",chapter:"Kapitulli",verse:"Vargu (opsional)",tochap:"Deri në kapitullin (opsional)",toverse:"Deri në vargun (opsional)",
 bm:"Ruaje në faqeshënues",addnote:"Shkruaj një shënim",recent:"Studiuar së fundmi",none:"Ende asgjë këtu.",feat:"Burime të veçanta",newr:"Burime të reja",wait:"Në pritje të përmbajtjes.",ot:"Besëlidhja e Vjetër",nt:"Besëlidhja e Re",
@@ -127,9 +131,9 @@ $("#bmk").onclick=async()=>{await put({id:"bm:"+key(),type:"bookmark",ref:{...R}
 const openRef=id=>{const x=items.find(i=>i.id===id);if(x&&x.ref){R={...x.ref};location.hash="#/study"}};
 function Home(m){const rec=items.filter(i=>i.type==="recent").sort((a,b)=>b.t-a.t).slice(0,8),bms=items.filter(i=>i.type==="bookmark").sort((a,b)=>b.t-a.t).slice(0,8);
 const L=a=>a.length?a.map(i=>`<div class="item"><a href="#/study" data-open="${esc(i.id)}">${esc(i.label)}</a></div>`).join(""):`<p class="mut">${t("none")}</p>`;
-m.innerHTML=`<section class="hero"><h1>${t("app")}</h1><p>${t("intro")}</p><a class="btn" href="#/study">${t("start")}</a><p class="warn mut">${t("nobible")}</p></section>
+m.innerHTML=`<section class="hero"><h1>${t("app")}</h1><p>${t("intro")}</p><p class="warn mut">${t("nobible")}</p></section><div class="big"><a href="#/study"><b>${t("study")}</b><span>${t("d_study")}</span></a><a href="#/books"><b>${t("books")}</b><span>${t("d_books")}</span></a><a href="#/notes"><b>${t("notes")}</b><span>${t("d_notes")}</span></a></div>
 <div class="card"><h2>${t("recent")}</h2>${L(rec)}</div><div class="card"><h2>${t("bmarks")}</h2>${L(bms)}</div>
-<div class="card"><h2>${t("feat")}</h2><p class="mut">${t("wait")}</p></div><div class="card"><h2>${t("newr")}</h2><p class="mut">${t("wait")}</p></div>`}
+`}
 function Books(m){const g=nt=>`<div class="bk">${B.filter(b=>b.nt===nt).map(b=>`<a href="#/book/${b.id}">${esc(bn(b))}</a>`).join("")}</div>`;
 m.innerHTML=`<h1>${t("books")}</h1><h2>${t("ot")} (39)</h2>${g(false)}<h2 style="margin-top:1.5rem">${t("nt")} (27)</h2>${g(true)}`}
 function Book(m,id){const b=bk(id);R={b:b.id,c1:"1",v1:"",c2:"",v2:""};
@@ -174,8 +178,8 @@ let CONTENT={resources:[],quizzes:[],crossrefs:[],verses:null};
 const XT="quotation|allusion|prophecy|parallel|theme|historical|word|other".split("|");
 Object.assign(I.en,{lib:"Library",quiz:"Quizzes",links:"Connections",gs:"Search",adm:"Checks",demo:"Load technical demo data (not real content)",empty:"No published content yet. Add it to content.json.",type:"Type",submit:"Submit",retry:"Try again",score:"Score",hl:"Highlights",color:"Colour",hlbtn:"Highlight this reference",xr:"My private connections",xrbtn:"Add private connection",xtype:"Connection type",focus:"Focus on selected book"});
 Object.assign(I.sq,{lib:"Biblioteka",quiz:"Kuize",links:"Lidhjet",gs:"Kërko",adm:"Kontrolle",demo:"Ngarko të dhëna demo teknike (jo përmbajtje reale)",empty:"Ende nuk ka përmbajtje të publikuar. Shtoje te content.json.",type:"Lloji",submit:"Dorëzo",retry:"Provo përsëri",score:"Rezultati",hl:"Theksime",color:"Ngjyra",hlbtn:"Thekso këtë referencë",xr:"Lidhjet e mia private",xrbtn:"Shto lidhje private",xtype:"Lloji i lidhjes",focus:"Përqendrohu te libri i zgjedhur"});
-Object.assign(I.en,{official:"Official",yours:"Yours",nolinks:"No connected passages for this reference yet.",linkhint:"Choose a passage to see the passages connected to it. Official connections are added by the site owner and cannot be deleted. You can add your own private connections, stored only on your device."});
-Object.assign(I.sq,{official:"Zyrtare",yours:"Të tuat",nolinks:"Ende nuk ka pasazhe të lidhura për këtë referencë.",linkhint:"Zgjidh një pasazh për të parë pasazhet e lidhura me të. Lidhjet zyrtare i shton pronari i faqes dhe nuk mund të fshihen. Mund të shtosh lidhjet e tua private, të ruajtura vetëm në pajisjen tënde."});
+Object.assign(I.en,{smaller:"Smaller text",larger:"Larger text",d_study:"Answer guided questions about a passage",d_books:"Browse the 66 books and the library",d_notes:"Your notes, bookmarks and backup",official:"Official",yours:"Yours",nolinks:"No connected passages for this reference yet.",linkhint:"Choose a passage to see the passages connected to it. Official connections are added by the site owner and cannot be deleted. You can add your own private connections, stored only on your device."});
+Object.assign(I.sq,{smaller:"Tekst më i vogël",larger:"Tekst më i madh",d_study:"Përgjigju pyetjeve udhëzuese për një pjesë",d_books:"Shfleto 66 librat dhe bibliotekën",d_notes:"Shënimet, faqeshënuesit dhe kopja rezervë",official:"Zyrtare",yours:"Të tuat",nolinks:"Ende nuk ka pasazhe të lidhura për këtë referencë.",linkhint:"Zgjidh një pasazh për të parë pasazhet e lidhura me të. Lidhjet zyrtare i shton pronari i faqes dhe nuk mund të fshihen. Mund të shtosh lidhjet e tua private, të ruajtura vetëm në pajisjen tënde."});
 const st=r=>[+r.c1,r.v1?+r.v1:0],en=r=>[+(r.c2||r.c1),r.v2?+r.v2:(r.v1?+r.v1:9999)],cmp=(a,b)=>a[0]-b[0]||a[1]-b[1];
 const ovl=(a,b)=>a.b===b.b&&cmp(st(a),en(b))<=0&&cmp(st(b),en(a))<=0;
 const DEMO={resources:[{id:"demo-r1",status:"published",type:"table",title:{en:"DEMO resource (technical test only)"},desc:{en:"Placeholder that proves filtering works."},tags:["demo"],refs:[{b:"Ruth",c1:"1"}]}],
@@ -241,15 +245,19 @@ m.innerHTML=`<h1>${t("adm")}</h1><div class="card"><h2>Content validation</h2>${
 document.addEventListener("click",ev=>{if(ev.target.dataset&&ev.target.dataset.demo!==undefined){CONTENT={...CONTENT,...DEMO};go()}});
 let CERR=[];const loadC=()=>fetch("content.json").then(r=>r.ok?r.json():null).then(c=>{if(!c)return;const er=validate(c);if(er.length){CERR=er;console.error(er);return}CONTENT={...CONTENT,...c};if(Array.isArray(c.study)&&c.study.length)S.splice(0,S.length,...c.study.map(s=>({n:s.n,q:s.q,l:s.l})))}).catch(()=>{});
 /* ---------- Shell ---------- */
+const GR={study:"study",links:"study",quiz:"study",books:"books",book:"books",library:"books",notes:"notes"},grp=p=>GR[p]||p,SUB={study:[["study","study"],["links","links"],["quiz","quiz"]],books:[["books","books"],["library","lib"]]};
 async function go(){const[,p,a]=(location.hash||"#/home").split("/");
-document.documentElement.lang=lang;$("#lg").value=lang;items=await all();
-$("#nv").innerHTML=[["home","home"],["books","books"],["study","study"],["library","lib"],["quiz","quiz"],["links","links"],["notes","notes"],["search","gs"]].map(([h,k])=>`<a href="#/${h}" ${(p===h||(p==="book"&&h==="books"))?'aria-current="page"':""}>${t(k)}</a>`).join("");
+document.documentElement.lang=lang;$("#lg").value=lang;$("#fm").setAttribute("aria-label",t("smaller"));$("#fp").setAttribute("aria-label",t("larger"));items=await all();
+$("#nv").innerHTML=[["home","home"],["study","study"],["books","books"],["notes","notes"],["search","gs"]].map(([h,k])=>`<a href="#/${h}" ${grp(p)===h?'aria-current="page"':""}>${t(k)}</a>`).join("");
 $("#ft").innerHTML=(db?"":`<p class="err">${t("nodb")}</p>`)+(CERR.length?`<p class="err">content.json: ${esc(CERR.slice(0,3).join("; "))}</p>`:"")+t("nobible");
-({home:Home,books:Books,book:Book,study:Study,notes:Notes,library:Library,quiz:Quiz,links:Links,search:Search,checks:Admin}[p]||Home)($("#app"),a);scrollTo(0,0)}
+({home:Home,books:Books,book:Book,study:Study,notes:Notes,library:Library,quiz:Quiz,links:Links,search:Search,checks:Admin}[p]||Home)($("#app"),a);const sg=SUB[grp(p)];if(sg)$("#app").insertAdjacentHTML("afterbegin",`<nav class="sub" aria-label="${t(grp(p))}">${sg.map(([h,k])=>`<a href="#/${h}" ${p===h||(p==="book"&&h==="books")?'aria-current="page"':""}>${t(k)}</a>`).join("")}</nav>`);scrollTo(0,0)}
 document.addEventListener("click",ev=>{const o=ev.target.closest("[data-open]");if(o){openRef(o.dataset.open)}});
 $("#lg").onchange=e=>{lang=e.target.value;ls("lang",lang);go()};
 let cur=ls("theme")||(typeof matchMedia==="function"&&matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");$("#th").onclick=()=>{cur=cur==="dark"?"light":"dark";document.documentElement.dataset.theme=cur;ls("theme",cur)};
 const th=ls("theme");if(th)document.documentElement.dataset.theme=th;
+const FS=[.9,1,1.15,1.3,1.5,1.75],s0=ls("fs");let fi=s0==null?1:+s0;if(!(fi>=0&&fi<FS.length))fi=1;
+const sf=()=>{document.documentElement.style.setProperty("--fs",FS[fi]);ls("fs",fi);$("#fm").disabled=fi===0;$("#fp").disabled=fi===FS.length-1};
+$("#fm").onclick=()=>{if(fi>0){fi--;sf()}};$("#fp").onclick=()=>{if(fi<FS.length-1){fi++;sf()}};sf();
 addEventListener("hashchange",go);
 Promise.all([open(),loadC()]).then(([d])=>{db=d;go()});
 </script></body></html>
