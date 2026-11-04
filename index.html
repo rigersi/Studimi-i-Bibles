@@ -57,7 +57,7 @@ nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-
 </style></head>
 <body>
 <header><a class="logo" href="#/home">✝ <b>Bible</b>Study</a><nav id="nv" aria-label="Main"></nav>
-<div class="tools"><select id="lg" aria-label="Language"><option value="en">English</option><option value="sq">Shqip</option></select><button id="fm" class="alt" aria-label="Smaller text">A−</button><button id="fp" class="alt" aria-label="Larger text">A+</button><button id="th" class="alt" aria-label="Theme">◐</button></div></header>
+<div class="tools"><select id="lg" aria-label="Language"><option value="sq">Shqip</option><option value="en">English</option></select><button id="fm" class="alt" aria-label="Smaller text">A−</button><button id="fp" class="alt" aria-label="Larger text">A+</button><button id="th" class="alt" aria-label="Theme">◐</button></div></header>
 <main id="app"></main><div id="st" role="status" aria-live="polite"></div>
 <footer class="mut" id="ft"></footer>
 <script>
@@ -92,7 +92,7 @@ never:"Ende nuk ke eksportuar kopje rezervë.",last:"Kopja e fundit: ",bad:"Ky s
 bmarks:"Faqeshënuesit",nlist:"Shënimet",chs:"kapituj",nodb:"Ruajtja lokale nuk është e disponueshme; asgjë nuk do të ruhet.",notes_ph:"Shënimi yt privat…",bmd:"U ruajt në faqeshënues",ready:"Pjesa e zgjedhur"}};
 /* ---------- Helpers ---------- */
 const $=s=>document.querySelector(s),ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){}};
-let lang=ls("lang")||((navigator.language||"").startsWith("sq")?"sq":"en");
+let lang=ls("lang")||"sq";
 const t=k=>I[lang][k]??I.en[k]??k,bn=b=>b[lang]||b.en,pick=o=>o[lang]||o.en;
 const dual=s=>{const[a,b]=s.split("|");return lang==="sq"?b||a:a};
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
