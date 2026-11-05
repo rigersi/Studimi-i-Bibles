@@ -246,7 +246,7 @@ m.innerHTML=`<h1>${t("adm")}</h1><div class="card"><h2>Content validation</h2>${
 document.addEventListener("click",ev=>{if(ev.target.dataset&&ev.target.dataset.demo!==undefined){CONTENT={...CONTENT,...DEMO};go()}});
 let CERR=[];const loadC=()=>fetch("content.json").then(r=>r.ok?r.json():null).then(c=>{if(!c)return;const er=validate(c);if(er.length){CERR=er;console.error(er);return}CONTENT={...CONTENT,...c};if(Array.isArray(c.study)&&c.study.length)S.splice(0,S.length,...c.study.map(s=>({n:s.n,q:s.q,l:s.l})))}).catch(()=>{});
 let UNS=false;
-async function bnr(){const x=db?await all():[];UNS=x.some(i=>i.type!=="recent"&&i.t>(+ls("lastExport")||0));const b=$("#bn");if(b)b.innerHTML=UNS?`<div class="bn" role="status"><span>Ke shënime që nuk i ke ruajtur. Ruaj një kopje.</span> <button id="bs">Ruaj një kopje</button></div>`:"";const s=$("#bs");if(s)s.onclick=doSave}
+async function bnr(){const x=db?await all():[];UNS=x.some(i=>i.type!=="recent"&&i.t>(+ls("lastExport")||0));const b=$("#bn");if(b)b.innerHTML=UNS?`<div class="bn" role="status"><span>Ke shënime që nuk i ke ruajtur. Ruaj një kopje kur të jesh gati.</span> <button id="bs">Ruaj një kopje</button></div>`:"";const s=$("#bs");if(s)s.onclick=doSave}
 async function doSave(){const f=new File([JSON.stringify({app:"bible-study",schema:1,exportedAt:new Date().toISOString(),items:await all()},null,1)],"bible-study-backup.json",{type:"application/json"});
 try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:"bible-study-backup"});ls("lastExport",Date.now());bnr();return}}catch(e){if(e&&e.name==="AbortError")return}
 const a=document.createElement("a");a.href=URL.createObjectURL(f);a.download=f.name;a.click();ls("lastExport",Date.now());bnr()}
