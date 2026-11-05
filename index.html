@@ -49,6 +49,7 @@ nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-
 @media (max-width:640px){header{padding:.5rem .75rem}nav{order:3;width:100%}.row>*{flex:1 1 100%}.g{grid-template-columns:1fr 1fr}.card,.sel,details{padding:.8rem}}
 @media (min-width:900px){.g{grid-template-columns:repeat(5,1fr)}.bk{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
 @media (min-width:1400px){main{max-width:1100px}}
+.bn{background:var(--ac);color:var(--on);padding:.6rem 1rem;display:flex;gap:.8rem;align-items:center;justify-content:center;flex-wrap:wrap;font-family:system-ui;text-align:center}.bn button{background:var(--card);color:var(--fg);border-color:var(--card)}
 .big{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0}
 .big a{display:flex;flex-direction:column;justify-content:center;gap:.3rem;min-height:120px;padding:1.4rem;border-radius:16px;background:var(--ac);color:var(--on);text-decoration:none;font-family:system-ui}
 .big b{font-size:1.4rem}.big span{font-size:1rem;opacity:.92}
@@ -58,7 +59,7 @@ nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-
 <body>
 <header><a class="logo" href="#/home">✝ <b>Bible</b>Study</a><nav id="nv" aria-label="Main"></nav>
 <div class="tools"><select id="lg" aria-label="Language"><option value="sq">Shqip</option><option value="en">English</option></select><button id="fm" class="alt" aria-label="Smaller text">A−</button><button id="fp" class="alt" aria-label="Larger text">A+</button><button id="th" class="alt" aria-label="Theme">◐</button></div></header>
-<main id="app"></main><div id="st" role="status" aria-live="polite"></div>
+<div id="bn"></div><main id="app"></main><div id="st" role="status" aria-live="polite"></div>
 <footer class="mut" id="ft"></footer>
 <script>
 "use strict";
@@ -78,7 +79,7 @@ start:"Start studying",nobible:"This site contains no Bible text. It works with 
 bm:"Bookmark",addnote:"Write a note",recent:"Recently studied",none:"Nothing here yet.",feat:"Featured resources",newr:"New resources",wait:"Awaiting content.",ot:"Old Testament",nt:"New Testament",
 done:"answered",saved:"Saved on this device",e_chap:"Chapter is out of range for this book.",e_verse:"Verses must be whole numbers, 1 or more.",e_range:"The end of the range must come after the start.",
 vnote:"Verse numbers are not yet checked against each chapter’s verse count (metadata pending).",ph:"Your response…",save:"Save note",tags:"Tags (comma separated)",search:"Search my notes",
-exp:"Export backup",imp:"Import backup",allb:"All books",del:"Delete",priv:"Everything you write stays in this browser on this device. Nothing is uploaded and nothing syncs between devices, so export a backup regularly.",
+exp:"Save a copy",imp:"Restore notes",allb:"All books",del:"Delete",priv:"Everything you write stays in this browser on this device. Nothing is uploaded and nothing syncs between devices, so export a backup regularly.",
 never:"You have not exported a backup yet.",last:"Last backup: ",bad:"This file is not a valid backup.",conf:"Merge {n} items into your local data? Newer versions are kept.",impd:"Imported {n} items.",
 bmarks:"Bookmarks",nlist:"Notes",chs:"chapters",nodb:"Local storage is unavailable in this browser; nothing will be saved.",notes_ph:"Your private note…",bmd:"Bookmarked",ready:"Selected passage"},
 sq:{home:"Kreu",books:"Librat e Biblës",study:"Studio",notes:"Shënimet",app:"Hapësira e Studimit Biblik",
@@ -87,7 +88,7 @@ start:"Fillo studimin",nobible:"Kjo faqe nuk përmban tekst biblik. Punon vetëm
 bm:"Ruaje në faqeshënues",addnote:"Shkruaj një shënim",recent:"Studiuar së fundmi",none:"Ende asgjë këtu.",feat:"Burime të veçanta",newr:"Burime të reja",wait:"Në pritje të përmbajtjes.",ot:"Besëlidhja e Vjetër",nt:"Besëlidhja e Re",
 done:"të plotësuara",saved:"U ruajt në këtë pajisje",e_chap:"Kapitulli është jashtë kufijve për këtë libër.",e_verse:"Vargjet duhet të jenë numra të plotë, 1 ose më shumë.",e_range:"Fundi i intervalit duhet të vijojë pas fillimit.",
 vnote:"Numrat e vargjeve ende nuk kontrollohen me numrin e vargjeve të kapitullit (të dhënat në pritje).",ph:"Përgjigjja jote…",save:"Ruaj shënimin",tags:"Etiketa (të ndara me presje)",search:"Kërko te shënimet e mia",
-exp:"Eksporto kopjen rezervë",imp:"Importo kopjen rezervë",allb:"Të gjithë librat",del:"Fshi",priv:"Gjithçka që shkruan mbetet në këtë shfletues, në këtë pajisje. Asgjë nuk ngarkohet dhe asgjë nuk sinkronizohet mes pajisjeve, prandaj eksporto rregullisht një kopje rezervë.",
+exp:"Ruaj një kopje",imp:"Rikthe shënimet",allb:"Të gjithë librat",del:"Fshi",priv:"Gjithçka që shkruan mbetet në këtë shfletues, në këtë pajisje. Asgjë nuk ngarkohet dhe asgjë nuk sinkronizohet mes pajisjeve, prandaj eksporto rregullisht një kopje rezervë.",
 never:"Ende nuk ke eksportuar kopje rezervë.",last:"Kopja e fundit: ",bad:"Ky skedar nuk është kopje rezervë e vlefshme.",conf:"Të bashkohen {n} elementë me të dhënat lokale? Mbahen versionet më të reja.",impd:"U importuan {n} elementë.",
 bmarks:"Faqeshënuesit",nlist:"Shënimet",chs:"kapituj",nodb:"Ruajtja lokale nuk është e disponueshme; asgjë nuk do të ruhet.",notes_ph:"Shënimi yt privat…",bmd:"U ruajt në faqeshënues",ready:"Pjesa e zgjedhur"}};
 /* ---------- Helpers ---------- */
@@ -96,7 +97,7 @@ let lang=ls("lang")||"sq";
 const t=k=>I[lang][k]??I.en[k]??k,bn=b=>b[lang]||b.en,pick=o=>o[lang]||o.en;
 const dual=s=>{const[a,b]=s.split("|");return lang==="sq"?b||a:a};
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const toast=m=>{const e=$("#st");e.textContent=m;clearTimeout(toast.i);toast.i=setTimeout(()=>e.textContent="",2200)};
+const toast=m=>{const e=$("#st");e.textContent=m;clearTimeout(toast.i);toast.i=setTimeout(()=>e.textContent="",2200);bnr()};
 /* ---------- IndexedDB (versioned; add cases in onupgradeneeded for future migrations) ---------- */
 let db=null,items=[];
 const open=()=>new Promise(r=>{try{const q=indexedDB.open("bible-study",1);
@@ -153,7 +154,7 @@ m.innerHTML=`<h1>${t("notes")}</h1><p class="warn">${t("priv")} ${days===null?t(
 <div class="card"><label for="nt" class="mut">${t("notes_ph")}</label><textarea id="nt"></textarea><label for="tg" class="mut">${t("tags")}</label><input id="tg" style="width:100%"><div class="row"><button id="sv">${t("save")}</button></div></div>
 <div class="row"><input id="q" type="search" placeholder="${t("search")}" aria-label="${t("search")}"><select id="fb" aria-label="${t("book")}"><option value="">${t("allb")}</option>${B.map(b=>`<option value="${b.id}">${esc(bn(b))}</option>`).join("")}</select></div>
 <div class="card" id="ls"></div>
-<div class="row"><button id="ex" class="alt">${t("exp")}</button><label class="btn alt" style="background:var(--card);color:var(--fg);border-color:var(--line)">${t("imp")}<input id="im" type="file" accept="application/json" hidden></label></div>`;
+<div class="row"><button id="ex">${t("exp")}</button><label class="btn alt" style="background:var(--card);color:var(--fg);border-color:var(--line)">${t("imp")}<input id="im" type="file" accept="application/json" hidden></label></div>`;
 Sel($("#sl"),ok=>$("#sv").disabled=!ok);
 const list=()=>{const q=$("#q").value.toLowerCase(),f=$("#fb").value;
 const a=items.filter(i=>(i.type==="note"||i.type==="bookmark")&&(!f||i.ref.b===f)&&(!q||[i.text,i.label,(i.tags||[]).join(" ")].join(" ").toLowerCase().includes(q))).sort((x,y)=>y.t-x.t);
@@ -163,8 +164,8 @@ $("#sv").onclick=async()=>{const x=$("#nt").value.trim();if(!x||chk())return;
 await put({id:"n:"+crypto.randomUUID(),type:"note",ref:{...R},label:lab(),text:x,tags:$("#tg").value.split(",").map(s=>s.trim()).filter(Boolean),t:Date.now()});
 items=await all();$("#nt").value="";$("#tg").value="";list();toast(t("saved"))};
 $("#ls").onclick=async ev=>{const d=ev.target.dataset.del;if(d){await del(d);items=await all();list()}};
-$("#ex").onclick=()=>{const b=new Blob([JSON.stringify({app:"bible-study",schema:1,exportedAt:new Date().toISOString(),items},null,1)],{type:"application/json"});
-const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="bible-study-backup.json";a.click();ls("lastExport",Date.now())};
+$("#ex").onclick=doSave;
+
 $("#im").onchange=async ev=>{const f=ev.target.files[0];if(!f)return;
 try{const j=JSON.parse(await f.text());if(j.app!=="bible-study"||j.schema!==1||!Array.isArray(j.items))throw 0;
 const S2=x=>x==null||typeof x==="string",clean=[];
@@ -244,10 +245,16 @@ function Admin(m){const e=validate(CONTENT),ms=[],f=(o,n)=>{if(o&&!(o.en&&o.sq))
 m.innerHTML=`<h1>${t("adm")}</h1><div class="card"><h2>Content validation</h2>${e.length?"<ul>"+e.map(x=>`<li>${esc(x)}</li>`).join("")+"</ul>":"<p>OK</p>"}<h2>Missing translations</h2>${ms.length?"<ul>"+ms.map(x=>`<li>${esc(x)}</li>`).join("")+"</ul>":"<p>—</p>"}</div><div class="card"><h2>Self-tests</h2>${runTests().map(([n,ok])=>`<div>${ok?"✔":"✘"} ${esc(n)}</div>`).join("")}</div>`}
 document.addEventListener("click",ev=>{if(ev.target.dataset&&ev.target.dataset.demo!==undefined){CONTENT={...CONTENT,...DEMO};go()}});
 let CERR=[];const loadC=()=>fetch("content.json").then(r=>r.ok?r.json():null).then(c=>{if(!c)return;const er=validate(c);if(er.length){CERR=er;console.error(er);return}CONTENT={...CONTENT,...c};if(Array.isArray(c.study)&&c.study.length)S.splice(0,S.length,...c.study.map(s=>({n:s.n,q:s.q,l:s.l})))}).catch(()=>{});
+let UNS=false;
+async function bnr(){const x=db?await all():[];UNS=x.some(i=>i.type!=="recent"&&i.t>(+ls("lastExport")||0));const b=$("#bn");if(b)b.innerHTML=UNS?`<div class="bn" role="status"><span>Ke shënime që nuk i ke ruajtur. Ruaj një kopje.</span> <button id="bs">Ruaj një kopje</button></div>`:"";const s=$("#bs");if(s)s.onclick=doSave}
+async function doSave(){const f=new File([JSON.stringify({app:"bible-study",schema:1,exportedAt:new Date().toISOString(),items:await all()},null,1)],"bible-study-backup.json",{type:"application/json"});
+try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:"bible-study-backup"});ls("lastExport",Date.now());bnr();return}}catch(e){if(e&&e.name==="AbortError")return}
+const a=document.createElement("a");a.href=URL.createObjectURL(f);a.download=f.name;a.click();ls("lastExport",Date.now());bnr()}
+addEventListener("beforeunload",e=>{if(UNS){e.preventDefault();e.returnValue=""}});
 /* ---------- Shell ---------- */
 const GR={study:"study",links:"study",quiz:"study",books:"books",book:"books",library:"books",notes:"notes"},grp=p=>GR[p]||p,SUB={study:[["study","study"],["links","links"],["quiz","quiz"]],books:[["books","books"],["library","lib"]]};
 async function go(){const[,p,a]=(location.hash||"#/home").split("/");
-document.documentElement.lang=lang;$("#lg").value=lang;$("#fm").setAttribute("aria-label",t("smaller"));$("#fp").setAttribute("aria-label",t("larger"));items=await all();
+document.documentElement.lang=lang;$("#lg").value=lang;$("#fm").setAttribute("aria-label",t("smaller"));$("#fp").setAttribute("aria-label",t("larger"));bnr();items=await all();
 $("#nv").innerHTML=[["home","home"],["study","study"],["books","books"],["notes","notes"],["search","gs"]].map(([h,k])=>`<a href="#/${h}" ${grp(p)===h?'aria-current="page"':""}>${t(k)}</a>`).join("");
 $("#ft").innerHTML=(db?"":`<p class="err">${t("nodb")}</p>`)+(CERR.length?`<p class="err">content.json: ${esc(CERR.slice(0,3).join("; "))}</p>`:"")+t("nobible");
 ({home:Home,books:Books,book:Book,study:Study,notes:Notes,library:Library,quiz:Quiz,links:Links,search:Search,checks:Admin}[p]||Home)($("#app"),a);const sg=SUB[grp(p)];if(sg)$("#app").insertAdjacentHTML("afterbegin",`<nav class="sub" aria-label="${t(grp(p))}">${sg.map(([h,k])=>`<a href="#/${h}" ${p===h||(p==="book"&&h==="books")?'aria-current="page"':""}>${t(k)}</a>`).join("")}</nav>`);scrollTo(0,0)}
@@ -259,5 +266,5 @@ const FS=[.9,1,1.15,1.3,1.5,1.75],s0=ls("fs");let fi=s0==null?1:+s0;if(!(fi>=0&&
 const sf=()=>{document.documentElement.style.setProperty("--fs",FS[fi]);ls("fs",fi);$("#fm").disabled=fi===0;$("#fp").disabled=fi===FS.length-1};
 $("#fm").onclick=()=>{if(fi>0){fi--;sf()}};$("#fp").onclick=()=>{if(fi<FS.length-1){fi++;sf()}};sf();
 addEventListener("hashchange",go);
-Promise.all([open(),loadC()]).then(([d])=>{db=d;go()});
+Promise.all([open(),loadC()]).then(([d])=>{db=d;try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}go()});
 </script></body></html>
