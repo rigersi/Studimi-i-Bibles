@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="sq"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bible Study Workspace</title>
+<title>Hapësira e Studimit Biblik</title>
 <style>
 :root{--bg:#f6f8fb;--fg:#1c2430;--mut:#5b6675;--card:#fff;--line:#dde3ec;--ac:#1e3a6e;--on:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1520;--fg:#e8edf5;--mut:#9aa7ba;--card:#172033;--line:#26324a;--ac:#8fb0ff;--on:#0f1520;color-scheme:dark}}
@@ -59,7 +59,7 @@ nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-
 <body>
 <header><a class="logo" href="#/home">✝ <b>Bible</b>Study</a><nav id="nv" aria-label="Main"></nav>
 <div class="tools"><select id="lg" aria-label="Language"><option value="sq">Shqip</option><option value="en">English</option></select><button id="fm" class="alt" aria-label="Smaller text">A−</button><button id="fp" class="alt" aria-label="Larger text">A+</button><button id="th" class="alt" aria-label="Theme">◐</button></div></header>
-<div id="bn"></div><main id="app"></main><div id="st" role="status" aria-live="polite"></div>
+<div id="bn"></div><main id="app"></main><div id="bn2"></div><div id="st" role="status" aria-live="polite"></div>
 <footer class="mut" id="ft"></footer>
 <script>
 "use strict";
@@ -93,7 +93,7 @@ never:"Ende nuk ke eksportuar kopje rezervë.",last:"Kopja e fundit: ",bad:"Ky s
 bmarks:"Faqeshënuesit",nlist:"Shënimet",chs:"kapituj",nodb:"Ruajtja lokale nuk është e disponueshme; asgjë nuk do të ruhet.",notes_ph:"Shënimi yt privat…",bmd:"U ruajt në faqeshënues",ready:"Pjesa e zgjedhur"}};
 /* ---------- Helpers ---------- */
 const $=s=>document.querySelector(s),ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){}};
-let lang=ls("lang")||"sq";
+let lang="sq"; /* Albanian ALWAYS opens first on every visit. English is only by choice and is NOT remembered. */
 const t=k=>I[lang][k]??I.en[k]??k,bn=b=>b[lang]||b.en,pick=o=>o[lang]||o.en;
 const dual=s=>{const[a,b]=s.split("|");return lang==="sq"?b||a:a};
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -150,7 +150,7 @@ $("#sb2").addEventListener("input",ev=>{const q=ev.target.dataset.q;if(!q||chk()
 tm=setTimeout(async()=>{const id=`ans:${k}:${q}`;if(v.trim())await put({id,type:"answer",k,q,ref:r,label:l,text:v,t:Date.now()});else await del(id);
 await put({id:"rc:"+k,type:"recent",ref:r,label:l,t:Date.now()});items=await all();prog();toast(t("saved"))},500)})}
 function Notes(m){const days=(()=>{const x=+ls("lastExport");return x?Math.floor((Date.now()-x)/864e5):null})();
-m.innerHTML=`<h1>${t("notes")}</h1><p class="warn">${t("priv")} ${days===null?t("never"):t("last")+days+"d"}${days!==null&&days>30?" ⚠":""}</p><div id="sl"></div>
+m.innerHTML=`<h1>${t("notes")}</h1><p class="warn">${t("priv")} ${days===null?t("never"):t("last")+days+(lang==="sq"?" ditë":" days")}${days!==null&&days>30?" ⚠":""}</p><div id="sl"></div>
 <div class="card"><label for="nt" class="mut">${t("notes_ph")}</label><textarea id="nt"></textarea><label for="tg" class="mut">${t("tags")}</label><input id="tg" style="width:100%"><div class="row"><button id="sv">${t("save")}</button></div></div>
 <div class="row"><input id="q" type="search" placeholder="${t("search")}" aria-label="${t("search")}"><select id="fb" aria-label="${t("book")}"><option value="">${t("allb")}</option>${B.map(b=>`<option value="${b.id}">${esc(bn(b))}</option>`).join("")}</select></div>
 <div class="card" id="ls"></div>
@@ -158,7 +158,7 @@ m.innerHTML=`<h1>${t("notes")}</h1><p class="warn">${t("priv")} ${days===null?t(
 Sel($("#sl"),ok=>$("#sv").disabled=!ok);
 const list=()=>{const q=$("#q").value.toLowerCase(),f=$("#fb").value;
 const a=items.filter(i=>(i.type==="note"||i.type==="bookmark")&&(!f||i.ref.b===f)&&(!q||[i.text,i.label,(i.tags||[]).join(" ")].join(" ").toLowerCase().includes(q))).sort((x,y)=>y.t-x.t);
-$("#ls").innerHTML=a.length?a.map(i=>`<div class="item"><a href="#/study" data-open="${esc(i.id)}"><strong>${esc(i.label)}</strong></a> <span class="mut">${t(i.type==="note"?"nlist":"bmarks")} · ${new Date(i.t).toLocaleDateString()}</span>${i.text?`<p style="white-space:pre-wrap;margin:.3rem 0">${esc(i.text)}</p>`:""}${(i.tags||[]).map(g=>`<span class="mut">#${esc(g)} </span>`).join("")}<div><button class="alt" data-del="${esc(i.id)}">${t("del")}</button></div></div>`).join(""):`<p class="mut">${t("none")}</p>`};
+$("#ls").innerHTML=a.length?a.map(i=>`<div class="item"><a href="#/study" data-open="${esc(i.id)}"><strong>${esc(i.label)}</strong></a> <span class="mut">${t(i.type==="note"?"nlist":"bmarks")} · ${new Date(i.t).toLocaleDateString(lang==="sq"?"sq-AL":"en-GB")}</span>${i.text?`<p style="white-space:pre-wrap;margin:.3rem 0">${esc(i.text)}</p>`:""}${(i.tags||[]).map(g=>`<span class="mut">#${esc(g)} </span>`).join("")}<div><button class="alt" data-del="${esc(i.id)}">${t("del")}</button></div></div>`).join(""):`<p class="mut">${t("none")}</p>`};
 list();$("#q").oninput=list;$("#fb").onchange=list;
 $("#sv").onclick=async()=>{const x=$("#nt").value.trim();if(!x||chk())return;
 await put({id:"n:"+crypto.randomUUID(),type:"note",ref:{...R},label:lab(),text:x,tags:$("#tg").value.split(",").map(s=>s.trim()).filter(Boolean),t:Date.now()});
@@ -179,8 +179,8 @@ let CONTENT={resources:[],quizzes:[],crossrefs:[],verses:null};
 const XT="quotation|allusion|prophecy|parallel|theme|historical|word|other".split("|");
 Object.assign(I.en,{lib:"Library",quiz:"Quizzes",links:"Connections",gs:"Search",adm:"Checks",demo:"Load technical demo data (not real content)",empty:"No published content yet. Add it to content.json.",type:"Type",submit:"Submit",retry:"Try again",score:"Score",hl:"Highlights",color:"Colour",hlbtn:"Highlight this reference",xr:"My private connections",xrbtn:"Add private connection",xtype:"Connection type",focus:"Focus on selected book"});
 Object.assign(I.sq,{lib:"Biblioteka",quiz:"Kuize",links:"Lidhjet",gs:"Kërko",adm:"Kontrolle",demo:"Ngarko të dhëna demo teknike (jo përmbajtje reale)",empty:"Ende nuk ka përmbajtje të publikuar. Shtoje te content.json.",type:"Lloji",submit:"Dorëzo",retry:"Provo përsëri",score:"Rezultati",hl:"Theksime",color:"Ngjyra",hlbtn:"Thekso këtë referencë",xr:"Lidhjet e mia private",xrbtn:"Shto lidhje private",xtype:"Lloji i lidhjes",focus:"Përqendrohu te libri i zgjedhur"});
-Object.assign(I.en,{smaller:"Smaller text",larger:"Larger text",d_study:"Answer guided questions about a passage",d_books:"Browse the 66 books and the library",d_notes:"Your notes, bookmarks and backup",official:"Official",yours:"Yours",nolinks:"No connected passages for this reference yet.",linkhint:"Choose a passage to see the passages connected to it. Official connections are added by the site owner and cannot be deleted. You can add your own private connections, stored only on your device."});
-Object.assign(I.sq,{smaller:"Tekst më i vogël",larger:"Tekst më i madh",d_study:"Përgjigju pyetjeve udhëzuese për një pjesë",d_books:"Shfleto 66 librat dhe bibliotekën",d_notes:"Shënimet, faqeshënuesit dhe kopja rezervë",official:"Zyrtare",yours:"Të tuat",nolinks:"Ende nuk ka pasazhe të lidhura për këtë referencë.",linkhint:"Zgjidh një pasazh për të parë pasazhet e lidhura me të. Lidhjet zyrtare i shton pronari i faqes dhe nuk mund të fshihen. Mund të shtosh lidhjet e tua private, të ruajtura vetëm në pajisjen tënde."});
+Object.assign(I.en,{bnmsg:"You have notes that haven’t been saved. Save a copy when you’re ready.",smaller:"Smaller text",larger:"Larger text",d_study:"Answer guided questions about a passage",d_books:"Browse the 66 books and the library",d_notes:"Your notes, bookmarks and backup",official:"Official",yours:"Yours",nolinks:"No connected passages for this reference yet.",linkhint:"Choose a passage to see the passages connected to it. Official connections are added by the site owner and cannot be deleted. You can add your own private connections, stored only on your device."});
+Object.assign(I.sq,{bnmsg:"Ke shënime që nuk i ke ruajtur. Ruaj një kopje kur të jesh gati.",smaller:"Tekst më i vogël",larger:"Tekst më i madh",d_study:"Përgjigju pyetjeve udhëzuese për një pjesë",d_books:"Shfleto 66 librat dhe bibliotekën",d_notes:"Shënimet, faqeshënuesit dhe kopja rezervë",official:"Zyrtare",yours:"Të tuat",nolinks:"Ende nuk ka pasazhe të lidhura për këtë referencë.",linkhint:"Zgjidh një pasazh për të parë pasazhet e lidhura me të. Lidhjet zyrtare i shton pronari i faqes dhe nuk mund të fshihen. Mund të shtosh lidhjet e tua private, të ruajtura vetëm në pajisjen tënde."});
 const st=r=>[+r.c1,r.v1?+r.v1:0],en=r=>[+(r.c2||r.c1),r.v2?+r.v2:(r.v1?+r.v1:9999)],cmp=(a,b)=>a[0]-b[0]||a[1]-b[1];
 const ovl=(a,b)=>a.b===b.b&&cmp(st(a),en(b))<=0&&cmp(st(b),en(a))<=0;
 const DEMO={resources:[{id:"demo-r1",status:"published",type:"table",title:{en:"DEMO resource (technical test only)"},desc:{en:"Placeholder that proves filtering works."},tags:["demo"],refs:[{b:"Ruth",c1:"1"}]}],
@@ -246,7 +246,7 @@ m.innerHTML=`<h1>${t("adm")}</h1><div class="card"><h2>Content validation</h2>${
 document.addEventListener("click",ev=>{if(ev.target.dataset&&ev.target.dataset.demo!==undefined){CONTENT={...CONTENT,...DEMO};go()}});
 let CERR=[];const loadC=()=>fetch("content.json").then(r=>r.ok?r.json():null).then(c=>{if(!c)return;const er=validate(c);if(er.length){CERR=er;console.error(er);return}CONTENT={...CONTENT,...c};if(Array.isArray(c.study)&&c.study.length)S.splice(0,S.length,...c.study.map(s=>({n:s.n,q:s.q,l:s.l})))}).catch(()=>{});
 let UNS=false;
-async function bnr(){const x=db?await all():[];UNS=x.some(i=>i.type!=="recent"&&i.t>(+ls("lastExport")||0));const b=$("#bn");if(b)b.innerHTML=UNS?`<div class="bn" role="status"><span>Ke shënime që nuk i ke ruajtur. Ruaj një kopje kur të jesh gati.</span> <button id="bs">Ruaj një kopje</button></div>`:"";const s=$("#bs");if(s)s.onclick=doSave}
+async function bnr(){const x=db?await all():[];UNS=x.some(i=>i.type!=="recent"&&i.t>(+ls("lastExport")||0));const h=UNS?`<div class="bn" role="status"><span>${t("bnmsg")}</span> <button class="bs">${t("exp")}</button></div>`:"";["#bn","#bn2"].forEach(i=>{const e=$(i);if(e)e.innerHTML=h});document.querySelectorAll(".bs").forEach(s=>s.onclick=doSave)}
 async function doSave(){const f=new File([JSON.stringify({app:"bible-study",schema:1,exportedAt:new Date().toISOString(),items:await all()},null,1)],"bible-study-backup.json",{type:"application/json"});
 try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:"bible-study-backup"});ls("lastExport",Date.now());bnr();return}}catch(e){if(e&&e.name==="AbortError")return}
 const a=document.createElement("a");a.href=URL.createObjectURL(f);a.download=f.name;a.click();ls("lastExport",Date.now());bnr()}
@@ -259,7 +259,7 @@ $("#nv").innerHTML=[["home","home"],["study","study"],["books","books"],["notes"
 $("#ft").innerHTML=(db?"":`<p class="err">${t("nodb")}</p>`)+(CERR.length?`<p class="err">content.json: ${esc(CERR.slice(0,3).join("; "))}</p>`:"")+t("nobible");
 ({home:Home,books:Books,book:Book,study:Study,notes:Notes,library:Library,quiz:Quiz,links:Links,search:Search,checks:Admin}[p]||Home)($("#app"),a);const sg=SUB[grp(p)];if(sg)$("#app").insertAdjacentHTML("afterbegin",`<nav class="sub" aria-label="${t(grp(p))}">${sg.map(([h,k])=>`<a href="#/${h}" ${p===h||(p==="book"&&h==="books")?'aria-current="page"':""}>${t(k)}</a>`).join("")}</nav>`);scrollTo(0,0)}
 document.addEventListener("click",ev=>{const o=ev.target.closest("[data-open]");if(o){openRef(o.dataset.open)}});
-$("#lg").onchange=e=>{lang=e.target.value;ls("lang",lang);go()};
+$("#lg").onchange=e=>{lang=e.target.value;go()};
 let cur=ls("theme")||(typeof matchMedia==="function"&&matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");$("#th").onclick=()=>{cur=cur==="dark"?"light":"dark";document.documentElement.dataset.theme=cur;ls("theme",cur)};
 const th=ls("theme");if(th)document.documentElement.dataset.theme=th;
 const FS=[.9,1,1.15,1.3,1.5,1.75],s0=ls("fs");let fi=s0==null?1:+s0;if(!(fi>=0&&fi<FS.length))fi=1;
