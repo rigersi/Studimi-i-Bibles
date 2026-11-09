@@ -59,6 +59,7 @@ nav{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-
 .chipbox{max-height:12rem;overflow:auto;padding:.1rem;margin:.3rem 0}.cr{display:flex;flex-wrap:wrap;gap:.35rem}.gh{font:600 .8rem system-ui;color:var(--mut);margin:.5rem 0 .25rem}
 .chip{display:inline-block;padding:.35rem .7rem;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:var(--fg);text-decoration:none;font:.85rem system-ui;white-space:nowrap}.chip:hover,.chip:focus-visible{border-color:var(--ac);color:var(--ac)}
 details>summary{cursor:pointer;padding:.3rem 0}.lkup{margin:.4rem 0 .6rem;padding:.4rem .8rem}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.7rem}.cat-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.4rem;padding:1rem;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:12px}.cat-card span{color:var(--mut);font-size:.88rem;font-weight:400}.cat-card[aria-pressed="true"]{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
 .hint{margin:.2rem 0 .5rem;padding-left:1.2rem;color:var(--mut);font-size:.9rem;font-family:system-ui}
 .sub{display:flex;gap:.3rem;margin-bottom:1rem;border-bottom:1px solid var(--line);padding-bottom:.6rem;flex-wrap:wrap;overflow:visible}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
@@ -204,11 +205,28 @@ for(const x of c.crossrefs||[]){uid(x,"crossref");if(!B.some(b=>b.id===(x.from||
 for(const k of Object.keys(c.books||{}))if(!B.some(b=>b.id===k))e.push("books: unknown book id "+k);
 for(const s of c.study||[])if(!s.n||!s.q||!Array.isArray(s.l)||s.l.some(p=>!p.id||!p.en))e.push("study stage "+s.n+": needs n, q and l[{id,en}]");
 return e}
-function Library(m){const rs=(CONTENT.resources||[]).filter(r=>r.status==="published"),ty=[...new Set(rs.map(r=>r.type))];
-m.innerHTML=`<h1>${t("lib")}</h1>`+(rs.length?`<div class="row"><input id="rq" type="search" placeholder="${t("gs")}" aria-label="${t("gs")}"><select id="rt" aria-label="${t("type")}"><option value="">${t("type")}</option>${ty.map(x=>`<option>${esc(x)}</option>`).join("")}</select></div><div id="rl"></div>`:`<div class="card"><p class="mut">${t("empty")}</p>${demoBtn()}</div>`);
-if(!rs.length)return;const d=()=>{const q=$("#rq").value.toLowerCase(),f=$("#rt").value;
-$("#rl").innerHTML=rs.filter(r=>(!f||r.type===f)&&(!q||[loc(r.title),loc(r.desc),(r.tags||[]).join(" ")].join(" ").toLowerCase().includes(q))).map(r=>`<div class="card">${r.image?`<img src="${esc(r.image)}" alt="${esc(loc(r.title))}" loading="lazy">`:""}<h2>${esc(loc(r.title))}</h2><p class="mut">${esc(r.type)}${(r.refs||[]).length?" · "+t("appl")+": "+r.refs.map(x=>esc(lab(x))).join(", "):""}</p><p>${esc(loc(r.desc))}</p>${r.source?`<p class="mut">${esc(r.source)} ${esc(r.license||"")}</p>`:""}${r.url?`<a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${t("openfile")} →</a>`:""}</div>`).join("")};
-d();$("#rq").oninput=d;$("#rt").onchange=d}
+// A resource may declare category explicitly; older type values remain usable.
+const CATS=[
+["archaeology","Archaeology","Arkeologjia","Artifacts, excavations, manuscripts","Artefakte, gërmime, dorëshkrime"],
+["maps","Maps","Harta","Geographic routes, tribal borders","Rrugë gjeografike, kufij fisesh"],
+["places","Places","Vende","City histories, site profiles","Histori qytetesh, profile vendesh"],
+["biographies","Biographies","Biografi","Character profiles, key figures","Profile personazhesh, figura kyçe"],
+["family-trees","Family Trees","Pemë familjare","Lineages, tribal connections","Prejardhje, lidhje mes fiseve"],
+["timelines","Timelines","Kronologji","Chronological history, eras","Histori kronologjike, periudha"],
+["charts","Charts","Tabela dhe diagrame","Harmonies, visual comparisons","Harmonizime, krahasime vizuale"],
+["commentaries","Commentaries","Komentare","Verse-by-verse explanations","Shpjegime varg pas vargu"],
+["cultural-background","Cultural Background","Konteksti kulturor","Ancient customs, daily life","Zakone të lashta, jeta e përditshme"],
+["language-tools","Language Tools","Mjete gjuhësore","Greek and Hebrew word studies","Studime fjalësh greke dhe hebraike"]];
+const catOf=r=>{const k=String(r.category||r.type||"").toLowerCase().trim().replace(/[ _]+/g,"-");return ({map:"maps",place:"places",biography:"biographies","family-tree":"family-trees",timeline:"timelines",chart:"charts",table:"charts",commentary:"commentaries"})[k]||k};
+Object.assign(I.en,{categories:"Browse by category",allcategories:"All material",catempty:"No published material in this category yet.",nomatches:"No material matches your search.",othermaterial:"Other material"});
+Object.assign(I.sq,{categories:"Shfleto sipas kategorisë",allcategories:"Të gjitha materialet",catempty:"Ende nuk ka materiale të publikuara në këtë kategori.",nomatches:"Asnjë material nuk përputhet me kërkimin.",othermaterial:"Materiale të tjera"});
+function Library(m){const rs=(CONTENT.resources||[]).filter(r=>r.status==="published");let selected="";
+m.innerHTML=`<h1>${t("lib")}</h1><h2>${t("categories")}</h2><div class="cat-grid">${CATS.map(c=>`<button class="cat-card" type="button" data-category="${c[0]}" aria-pressed="false"><strong>${esc(c[lang==="sq"?2:1])}</strong><span>${esc(c[lang==="sq"?4:3])}</span></button>`).join("")}</div><div class="row"><button class="alt" id="allcats" aria-pressed="true">${t("allcategories")}</button><input id="rq" type="search" placeholder="${t("gs")}" aria-label="${t("gs")}"></div><h2 id="rheading"></h2><div id="rl" aria-live="polite"></div>`;
+const d=()=>{const q=$("#rq").value.trim().toLowerCase(),cat=CATS.find(c=>c[0]===selected),filtered=rs.filter(r=>(!selected||catOf(r)===selected)&&(!q||[loc(r.title),loc(r.desc),r.type,(r.tags||[]).join(" ")].join(" ").toLowerCase().includes(q)));
+$("#rheading").textContent=cat?cat[lang==="sq"?2:1]:t("allcategories");
+$("#rl").innerHTML=filtered.length?filtered.map(r=>`<div class="card">${r.image?`<img src="${esc(r.image)}" alt="${esc(loc(r.title))}" loading="lazy">`:""}<h2>${esc(loc(r.title))}</h2><p class="mut">${esc(r.type||"")}${(r.refs||[]).length?" · "+t("appl")+": "+r.refs.map(x=>esc(lab(x))).join(", "):""}</p><p>${esc(loc(r.desc))}</p>${r.source?`<p class="mut">${esc(r.source)} ${esc(r.license||"")}</p>`:""}${r.url?`<a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${t("openfile")} →</a>`:""}</div>`).join(""):`<div class="card"><p class="mut">${q?t("nomatches"):selected?t("catempty"):t("empty")}</p>${!rs.length&&!selected?demoBtn():""}</div>`;
+m.querySelectorAll("[data-category]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.category===selected)));$("#allcats").setAttribute("aria-pressed",String(!selected));};
+m.querySelectorAll("[data-category]").forEach(b=>b.onclick=()=>{selected=b.dataset.category;d();$("#rheading").scrollIntoView({behavior:"smooth",block:"nearest"})});$("#allcats").onclick=()=>{selected="";d()};$("#rq").oninput=d;d()}
 function Search(m){m.innerHTML=`<h1>${t("gs")}</h1><input id="gq" type="search" style="width:100%" aria-label="${t("gs")}"><div id="gr"></div>`;
 $("#gq").oninput=e=>{const q=e.target.value.trim().toLowerCase();if(!q){$("#gr").innerHTML="";return}const has=s=>String(s||"").toLowerCase().includes(q),P=x=>x.status==="published",tg=a=>(a||[]).some(has);
 const G=[[t("bbooks"),B.filter(b=>has(b.en)||has(b.sq)).map(b=>[bn(b),"#/book/"+b.id])],[t("lib"),(CONTENT.resources||[]).filter(r=>P(r)&&(has(loc(r.title))||has(loc(r.desc))||tg(r.tags))).map(r=>[loc(r.title),"#/library"])],
@@ -280,10 +298,10 @@ await put({id:"x:"+crypto.randomUUID(),type:"xref",ref:{...R},to,label:lab(),tex
 const bgw=(w,v)=>`https://www.biblegateway.com/quicksearch/?quicksearch=${w}&qs_version=${v}`,bcm=(w,id)=>`https://www.bible.com/search/bible?q=${w}&version_id=${id}`;
 const WS=[["Bibla 1994",w=>bcm(w,7)],["S\u00eb bashku 2020",w=>bcm(w,3631)],["NASB",w=>bgw(w,"NASB")],["ESV",w=>bgw(w,"ESV")]];
 const wsUrl=(i,word)=>{const w=encodeURIComponent(String(word||"").trim());return w?WS[i][1](w):""};
-Object.assign(I.en,{lkt:"Where else is this word, person or place mentioned in the Bible?",lkhint:"Type the word in English. The search covers the whole Bible, not only this passage. Also try the other spelling of names (for example Joshua / Jozueu)."});
-Object.assign(I.sq,{lkt:"Ku tjetër përmendet kjo fjalë, person ose vend në Bibël?",lkhint:"Shkruaje fjalën shqip. Kërkimi përfshin gjithë Biblën, jo vetëm këtë pjesë. Provo edhe shkrimin tjetër të emrave (p.sh. Jozueu / Joshua)."});
+Object.assign(I.en,{lkt:"Where else is this word, person or place mentioned in the Bible?",lkhint:"Type the word in English. The search covers the whole Bible, not only this passage. Compare results in context; a search for a translated word is not a Hebrew or Greek word study. Also try alternate spellings of names."});
+Object.assign(I.sq,{lkt:"Ku tjetër përmendet kjo fjalë, person ose vend në Bibël?",lkhint:"Shkruaje fjalën shqip. Kërkimi përfshin gjithë Biblën, jo vetëm këtë pjesë. Krahasoji rezultatet në kontekst; kërkimi i një fjale të përkthyer nuk është studim i fjalës në hebraisht ose greqisht. Provo edhe shkrime të tjera të emrave."});
 /* Albanian chosen: Albanian Bibles first. English chosen: English Bibles first. All four stay available. */
-const wsOrder=()=>lang==="sq"?[0,1,2,3]:[2,3,0,1],LU=["o1","o3","i3","i5"];
+const wsOrder=()=>lang==="sq"?[0,1,2,3]:[2,3,0,1],LU=["i3"];
 const lookup=()=>`<details class="lkup" open><summary class="mut">\u{1F50E} ${t("lkt")}</summary><input class="lq" type="search" autocomplete="off" placeholder="${t("wsph")}" aria-label="${t("wsph")}" style="width:100%"><div class="row">${wsOrder().map(i=>`<a class="btn" data-ws="${i}" href="#/study" target="_blank" rel="noopener noreferrer" aria-disabled="true" style="opacity:.5;pointer-events:none">${WS[i][0]}</a>`).join("")}</div><p class="mut">${t("lkhint")}</p></details>`;
 document.addEventListener("input",ev=>{const q=ev.target;if(!q.classList||!q.classList.contains("lq"))return;q.closest("details").querySelectorAll("[data-ws]").forEach(a=>{const u=wsUrl(+a.dataset.ws,q.value);a.href=u||"#/study";a.style.opacity=u?1:.5;a.style.pointerEvents=u?"auto":"none";a.setAttribute("aria-disabled",u?"false":"true")})});
 function Words(m){m.innerHTML=`<h1>${t("wsrch")}</h1><p>${t("wsintro")}</p><div class="card"><label for="wq" class="mut">${t("wsph")}</label><input id="wq" type="search" style="width:100%" autocomplete="off"><div class="row">${wsOrder().map(i=>{const x=WS[i];return `<a class="btn" data-ws="${i}" href="#/words" target="_blank" rel="noopener noreferrer" aria-disabled="true" style="opacity:.5;pointer-events:none">${x[0]}</a>`}).join("")}</div><p class="mut">${t("lkhint")}</p><p class="mut">${t("wsnote")}</p></div>`;

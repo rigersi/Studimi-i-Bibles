@@ -36,7 +36,8 @@
       ],
       "source": "Who made it / where it came from",
       "license": "License or permission",
-      "url": "https://example.com/my-map"
+      "url": "https://example.com/my-map",
+      "category": "maps"
     }
   ],
   "crossrefs": [

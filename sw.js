@@ -1,4 +1,4 @@
-const V="ura-v6",SHELL=["./","index.html","content.json","manifest.webmanifest","apple-touch-icon.png","favicon-32.png","icon-192.png","icon-512.png","icon-maskable-512.png","ura-logo.png"];
+const V="ura-v7",SHELL=["./","index.html","content.json","manifest.webmanifest","apple-touch-icon.png","favicon-32.png","icon-192.png","icon-512.png","icon-maskable-512.png","ura-logo.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})))).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 /* only complete, successful (200) responses are cached; partial (206) or error responses would make cache.put throw */
