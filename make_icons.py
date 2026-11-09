@@ -5,10 +5,10 @@ Usage (from the repo root):
     pip install pillow numpy
     python3 tools/make_icons.py tools/logo-source.jpeg
 
-Writes: apple-touch-icon.png, icons/ura-logo.png (header logo, transparent),
-        icons/icon-192.png, icons/icon-512.png, icons/icon-maskable-512.png, icons/favicon-32.png
+Writes: apple-touch-icon.png, ura-logo.png (header logo, transparent),
+        icon-192.png, icon-512.png, icon-maskable-512.png, favicon-32.png
 The source should be the logo on a plain light background (any light colour: beige, white...).
-After changing icons, bump the version in sw.js (const V="ura-v4" -> "ura-v5") so installed copies update.
+After changing icons, bump the version in sw.js (const V="ura-v6" -> "ura-v7") so installed copies update.
 """
 import sys, os
 import numpy as np
@@ -41,12 +41,11 @@ def icon(size, frac):                                     # logo centred on whit
     out.paste(white.resize((w, h), Image.LANCZOS), ((size - w) // 2, (size - h) // 2))
     return out
 
-os.makedirs("icons", exist_ok=True)
-hl.save("icons/ura-logo.png", optimize=True)
-icon(512, .84).save("icons/icon-512.png", optimize=True)
-icon(192, .84).save("icons/icon-192.png", optimize=True)
-icon(512, .62).save("icons/icon-maskable-512.png", optimize=True)   # extra margin: Android crops it
+hl.save("ura-logo.png", optimize=True)
+icon(512, .84).save("icon-512.png", optimize=True)
+icon(192, .84).save("icon-192.png", optimize=True)
+icon(512, .62).save("icon-maskable-512.png", optimize=True)   # extra margin: Android crops it
 icon(180, .84).save("apple-touch-icon.png", optimize=True)
-icon(64, .9).save("icons/favicon-32.png", optimize=True)
+icon(64, .9).save("favicon-32.png", optimize=True)
 print("done: header logo, 3 app icons, apple-touch-icon, favicon")
-print("note: index.html contains the header logo embedded as base64. To change the header logo, re-embed icons/ura-logo.png (see README).")
+print("note: index.html contains the header logo embedded as base64. To change the header logo, re-embed ura-logo.png (see README).")
