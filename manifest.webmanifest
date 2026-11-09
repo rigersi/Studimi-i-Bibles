@@ -3,11 +3,16 @@
   "name": "Ura: Bible Study Guide",
   "short_name": "Ura",
   "description": "Ura: a free guide for studying the Bible. Your notes stay on your device.",
+  "lang": "sq",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "any",
+  "categories": ["education", "books", "lifestyle"],
   "background_color": "#ffffff",
   "theme_color": "#1e3a6e",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "icons/icon-192.png",
@@ -26,6 +31,26 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Studim / Study",
+      "short_name": "Studim",
+      "url": "./#/study",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Shënimet / Notes",
+      "short_name": "Shënimet",
+      "url": "./#/notes",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Librat / Books",
+      "short_name": "Librat",
+      "url": "./#/books",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }
