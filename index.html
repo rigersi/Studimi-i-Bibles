@@ -143,7 +143,7 @@ m.innerHTML=`<section class="hero"><h1>${t("app")}</h1><p>${t("intro")}</p><p cl
 <div class="card"><h2>${t("recent")}</h2>${L(rec)}</div><div class="card"><h2>${t("bmarks")}</h2>${L(bms)}</div>
 `}
 function Books(m){const g=nt=>`<div class="bk">${B.filter(b=>b.nt===nt).map(b=>`<a href="#/book/${b.id}">${esc(bn(b))}</a>`).join("")}</div>`;
-m.innerHTML=`<h1>${t("bbooks")}</h1><h2>${t("ot")} (39)</h2>${g(false)}<h2 style="margin-top:1.5rem">${t("nt")} (27)</h2>${g(true)}`}
+m.innerHTML=`<h1>${t("ot")} (39)</h1>${g(false)}<h2 style="margin-top:1.5rem">${t("nt")} (27)</h2>${g(true)}`}
 function Book(m,id){const b=bk(id);R={b:b.id,c1:"1",v1:"",c2:"",v2:""};
 m.innerHTML=`<p><a href="#/books">← ${t("allb")}</a></p><h1>${esc(bn(b))}</h1><p class="mut">${t(b.nt?"nt":"ot")} · ${b.ch} ${t("chs")}</p><a class="btn" href="#/study">${t("study")}: ${esc(bn(b))}</a>
 <div class="card"><dl>${FIELDS.map(f=>`<dt>${esc(pick(f))}</dt>${(()=>{const v=((CONTENT.books||{})[b.id]||{})[f.k];return v&&loc(v)?`<dd style="font-style:normal;color:var(--fg);white-space:pre-wrap">${esc(loc(v))}</dd>`:`<dd>${t("wait")}</dd>`})()}`).join("")}</dl></div>`}
@@ -307,10 +307,10 @@ document.addEventListener("input",ev=>{const q=ev.target;if(!q.classList||!q.cla
 function Words(m){m.innerHTML=`<h1>${t("wsrch")}</h1><p>${t("wsintro")}</p><div class="card"><label for="wq" class="mut">${t("wsph")}</label><input id="wq" type="search" style="width:100%" autocomplete="off"><div class="row">${wsOrder().map(i=>{const x=WS[i];return `<a class="btn" data-ws="${i}" href="#/words" target="_blank" rel="noopener noreferrer" aria-disabled="true" style="opacity:.5;pointer-events:none">${x[0]}</a>`}).join("")}</div><p class="mut">${t("lkhint")}</p><p class="mut">${t("wsnote")}</p></div>`;
 const upd=()=>{const v=$("#wq").value;document.querySelectorAll("[data-ws]").forEach(a=>{const u=wsUrl(+a.dataset.ws,v);a.href=u||"#/words";a.style.opacity=u?1:.5;a.style.pointerEvents=u?"auto":"none";a.setAttribute("aria-disabled",u?"false":"true")})};$("#wq").oninput=upd}
 /* ---------- Shell ---------- */
-const GR={study:"study",books:"books",book:"books",library:"books",notes:"notes",words:"search"},grp=p=>GR[p]||p,SUB={books:[["books","bbooks"],["library","lib"]],search:[["search","sitesearch"],["words","wsrch"]]};
+const GR={study:"study",books:"books",book:"books",library:"library",notes:"notes",words:"search"},grp=p=>GR[p]||p,SUB={search:[["search","sitesearch"],["words","wsrch"]]};
 async function go(){const[,p,a]=(location.hash||"#/home").split("/");
 document.documentElement.lang=lang;document.title=t("ttl");$("#lg").value=lang;$("#fm").setAttribute("aria-label",t("smaller"));$("#fp").setAttribute("aria-label",t("larger"));$("#ib").textContent=t("install");$("#lt").textContent=t("brand");bnr();lbar();items=await all();
-$("#nv").innerHTML=[["home","home"],["study","study"],["books","books"],["notes","notes"],["search","gs"]].map(([h,k])=>`<a href="#/${h}" ${grp(p)===h?'aria-current="page"':""}>${t(k)}</a>`).join("");
+$("#nv").innerHTML=[["home","home"],["study","study"],["books","bbooks"],["library","lib"],["notes","notes"],["search","gs"]].map(([h,k])=>`<a href="#/${h}" ${grp(p)===h?'aria-current="page"':""}>${t(k)}</a>`).join("");
 $("#ft").innerHTML=(db?"":`<p class="err">${t("nodb")}</p>`)+(CERR.length?`<p class="err">content.json: ${esc(CERR.slice(0,3).join("; "))}</p>`:"")+t("nobible")+`<p class="mut">${t("credit")} <a href="https://www.openbible.info/labs/cross-references/" rel="noopener noreferrer" target="_blank">OpenBible.info</a> (CC BY)</p>`;
 ({home:Home,books:Books,book:Book,study:Study,notes:Notes,library:Library,search:Search,words:Words,checks:Admin}[p]||Home)($("#app"),a);const sg=SUB[grp(p)];if(sg)$("#app").insertAdjacentHTML("afterbegin",`<nav class="sub" aria-label="${t(grp(p))}">${sg.map(([h,k])=>`<a href="#/${h}" ${p===h||(p==="book"&&h==="books")?'aria-current="page"':""}>${t(k)}</a>`).join("")}</nav>`);scrollTo(0,0)}
 document.addEventListener("click",ev=>{const o=ev.target.closest("[data-open]");if(o){openRef(o.dataset.open)}});
