@@ -143,7 +143,7 @@ m.innerHTML=`<section class="hero"><h1>${t("app")}</h1><p>${t("intro")}</p><p cl
 <div class="card"><h2>${t("recent")}</h2>${L(rec)}</div><div class="card"><h2>${t("bmarks")}</h2>${L(bms)}</div>
 `}
 function Books(m){const g=nt=>`<div class="bk">${B.filter(b=>b.nt===nt).map(b=>`<a href="#/book/${b.id}">${esc(bn(b))}</a>`).join("")}</div>`;
-m.innerHTML=`<h1>${t("ot")} (39)</h1>${g(false)}<h2 style="margin-top:1.5rem">${t("nt")} (27)</h2>${g(true)}`}
+m.innerHTML=`<h1 style="font-size:1.15rem">${t("ot")} (39)</h1>${g(false)}<h2 style="margin-top:1.5rem">${t("nt")} (27)</h2>${g(true)}`}
 function Book(m,id){const b=bk(id);R={b:b.id,c1:"1",v1:"",c2:"",v2:""};
 m.innerHTML=`<p><a href="#/books">← ${t("allb")}</a></p><h1>${esc(bn(b))}</h1><p class="mut">${t(b.nt?"nt":"ot")} · ${b.ch} ${t("chs")}</p><a class="btn" href="#/study">${t("study")}: ${esc(bn(b))}</a>
 <div class="card"><dl>${FIELDS.map(f=>`<dt>${esc(pick(f))}</dt>${(()=>{const v=((CONTENT.books||{})[b.id]||{})[f.k];return v&&loc(v)?`<dd style="font-style:normal;color:var(--fg);white-space:pre-wrap">${esc(loc(v))}</dd>`:`<dd>${t("wait")}</dd>`})()}`).join("")}</dl></div>`}
