@@ -11,7 +11,7 @@ export function mountJourney(root) {
   // Animated image patches: the original picture remains a fallback underneath.
   const loader=new THREE.TextureLoader(),textures=[];let texturesReady=0;
   const loadTexture=url=>{const texture=loader.load(url,()=>{texturesReady++;if(!disposed)draw()},undefined,()=>{});texture.colorSpace=THREE.SRGBColorSpace;textures.push(texture);return texture};
-  const desktopOne=loadTexture('assets/desk-view.webp'),desktopTwo=loadTexture(document.documentElement.lang==='en'?'assets/study-transition-en.webp':'assets/study-transition-sq.webp'),portraitOne=loadTexture('assets/desk-portrait.webp'),portraitTwo=loadTexture(document.documentElement.lang==='en'?'assets/study-portrait-en.webp':'assets/study-portrait-sq.webp');
+  const desktopOne=loadTexture('assets/desk-view.webp'),desktopTwo=loadTexture(document.documentElement.lang==='en'?'assets/study-scene-en.webp':'assets/study-scene-sq.webp'),portraitOne=loadTexture('assets/desk-portrait.webp'),portraitTwo=loadTexture(document.documentElement.lang==='en'?'assets/study-portrait-fixed-en.webp':'assets/study-portrait-fixed-sq.webp');
   const fxUniforms={imageOne:{value:desktopOne},imageTwo:{value:desktopTwo},size:{value:new THREE.Vector2(1,1)},time:{value:0},progress:{value:progress},mobile:{value:0}};
   const fxScene=new THREE.Scene(),fxCamera=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
   const fxMaterial=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:fxUniforms,
