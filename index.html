@@ -119,8 +119,8 @@ main.home-page{background:linear-gradient(#142644e8,#142644f0),url("assets/desk-
 /* On phones, keep the copy above the desk and story landscapes instead of covering them. */
 @media(max-width:640px){
  .journey-scene:after{background:linear-gradient(180deg,#0b18304d 0%,transparent 40%,#0b183025 100%)}
- .journey-step,.journey-step:nth-child(2){align-items:flex-end;padding:1rem 1rem 1.5rem}
- .journey-step:first-child{align-items:center}
+ .journey-step{align-items:flex-start;padding:1rem 1rem 1.5rem}
+ .journey-step:nth-child(2){align-items:flex-end}
  .journey-text,.journey-step:nth-child(2) .journey-text{position:sticky;top:calc(var(--header-height,65px) + 1rem);width:min(100%,24rem);max-width:24rem;background:#0b18309e;border:1px solid #ffffff38;border-radius:14px;padding:.85rem 1rem;box-shadow:0 10px 30px #08132225;backdrop-filter:blur(3px);text-shadow:0 1px 3px #071122}
  .journey-text h1,.journey-text h2,.journey-step:nth-child(2) .journey-text h2{font-size:clamp(1.55rem,6.5vw,2.1rem);margin:.35rem 0}
  .journey-text p{font-size:.87rem;line-height:1.4;margin:.45rem 0}
