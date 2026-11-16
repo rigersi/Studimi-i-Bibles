@@ -171,7 +171,7 @@ const guideSymbols=[
 ["<path d='M12 3v18M7 8h10'/>","Salvation through Christ","Shpëtimi përmes Krishtit"],
 ["<path d='M9 18V5l10-2v13M9 16c-5-1-6 4-2 4 2 0 2-2 2-2M19 14c-5-1-6 4-2 4 2 0 2-2 2-2'/>","Praise","Lavdërimi"],
 ["<path d='M12 8C6 4 3 9 5 15c1 4 4 6 7 5 3 1 6-1 7-5 2-6-1-11-7-7zM12 8c0-3 1-5 3-6'/>","Fruit of the Spirit","Fryti i Frymës së Shenjtë"],
-["<path d='M3 20V7a4 4 0 0 1 8 0v13zM13 20V7a4 4 0 0 1 8 0v13z'/>","A command to consider and obey","Një urdhër për ta shqyrtuar dhe për t’iu bindur"],
+["<path d='M3 20V7a4 4 0 0 1 8 0v13zM13 20V7a4 4 0 0 1 8 0v13zM5 9h4M5 12h4M5 15h4M15 9h4M15 12h4M15 15h4'/>","A command to consider and obey — stone tablets","Një urdhër për ta shqyrtuar dhe për t’iu bindur — pllaka prej guri"],
 ["<rect x='4' y='10' width='16' height='11'/><path d='M3 7h18v3H3zM12 7v14M12 7c-5 0-6-5-3-5 2 0 3 3 3 5zm0 0c5 0 6-5 3-5-2 0-3 3-3 5z'/>","God’s grace","Hiri i Perëndisë"]];
 function guideKey(){return `<details><summary>${t("guideLink")}</summary><p class="mut">${t("guideUse")}</p><h3>${t("markTitle")}</h3><ul class="guide-key">${guideMarks.map(([mark,en,sq],i)=>`<li><span class="guide-mark" aria-hidden="true">${i===0?`<span class="mark-circle">${lang==="sq"?"fjalë":"word"}</span>`:i===2?`<span class="mark-box">${lang==="sq"?"fjalë":"word"}</span>`:i===4?`<span class="mark-circle">12</span>`:esc(mark)}</span><span>${esc(lang==="sq"?sq:en)}</span></li>`).join("")}</ul><h3>${t("themeTitle")}</h3><ul class="guide-key">${guideSymbols.map(([icon,en,sq])=>`<li><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${esc(lang==="sq"?sq:en)}</span></li>`).join("")}</ul></details>`}
 function guideLegend(){return `<section class="card" id="marking-guide"><h2>${t("guideTitle")}</h2><p>${t("guideIntro")}</p>${guideKey()}</section>`}
@@ -204,7 +204,7 @@ o11:{en:"Optional: bracket a section in the margin, circle verse numbers for ste
 o9:{en:"Optional: underline a key statement or highlight a passage you want to find again.",sq:"Opsionale: nënvizo një pohim kyç ose thekso një pjesë që dëshiron ta gjesh sërish."},
 i3:{en:"Optional: if the context supports a theme in the passage, mark it with a symbol from the key under Observation.",sq:"Opsionale: nëse konteksti e mbështet një temë në pjesë, shënoje me një simbol nga çelësi te Vëzhgimi."},
 i9:{en:"Optional: use a theme symbol beside a passage about God’s character when the context supports it. See the marking key under Observation.",sq:"Opsionale: vendos një simbol tematik pranë një pjese për karakterin e Perëndisë kur e mbështet konteksti. Shiko çelësin e shenjave te Vëzhgimi."},
-a1:{en:"Optional: use the tablets symbol beside a command; first consider who received it and how it applies.",sq:"Opsionale: vendos simbolin e pllakave pranë një urdhri; fillimisht shqyrto kujt iu dha dhe si zbatohet."},
+a1:{en:"Optional: use the stone tablets symbol beside a command; first consider who received it and how it applies.",sq:"Opsionale: vendos simbolin e pllakave prej guri pranë një urdhri; fillimisht shqyrto kujt iu dha dhe si zbatohet."},
 a8:{en:"Optional: use the fruit symbol when the passage speaks about the fruit of the Spirit.",sq:"Opsionale: përdor simbolin e frytit kur pjesa flet për frytin e Frymës së Shenjtë."},
 a4:{en:"Optional: use the praise symbol when the passage expresses praise.",sq:"Opsionale: përdor simbolin e lavdërimit kur pjesa shpreh lavdërim."}};
 function Study(m){m.innerHTML=`<h1>${t("study")}</h1><div id="sl"></div><div id="sb2"></div>`;
