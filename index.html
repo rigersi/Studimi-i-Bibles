@@ -163,6 +163,49 @@ progress{accent-color:var(--ac);border-radius:99px}footer{line-height:1.7}footer
 .journey-index{display:inline-flex;align-items:center;gap:.6rem}.journey-index:before{content:"";display:inline-block;width:1.3rem;height:1px;background:#e5c78d;flex:none}.journey-progress{border-radius:2px}.journey-progress:after{border-radius:2px}
 @media(max-width:640px){main:not(.home-page){padding:1.35rem .9rem 2.5rem}main:not(.home-page)>h1{font-size:clamp(1.9rem,8vw,2.4rem);margin-bottom:1.1rem}fieldset.sel,fieldset.search-filters{padding:1rem} .g{gap:.85rem .65rem}.cat-grid{gap:.65rem}.cat-card{min-height:146px;padding:.9rem}.cat-icon{width:2.2rem;height:2.2rem;border-radius:9px}.cat-icon svg{width:1.2rem;height:1.2rem}#nv a{max-width:100px}}
 @media(max-width:350px){.cat-card{min-height:150px}.cat-card strong{font-size:.9rem}.cat-card span:not(.cat-icon){font-size:.8rem}}
+
+/* Light mode keeps the scenes while fading their copy and the end of the journey into white. */
+
+:root[data-theme="light"] main.home-page{background:#fff}
+:root[data-theme="light"] body.at-home footer{background:#fff;color:var(--mut)}
+:root[data-theme="light"] body.at-home footer a{color:var(--ac)}
+:root[data-theme="light"] .journey:after{content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;height:clamp(65px,12vw,150px);background:linear-gradient(to bottom,transparent,#fff);pointer-events:none}
+:root[data-theme="light"] .journey-text,:root[data-theme="light"] .journey-step:nth-child(2) .journey-text{color:#16263b;background:linear-gradient(135deg,rgba(255,255,255,.91),rgba(245,249,255,.78));border:1px solid rgba(255,255,255,.72);border-radius:14px;padding:1rem 1.15rem;box-shadow:0 10px 32px rgba(7,19,40,.18);backdrop-filter:blur(5px);text-shadow:none}
+:root[data-theme="light"] .journey-text h1,:root[data-theme="light"] .journey-text h2,:root[data-theme="light"] .journey-text p{color:#16263b}
+:root[data-theme="light"] .journey-text .journey-bible-note,:root[data-theme="light"] .journey-scroll{color:#394d65}
+:root[data-theme="light"] .journey-index{color:#705023}
+:root[data-theme="light"] .journey-index:before{background:#a67739}
+:root[data-theme="light"] .home-page .journey-text a{color:#17345d;background:rgba(255,255,255,.7);border-color:#7187a4}
+:root[data-theme="light"] .home-page .journey-text a:hover{background:#fff}
+:root[data-theme="light"] .journey-text a:focus-visible{outline-color:#17345d}
+
+@media (prefers-color-scheme:light){
+
+:root:not([data-theme="dark"]) main.home-page{background:#fff}
+:root:not([data-theme="dark"]) body.at-home footer{background:#fff;color:var(--mut)}
+:root:not([data-theme="dark"]) body.at-home footer a{color:var(--ac)}
+:root:not([data-theme="dark"]) .journey:after{content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;height:clamp(65px,12vw,150px);background:linear-gradient(to bottom,transparent,#fff);pointer-events:none}
+:root:not([data-theme="dark"]) .journey-text,:root:not([data-theme="dark"]) .journey-step:nth-child(2) .journey-text{color:#16263b;background:linear-gradient(135deg,rgba(255,255,255,.91),rgba(245,249,255,.78));border:1px solid rgba(255,255,255,.72);border-radius:14px;padding:1rem 1.15rem;box-shadow:0 10px 32px rgba(7,19,40,.18);backdrop-filter:blur(5px);text-shadow:none}
+:root:not([data-theme="dark"]) .journey-text h1,:root:not([data-theme="dark"]) .journey-text h2,:root:not([data-theme="dark"]) .journey-text p{color:#16263b}
+:root:not([data-theme="dark"]) .journey-text .journey-bible-note,:root:not([data-theme="dark"]) .journey-scroll{color:#394d65}
+:root:not([data-theme="dark"]) .journey-index{color:#705023}
+:root:not([data-theme="dark"]) .journey-index:before{background:#a67739}
+:root:not([data-theme="dark"]) .home-page .journey-text a{color:#17345d;background:rgba(255,255,255,.7);border-color:#7187a4}
+:root:not([data-theme="dark"]) .home-page .journey-text a:hover{background:#fff}
+:root:not([data-theme="dark"]) .journey-text a:focus-visible{outline-color:#17345d}
+}
+
+/* Search filters use the same selectable-card language as the material categories. */
+.search-filter-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:.65rem}
+.search-filter-options label.search-filter-card{position:relative;display:block;padding:0;font-size:inherit}
+.search-filter-card input{position:absolute;width:1px;height:1px;opacity:0}
+.search-filter-card span{display:flex;align-items:center;min-height:64px;height:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--fg);box-shadow:var(--shadow);font-weight:600;transition:background .2s,border-color .2s,box-shadow .2s}
+.search-filter-card input:checked+span{background:var(--soft-blue);border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.search-filter-card input:focus-visible+span{outline:3px solid var(--ac);outline-offset:3px}
+.save-resource{margin:.25rem 0 .5rem}
+@media(max-width:640px){.search-filter-options{grid-template-columns:repeat(2,minmax(0,1fr))}.search-filter-card span{min-height:60px}}
+
+.material-sort{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1rem 0}.material-sort span{color:var(--mut);font-weight:600}.material-sort button[aria-pressed="true"]{background:var(--soft-blue);border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
 </style></head>
 <body>
 <header><a href="#/search" id="headerSearch" class="header-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></a><div class="brand-crossing"><a class="logo" href="#/home"><span id="lt">URA</span></a><svg class="header-bridge" viewBox="0 0 160 44" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="bridge-deck" d="M2 32H158M2 36H158"/><path d="M20 32V7M140 32V7M20 9C47 37 113 37 140 9M2 19L20 9M140 9L158 19M37 20V32M54 26V32M72 29V32M88 29V32M106 26V32M123 20V32"/><path d="M15 7h10M135 7h10"/></svg><select id="lg" aria-label="Language"><option value="sq">Shqip</option><option value="en">English</option></select></div><span id="page-title"></span><nav id="nv" aria-label="Main"></nav>
@@ -252,18 +295,18 @@ const guideMarks=[
 ["⎡ ⎣","Margin bracket: the boundaries of a section","Kllapë në anë: kufijtë e një pjese"]];
 /* Original, simple drawings so each theme is recognisable without emoji fonts. */
 const guideSymbols=[
-["<path d='M12 20S3 15 3 9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 11-9 11z'/>","God’s love","Dashuria e Perëndisë"],
-["<circle cx='12' cy='12' r='4'/><path d='M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2'/>","God’s holiness","Shenjtëria e Perëndisë"],
-["<path d='M3 7l4 4 5-7 5 7 4-4-2 12H5zM5 16h14'/>","God’s sovereignty and reign","Sovraniteti dhe mbretërimi i Perëndisë"],
+["<path d='M12 20S3 15 3 9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 11-9 11z'/>","God’s love — heart","Dashuria e Perëndisë — zemra"],
+["<circle cx='12' cy='12' r='4'/><path d='M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2'/>","God’s holiness — sun","Shenjtëria e Perëndisë — dielli"],
+["<path d='M3 7l4 4 5-7 5 7 4-4-2 12H5zM5 16h14'/>","God’s sovereignty and reign — crown","Sovraniteti dhe mbretërimi i Perëndisë — kurora"],
 ["<path d='M3 19 6 11l5-5 5 2 5 11z'/>","God’s faithfulness — the rock","Besnikëria e Perëndisë — shkëmbi"],
-["<path d='M12 3v17M6 21h12M4 8h16M6 8l-3 6h6zM18 8l-3 6h6z'/>","God’s justice","Drejtësia e Perëndisë"],
-["<path d='M12 12C8 5 3 7 3 12s5 7 9 0c4-7 9-5 9 0s-5 7-9 0z'/>","God’s eternal nature","Përjetësia e Perëndisë"],
-["<path d='M13 2 5 13h6l-1 9 9-12h-6z'/>","God’s power","Fuqia e Perëndisë"],
-["<path d='M12 3v18M7 8h10'/>","Salvation through Christ","Shpëtimi përmes Krishtit"],
-["<path d='M9 18V5l10-2v13M9 16c-5-1-6 4-2 4 2 0 2-2 2-2M19 14c-5-1-6 4-2 4 2 0 2-2 2-2'/>","Praise","Lavdërimi"],
-["<path d='M12 8C6 4 3 9 5 15c1 4 4 6 7 5 3 1 6-1 7-5 2-6-1-11-7-7zM12 8c0-3 1-5 3-6'/>","Fruit of the Spirit","Fryti i Frymës së Shenjtë"],
+["<path d='M12 3v17M6 21h12M4 8h16M6 8l-3 6h6zM18 8l-3 6h6z'/>","God’s justice — scales","Drejtësia e Perëndisë — peshorja"],
+["<path d='M12 12C8 5 3 7 3 12s5 7 9 0c4-7 9-5 9 0s-5 7-9 0z'/>","God’s eternal nature — infinity symbol","Përjetësia e Perëndisë — simboli i pafundësisë"],
+["<path d='M13 2 5 13h6l-1 9 9-12h-6z'/>","God’s power — lightning bolt","Fuqia e Perëndisë — rrufeja"],
+["<path d='M12 3v18M7 8h10'/>","Salvation through Christ — cross","Shpëtimi përmes Krishtit — kryqi"],
+["<path d='M9 18V5l10-2v13M9 16c-5-1-6 4-2 4 2 0 2-2 2-2M19 14c-5-1-6 4-2 4 2 0 2-2 2-2'/>","Praise — musical note","Lavdërimi — nota muzikore"],
+["<path d='M12 8C6 4 3 9 5 15c1 4 4 6 7 5 3 1 6-1 7-5 2-6-1-11-7-7zM12 8c0-3 1-5 3-6'/>","Fruit of the Spirit — fruit","Fryti i Frymës së Shenjtë — fryti"],
 ["<path d='M3 20V7a4 4 0 0 1 8 0v13zM13 20V7a4 4 0 0 1 8 0v13zM5 9h4M5 12h4M5 15h4M15 9h4M15 12h4M15 15h4'/>","A command to consider and obey — stone tablets","Një urdhër për ta shqyrtuar dhe për t’iu bindur — pllaka prej guri"],
-["<rect x='4' y='10' width='16' height='11'/><path d='M3 7h18v3H3zM12 7v14M12 7c-5 0-6-5-3-5 2 0 3 3 3 5zm0 0c5 0 6-5 3-5-2 0-3 3-3 5z'/>","God’s grace","Hiri i Perëndisë"]];
+["<rect x='4' y='10' width='16' height='11'/><path d='M3 7h18v3H3zM12 7v14M12 7c-5 0-6-5-3-5 2 0 3 3 3 5zm0 0c5 0 6-5 3-5-2 0-3 3-3 5z'/>","God’s grace — gift","Hiri i Perëndisë — dhurata"]];
 // Stable IDs are stored in backups; never reorder or reuse these identifiers.
 const symbolIds=["love","holiness","sovereignty","faithfulness","justice","eternity","power","salvation","praise","fruit","command","grace"];
 const symbolIndex=id=>symbolIds.indexOf(id);
@@ -280,7 +323,7 @@ Object.assign(I.en,{homeBooksDesc:"Browse the 66 Bible books",homeLibraryDesc:"E
 Object.assign(I.sq,{homeBooksDesc:"Shfleto 66 librat e Biblës",homeLibraryDesc:"Shfleto materiale shtesë për studim",homeSearchDesc:"Kërko në faqe ose kërko një fjalë në Bibël"});
 Object.assign(I.en,{showcaseLabel:"Discover Ura",showcasePrev:"Previous introduction",showcaseNext:"Next introduction",showcaseGo:"Go to introduction",showcaseKicker:"A bridge to deeper study",showcaseSlides:[{title:"Begin with the Word",text:"Read a passage in your own Bible, then take your time exploring it with Ura. You can study in English or Albanian.",link:"Start studying",href:"#/study",tile:"The Word"},{title:"Observe. Understand. Respond.",text:"Take your time with the questions that fit your passage. Write in a notebook, in Ura, or both; your answers in Ura are saved on this device.",link:"Explore the study",href:"#/study",tile:"Study"},{title:"See the connections",text:"Explore cross-references and discover how passages connect. Read them in context as you follow the Bible’s story.",link:"Explore search",href:"#/search",tile:"Connections"},{title:"Go a little deeper",text:"Explore maps, history and other materials to understand Scripture and know God more deeply.",link:"Explore materials",href:"#/library",tile:"Explore"}]});
 Object.assign(I.sq,{showcaseLabel:"Zbulo Urën",showcasePrev:"Hyrja e mëparshme",showcaseNext:"Hyrja tjetër",showcaseGo:"Shko te hyrja",showcaseKicker:"Një urë drejt studimit më të thellë",showcaseSlides:[{title:"Fillo me Fjalën",text:"Lexo një pjesë në Biblën tënde, pastaj merr kohë ta shqyrtosh me Urën. Mund të studiosh në shqip ose anglisht.",link:"Fillo studimin",href:"#/study",tile:"Fjala"},{title:"Vëzhgo. Kupto. Përgjigju.",text:"Merr kohë për pyetjet që i përshtaten pjesës. Shkruaj në një bllok shënimesh, në Ura ose në të dyja; përgjigjet në Ura ruhen në këtë pajisje.",link:"Shiko studimin",href:"#/study",tile:"Studimi"},{title:"Shiko lidhjet",text:"Shqyrto referencat e tjera dhe zbulo si lidhen pjesët e Biblës. Lexoji në kontekst ndërsa ndjek historinë e saj.",link:"Hap kërkimin",href:"#/search",tile:"Lidhjet"},{title:"Shko më thellë",text:"Shfleto hartat, historinë dhe materiale të tjera për të kuptuar Shkrimin dhe për të njohur më thellë Perëndinë.",link:"Shfleto materialet",href:"#/library",tile:"Shfleto"}]});
-Object.assign(I.en,{journeySkip:"Skip introduction",journeyScroll:"Scroll to explore ↓"});Object.assign(I.sq,{journeySkip:"Kalo hyrjen",journeyScroll:"Rrëshqit për të zbuluar ↓"});
+Object.assign(I.en,{journeySkip:"Skip introduction",journeyScroll:"Scroll to explore ↓"});Object.assign(I.sq,{journeySkip:"Kalo hyrjen",journeyScroll:"Shih më poshtë ↓"});
 let cleanupJourney=()=>{};
 function Home(m){const slides=t("showcaseSlides");m.innerHTML=`<section class="journey" aria-label="${t("showcaseLabel")}"><div class="journey-scene" aria-hidden="true"><div class="journey-visual one"></div><div class="journey-visual two"></div><div class="journey-visual three"></div><div class="journey-visual four"></div><div class="journey-transition"></div><canvas></canvas><div class="journey-progress"></div></div><div class="journey-copy">${slides.map((v,i)=>`<section class="journey-step"><div class="journey-text"><span class="journey-index">0${i+1} / 04 · ${esc(t("showcaseKicker"))}</span>${i===0?`<h1>${esc(t("app"))}</h1><p>${esc(t("intro"))}</p><p class="journey-bible-note">${esc(t("nobible"))}</p>`:`<h2>${esc(v.title)}</h2><p>${esc(v.text)}</p>`}<a href="${esc(v.href)}">${esc(v.link)} →</a>${i===0?`<div class="journey-scroll">${t("journeyScroll")}</div>`:""}</div></section>`).join("")}</div></section><section class="card" id="marking-guide"><h2>${t("studyNotesTitle")}</h2><p>${t("guideIntro")}</p>${guideKey()}</section><div class="card"><h2>${t("contactTitle")}</h2><a href="mailto:rigersiduka@gmail.com">rigersiduka@gmail.com</a></div>`;
 const root=m.querySelector(".journey");
@@ -357,7 +400,7 @@ async function exportStudyImages(){
 async function restoreBackup(ev,onDone){const f=ev.target.files[0];if(!f)return;
 try{const j=JSON.parse(await f.text());if(j.app!=="bible-study"||j.schema!==1||!Array.isArray(j.items))throw 0;
 const S2=x=>x==null||typeof x==="string",clean=[];
-for(const x of j.items){if(!x||typeof x.id!=="string"||!["note","bookmark","answer","recent","highlight","xref","symbol"].includes(x.type)||typeof x.t!=="number"||!x.ref||!B.some(b=>b.id===x.ref.b)||![x.label,x.text,x.k,x.q].every(S2)||(x.tags!=null&&!(Array.isArray(x.tags)&&x.tags.every(s=>typeof s==="string"))))throw 0;
+for(const x of j.items){if(x&&x.type==="saved-resource"){if(typeof x.resourceId!=="string"||!x.resourceId||x.id!=="resource:"+x.resourceId||typeof x.t!=="number"||!Number.isFinite(x.t))throw 0;clean.push({id:x.id,type:x.type,resourceId:x.resourceId,t:x.t});continue}if(!x||typeof x.id!=="string"||!["note","bookmark","answer","recent","highlight","xref","symbol"].includes(x.type)||typeof x.t!=="number"||!x.ref||!B.some(b=>b.id===x.ref.b)||![x.label,x.text,x.k,x.q].every(S2)||(x.tags!=null&&!(Array.isArray(x.tags)&&x.tags.every(s=>typeof s==="string"))))throw 0;
 if(x.type==="symbol"&&(symbolIndex(x.q)<0||typeof x.k!=="string"||x.k!==key(x.ref)||(x.to&&(!B.some(b=>b.id===x.to.b)||x.to.b!==x.ref.b||chk(x.to)||cmp(st(x.to),st(x.ref))<0||cmp(en(x.to),en(x.ref))>0))))throw 0;
 const r=x.ref;clean.push({id:x.id,type:x.type,t:x.t,ref:{b:r.b,c1:String(r.c1??"1"),v1:String(r.v1??""),c2:String(r.c2??""),v2:String(r.v2??"")},label:x.label||"",text:x.text||"",tags:x.tags||[],k:x.k||"",q:x.q||"",color:/^#[0-9a-f]{3,8}$/i.test(x.color||"")?x.color:"#f2d544",to:x.to&&B.some(b=>b.id===x.to.b)?{b:x.to.b,c1:String(x.to.c1??"1"),v1:String(x.to.v1??""),c2:String(x.to.c2??""),v2:String(x.to.v2??"")}:null})}
 for(let i=clean.length-1;i>=0;i--)if(clean[i].type==="highlight")clean.splice(i,1);if(!confirm(t("conf").replace("{n}",clean.length)))return;
@@ -397,9 +440,10 @@ const CATS=[
 ["charts","Charts","Tabela dhe diagrame","Harmonies and visual comparisons","Harmonizime dhe krahasime vizuale"],
 ["language-tools","Language Tools","Mjete gjuhësore","Greek and Hebrew word studies","Studime fjalësh greke dhe hebraike"]];
 const catOf=r=>{const k=String(r.category||r.type||"").toLowerCase().trim().replace(/[ _]+/g,"-");return ({map:"maps",place:"maps",places:"maps",biography:"biographies","family-tree":"timelines","family-trees":"timelines",timeline:"timelines",chart:"charts",table:"charts",commentary:"commentaries","cultural-background":"archaeology"})[k]||k};
-Object.assign(I.en,{categories:"Browse by category",allcategories:"All material",catempty:"No published material in this category yet.",nomatches:"No material matches your search.",othermaterial:"Other material",catcoming:"No material yet"});
-Object.assign(I.sq,{categories:"Shfleto sipas kategorisë",allcategories:"Të gjitha materialet",catempty:"Ende nuk ka materiale të publikuara në këtë kategori.",nomatches:"Asnjë material nuk përputhet me kërkimin.",othermaterial:"Materiale të tjera",catcoming:"Ende pa materiale"});
+Object.assign(I.en,{categories:"Browse by category",allcategories:"All material",catempty:"No published material in the selected categories yet.",nomatches:"No material matches your search.",othermaterial:"Other material",catcoming:"No material yet"});
+Object.assign(I.sq,{categories:"Shfleto sipas kategorisë",allcategories:"Të gjitha materialet",catempty:"Ende nuk ka materiale të publikuara në kategoritë e zgjedhura.",nomatches:"Asnjë material nuk përputhet me kërkimin.",othermaterial:"Materiale të tjera",catcoming:"Ende pa materiale"});
 const categoryIcons={
+ saved:'<path d="M6 3h12v18l-6-4-6 4z"/>',
  archaeology:'<path d="M5 20h14M7 20v-3c0-2 1-3 2-5l-1-2h8l-1 2c1 2 2 3 2 5v3M8 10V7h8v3M10 7V4h4v3"/>',
  maps:'<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/>',
  places:'<path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
@@ -412,23 +456,44 @@ const categoryIcons={
  "language-tools":'<path d="M4 18 8 5l4 13M5.4 14h5.2M15 7h5M17.5 5v13M15 18h5"/>'
 };
 const categoryIcon=id=>`<span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24">${categoryIcons[id]||""}</svg></span>`;
-function Library(m){const rs=(CONTENT.resources||[]).filter(r=>r.status==="published");let selected="";
-m.innerHTML=`<h1>${t("lib")}</h1><h2>${t("categories")}</h2><div class="cat-grid">${CATS.map(c=>`<button class="cat-card" type="button" data-category="${c[0]}" aria-pressed="false">${categoryIcon(c[0])}<strong>${esc(c[lang==="sq"?2:1])}</strong><span>${esc(c[lang==="sq"?4:3])}</span>${rs.some(r=>catOf(r)===c[0])?"":`<span>${t("catcoming")}</span>`}</button>`).join("")}</div><div class="row"><button class="alt" id="allcats" aria-pressed="true">${t("allcategories")}</button></div><h2 id="rheading"></h2><div id="rl" aria-live="polite"></div>`;
-const d=()=>{const cat=CATS.find(c=>c[0]===selected),filtered=rs.filter(r=>!selected||catOf(r)===selected);
-$("#rheading").textContent=cat?cat[lang==="sq"?2:1]:t("allcategories");
-$("#rl").innerHTML=filtered.length?filtered.map(r=>`<div class="card">${r.image?`<img src="${esc(r.image)}" alt="${esc(loc(r.title))}" loading="lazy">`:""}<h2>${esc(loc(r.title))}</h2><p class="mut">${esc(r.type||"")}${(r.refs||[]).length?" · "+t("appl")+": "+r.refs.map(x=>esc(lab(x))).join(", "):""}</p><p>${esc(loc(r.desc))}</p>${r.source?`<p class="mut">${esc(r.source)} ${esc(r.license||"")}</p>`:""}${r.url?`<a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${t("openfile")} →</a>`:""}</div>`).join(""):`<div class="card"><p class="mut">${selected?t("catempty"):t("empty")}</p>${!rs.length&&!selected?demoBtn():""}</div>`;
-m.querySelectorAll("[data-category]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.category===selected)));$("#allcats").setAttribute("aria-pressed",String(!selected));};
-m.querySelectorAll("[data-category]").forEach(b=>b.onclick=()=>{selected=b.dataset.category;d();$("#rheading").scrollIntoView({behavior:"smooth",block:"nearest"})});$("#allcats").onclick=()=>{selected="";d()};d()}
+Object.assign(I.en,{savedResources:"Saved material",savedResourcesDesc:"Your saved resources, all in one place",savedResourcesEmpty:"No saved material yet. Use + Save on a resource to keep it here.",saveResource:"+ Save",removeResource:"✓ Saved · Remove",saveResourceHelp:"Use + Save on any resource to find it quickly here.",savedLocal:"Saved on this device",sortMaterial:"Sort by",sortCategory:"Category",sortBook:"Bible book",sortShuffle:"Shuffled",noBook:"No book specified"});
+Object.assign(I.sq,{savedResources:"Materialet e ruajtura",savedResourcesDesc:"Materialet e tua të ruajtura, në një vend",savedResourcesEmpty:"Ende nuk ka materiale të ruajtura. Përdor + Ruaj te një material për ta mbajtur këtu.",saveResource:"+ Ruaj",removeResource:"✓ U ruajt · Hiq",saveResourceHelp:"Përdor + Ruaj te çdo material për ta gjetur shpejt këtu.",savedLocal:"Ruhet në këtë pajisje",sortMaterial:"Rendit sipas",sortCategory:"Kategorisë",sortBook:"Librit të Biblës",sortShuffle:"Rastësisht",noBook:"Pa libër të përcaktuar"});
+function Library(m){const rs=(CONTENT.resources||[]).filter(r=>r.status==="published");const selected=new Set();let savedOnly=false,sortMode="category",shuffleOrder=[];
+const reshuffle=()=>{shuffleOrder=rs.map(r=>r.id);for(let i=shuffleOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffleOrder[i],shuffleOrder[j]]=[shuffleOrder[j],shuffleOrder[i]]}};reshuffle();
+const isSaved=r=>items.some(i=>i.type==="saved-resource"&&i.resourceId===r.id);
+m.innerHTML=`<h1>${t("lib")}</h1><h2>${t("categories")}</h2><p class="mut">${t("saveResourceHelp")} · ${t("savedLocal")}</p><div class="cat-grid"><button class="cat-card" type="button" id="saved-resources" aria-pressed="false">${categoryIcon("saved")}<strong>${t("savedResources")}</strong><span>${t("savedResourcesDesc")}</span></button>${CATS.map(c=>`<button class="cat-card" type="button" data-category="${c[0]}" aria-pressed="false">${categoryIcon(c[0])}<strong>${esc(c[lang==="sq"?2:1])}</strong><span>${esc(c[lang==="sq"?4:3])}</span>${rs.some(r=>catOf(r)===c[0])?"":`<span>${t("catcoming")}</span>`}</button>`).join("")}</div><div class="row"><button class="alt" id="allcats" aria-pressed="true">${t("allcategories")}</button></div><div class="material-sort" role="group" aria-label="${t("sortMaterial")}"><span>${t("sortMaterial")}:</span>${[["category","sortCategory"],["book","sortBook"],["shuffle","sortShuffle"]].map(([id,label])=>`<button type="button" class="alt" data-material-sort="${id}" aria-pressed="${id===sortMode}">${t(label)}</button>`).join("")}</div><h2 id="rheading"></h2><div id="rl" aria-live="polite"></div>`;
+const d=()=>{const cats=CATS.filter(c=>selected.has(c[0])),filtered=rs.filter(r=>savedOnly?isSaved(r):!selected.size||selected.has(catOf(r)));
+$("#rheading").textContent=savedOnly?t("savedResources"):cats.length?cats.map(c=>c[lang==="sq"?2:1]).join(" · "):t("allcategories");
+const resourceCard=r=>`<div class="card">${r.image?`<img src="${esc(r.image)}" alt="${esc(loc(r.title))}" loading="lazy">`:""}<h2>${esc(loc(r.title))}</h2><button type="button" class="alt save-resource" data-resource-id="${esc(r.id)}" aria-pressed="${isSaved(r)}">${t(isSaved(r)?"removeResource":"saveResource")}</button><p class="mut">${esc(r.type||"")}${(r.refs||[]).length?" · "+t("appl")+": "+r.refs.map(x=>esc(lab(x))).join(", "):""}</p><p>${esc(loc(r.desc))}</p>${r.source?`<p class="mut">${esc(r.source)} ${esc(r.license||"")}</p>`:""}${r.url?`<a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${t("openfile")} →</a>`:""}</div>`;
+let rendered="";
+if(filtered.length){
+ if(sortMode==="shuffle")rendered=[...filtered].sort((a,b)=>shuffleOrder.indexOf(a.id)-shuffleOrder.indexOf(b.id)).map(resourceCard).join("");
+ else if(sortMode==="category"){
+  const groups=CATS.map(c=>({label:c[lang==="sq"?2:1],resources:filtered.filter(r=>catOf(r)===c[0])}));
+  groups.push({label:t("othermaterial"),resources:filtered.filter(r=>!CATS.some(c=>c[0]===catOf(r)))});
+  rendered=groups.filter(g=>g.resources.length).map(g=>`<section><h3>${esc(g.label)}</h3>${g.resources.map(resourceCard).join("")}</section>`).join("");
+ }else{
+  const groups=B.map(b=>({label:bn(b),resources:filtered.filter(r=>(r.refs||[]).some(ref=>ref.b===b.id))}));
+  groups.push({label:t("noBook"),resources:filtered.filter(r=>!(r.refs||[]).some(ref=>B.some(b=>b.id===ref.b)))});
+  rendered=groups.filter(g=>g.resources.length).map(g=>`<section><h3>${esc(g.label)}</h3>${g.resources.map(resourceCard).join("")}</section>`).join("");
+ }
+}else rendered=`<div class="card"><p class="mut">${savedOnly?t("savedResourcesEmpty"):selected.size?t("catempty"):t("empty")}</p>${!rs.length&&!selected.size&&!savedOnly?demoBtn():""}</div>`;
+$("#rl").innerHTML=rendered;
+m.querySelectorAll("[data-material-sort]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.materialSort===sortMode)));
+m.querySelectorAll("[data-category]").forEach(b=>b.setAttribute("aria-pressed",String(selected.has(b.dataset.category))));$("#allcats").setAttribute("aria-pressed",String(!selected.size&&!savedOnly));$("#saved-resources").setAttribute("aria-pressed",String(savedOnly));};
+m.querySelectorAll("[data-category]").forEach(b=>b.onclick=()=>{savedOnly=false;selected.has(b.dataset.category)?selected.delete(b.dataset.category):selected.add(b.dataset.category);d()});$("#allcats").onclick=()=>{selected.clear();savedOnly=false;d()};$("#saved-resources").onclick=()=>{selected.clear();savedOnly=!savedOnly;d()};
+m.querySelectorAll("[data-material-sort]").forEach(b=>b.onclick=()=>{sortMode=b.dataset.materialSort;if(sortMode==="shuffle")reshuffle();d()});
+m.querySelector("#rl").onclick=async ev=>{const button=ev.target.closest("[data-resource-id]");if(!button)return;const resource=rs.find(r=>r.id===button.dataset.resourceId);if(!resource)return;button.disabled=true;try{if(!db)throw Error("storage");const id="resource:"+resource.id;if(isSaved(resource)){await del(id);items=items.filter(i=>i.id!==id)}else{const entry={id,type:"saved-resource",resourceId:resource.id,t:Date.now()};await put(entry);items=items.filter(i=>i.id!==id);items.push(entry)}d();toast(t("saved"))}catch(e){button.disabled=false;toast(t("saveError"))}};d()}
 Object.assign(I.en,{quickNote:"Write a quick note",savedItems:"Saved bookmarks and notes",searchHint:"Search books, resources, bookmarks and notes",deleteConfirm:"Delete this saved item?"});
 Object.assign(I.sq,{quickNote:"Shkruaj një shënim të shpejtë",savedItems:"Faqeshënuesit dhe shënimet e ruajtura",searchHint:"Kërko libra, materiale, faqeshënues dhe shënime",deleteConfirm:"Ta fshish këtë të dhënë të ruajtur?"});
 Object.assign(I.en,{passageSearchHint:"Search here",passageResults:"Results for passage",passageInvalid:"Check the chapter and verse numbers.",passageLoading:"Loading connections…",passageLoadError:"Connections could not be loaded. Check your connection and try again.",passageRetry:"Try again",passageStudy:"Study this passage"});
 Object.assign(I.sq,{passageSearchHint:"Kërko këtu",passageResults:"Rezultatet për pjesën",passageInvalid:"Kontrollo numrat e kapitullit dhe vargut.",passageLoading:"Duke ngarkuar lidhjet…",passageLoadError:"Lidhjet nuk u ngarkuan. Kontrollo lidhjen dhe provo përsëri.",passageRetry:"Provo përsëri",passageStudy:"Studio këtë pjesë"});
-Object.assign(I.en,{searchFilter:"Search for",searchAll:"Select one or more, or leave all unchecked to search everything.",searchStudies:"Studies",searchConnections:"Verse connections"});
-Object.assign(I.sq,{searchFilter:"Kërko për",searchAll:"Zgjidh një ose më shumë, ose lëri bosh për të kërkuar gjithçka.",searchStudies:"Studimet",searchConnections:"Lidhjet e vargjeve"});
+Object.assign(I.en,{searchFilter:"Search for",searchAll:"Select one or more, or leave all unselected to search everything.",searchStudies:"Studies",searchConnections:"Verse connections"});
+Object.assign(I.sq,{searchFilter:"Kërko për",searchAll:"Zgjidh një ose më shumë, ose mos zgjidh asnjë për të kërkuar gjithçka.",searchStudies:"Studimet",searchConnections:"Lidhjet e vargjeve"});
 const refNorm=s=>String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s+/g," ").trim();
 function parseSearchRef(text){const m=text.trim().match(/^(.+?)\s+(\d+)(?::(\d+))?(?:\s*[-–—]\s*(?:(\d+):(\d+)|(\d+)))?$/);if(!m)return null;const name=refNorm(m[1]),book=B.find(b=>[b.en,b.sq,b.id].some(n=>refNorm(n)===name));if(!book)return null;const r={b:book.id,c1:m[2],v1:m[3]||"",c2:m[4]||"",v2:m[5]||""};if(m[6]){if(r.v1)r.v2=m[6];else r.c2=m[6]}return {ref:r,error:chk(r)}}
 const searchStudyButton=r=>`<button type="button" class="alt ref-study" data-search-ref="${esc(encodeURIComponent(JSON.stringify(r)))}">${t("studyReference")}</button>`;
-function Search(m){m.innerHTML=`<h1>${t("gs")}</h1><input id="gq" type="search" style="width:100%" placeholder="${t("passageSearchHint")}" aria-label="${t("passageSearchHint")}"><fieldset class="search-filters"><legend>${t("searchFilter")}</legend><p class="mut">${t("searchAll")}</p><div class="search-filter-options">${[["books","bbooks"],["studies","searchStudies"],["connections","searchConnections"],["bookmarks","bmarks"],["notes","nlist"],["materials","lib"]].map(([v,k])=>`<label><input type="checkbox" name="searchFilter" value="${v}"> ${t(k)}</label>`).join("")}</div></fieldset><div id="gr"></div><section class="card" id="savedSection"><h2>${t("savedItems")}</h2><div id="savedItems"></div></section>`;
+function Search(m){m.innerHTML=`<h1>${t("gs")}</h1><input id="gq" type="search" style="width:100%" placeholder="${t("passageSearchHint")}" aria-label="${t("passageSearchHint")}"><fieldset class="search-filters"><legend>${t("searchFilter")}</legend><p class="mut">${t("searchAll")}</p><div class="search-filter-options">${[["books","bbooks"],["studies","searchStudies"],["connections","searchConnections"],["bookmarks","bmarks"],["notes","nlist"],["materials","lib"]].map(([v,k])=>`<label class="search-filter-card"><input type="checkbox" name="searchFilter" value="${v}"><span>${t(k)}</span></label>`).join("")}</div></fieldset><div id="gr"></div><section class="card" id="savedSection"><h2>${t("savedItems")}</h2><div id="savedItems"></div></section>`;
 let searchVersion=0,searchLimit=24;const render=async()=>{const version=++searchVersion,filters=new Set([...m.querySelectorAll('input[name="searchFilter"]:checked')].map(x=>x.value)),show=type=>!filters.size||filters.has(type),query=$("#gq").value.trim(),parsed=parseSearchRef(query),q=query.toLowerCase(),has=s=>String(s||"").toLowerCase().includes(q),tg=a=>(a||[]).some(has),saved=items.filter(i=>["note","bookmark"].includes(i.type)&&show(i.type==="note"?"notes":"bookmarks")&&(!q||(parsed&&!parsed.error&&i.ref&&ovl(i.ref,parsed.ref))||has(i.text)||has(i.label)||tg(i.tags))).sort((a,b)=>b.t-a.t);$("#savedSection").hidden=!(show("notes")||show("bookmarks"));
 $("#savedItems").innerHTML=[["bookmark","bmarks"],["note","nlist"]].filter(([type])=>show(type==="note"?"notes":"bookmarks")).map(([type,title])=>{const group=saved.filter(i=>i.type===type);return `<section><h3>${t(title)}</h3>${group.length?group.map(i=>`<div class="item"><a href="#/study" data-open="${esc(i.id)}"><strong>${esc(i.label)}</strong></a> <span class="mut">${new Date(i.t).toLocaleDateString(lang==="sq"?"sq-AL":"en-GB")}</span>${i.text?`<p style="white-space:pre-wrap">${esc(i.text)}</p>`:""}${(i.tags||[]).map(g=>`<span class="mut">#${esc(g)} </span>`).join("")}<div><button class="alt" type="button" data-delete-saved="${esc(i.id)}">${t("del")}</button></div></div>`).join(""):`<p class="mut">${t("none")}</p>`}</section>`}).join("");
 if(parsed&&(show("connections")||show("materials"))){const box=$("#gr"),r=parsed.ref;if(parsed.error){box.innerHTML=`<p class="err" role="alert">${t("passageInvalid")}</p>`;return}const resources=(CONTENT.resources||[]).filter(x=>x.status==="published"&&(x.refs||[]).some(ref=>ovl(ref,r))),own=[...(CONTENT.crossrefs||[]).filter(x=>x.status==="published"),...items.filter(i=>i.type==="xref").map(i=>({from:i.ref,to:i.to,priv:true,desc:i.text}))].filter(x=>x.from&&x.to&&(ovl(x.from,r)||ovl(x.to,r)));
