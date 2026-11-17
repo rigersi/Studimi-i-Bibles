@@ -1,6 +1,6 @@
 # Additional material
 
-The library shows ten categories even when no material has been published yet. Add resources to `content.json` using the example in `content.example.json`. Set `status` to `published`, supply the applicable Bible references, and set `category` to one of:
+The library groups the ten resource categories into seven cards: commentaries; places and maps; biographies; timelines and family trees; historical background (archaeology and cultural background); charts; and language tools. All cards remain visible when empty and are marked as such. Add resources to `content.json` using the example in `content.example.json`. Set `status` to `published`, supply the applicable Bible references, and set `category` to one of:
 
 `archaeology`, `maps`, `places`, `biographies`, `family-trees`, `timelines`, `charts`, `commentaries`, `cultural-background`, `language-tools`.
 

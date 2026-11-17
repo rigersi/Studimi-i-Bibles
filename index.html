@@ -389,19 +389,16 @@ for(const s of c.study||[])if(!s.n||!s.q||!Array.isArray(s.l)||s.l.some(p=>!p.id
 return e}
 // A resource may declare category explicitly; older type values remain usable.
 const CATS=[
-["archaeology","Archaeology","Arkeologjia","Artifacts, excavations, manuscripts","Artefakte, gërmime, dorëshkrime"],
-["maps","Maps","Harta","Geographic routes, tribal borders","Rrugë gjeografike, kufij fisesh"],
-["places","Places","Vende","City histories, site profiles","Histori qytetesh, profile vendesh"],
-["biographies","Biographies","Biografi","Character profiles, key figures","Profile personazhesh, figura kyçe"],
-["family-trees","Family Trees","Pemë familjare","Lineages, tribal connections","Prejardhje, lidhje mes fiseve"],
-["timelines","Timelines","Kronologji","Chronological history, eras","Histori kronologjike, periudha"],
-["charts","Charts","Tabela dhe diagrame","Harmonies, visual comparisons","Harmonizime, krahasime vizuale"],
-["commentaries","Commentaries","Komentare","Verse-by-verse explanations","Shpjegime varg pas vargu"],
-["cultural-background","Cultural Background","Konteksti kulturor","Ancient customs, daily life","Zakone të lashta, jeta e përditshme"],
+["commentaries","Commentaries","Komentare","Explanations of Bible passages","Shpjegime të pjesëve biblike"],
+["maps","Places and maps","Vende dhe harta","Locations, journeys and maps","Vende, udhëtime dhe harta"],
+["biographies","Biographies","Biografi","People and their stories","Njerëz dhe historitë e tyre"],
+["timelines","Timelines and family trees","Kronologji dhe pemë familjare","Events, lineages and connections","Ngjarje, prejardhje dhe lidhje"],
+["archaeology","Historical background","Konteksti historik","Archaeology, culture and daily life","Arkeologji, kulturë dhe jeta e përditshme"],
+["charts","Charts","Tabela dhe diagrame","Harmonies and visual comparisons","Harmonizime dhe krahasime vizuale"],
 ["language-tools","Language Tools","Mjete gjuhësore","Greek and Hebrew word studies","Studime fjalësh greke dhe hebraike"]];
-const catOf=r=>{const k=String(r.category||r.type||"").toLowerCase().trim().replace(/[ _]+/g,"-");return ({map:"maps",place:"places",biography:"biographies","family-tree":"family-trees",timeline:"timelines",chart:"charts",table:"charts",commentary:"commentaries"})[k]||k};
-Object.assign(I.en,{categories:"Browse by category",allcategories:"All material",catempty:"No published material in this category yet.",nomatches:"No material matches your search.",othermaterial:"Other material"});
-Object.assign(I.sq,{categories:"Shfleto sipas kategorisë",allcategories:"Të gjitha materialet",catempty:"Ende nuk ka materiale të publikuara në këtë kategori.",nomatches:"Asnjë material nuk përputhet me kërkimin.",othermaterial:"Materiale të tjera"});
+const catOf=r=>{const k=String(r.category||r.type||"").toLowerCase().trim().replace(/[ _]+/g,"-");return ({map:"maps",place:"maps",places:"maps",biography:"biographies","family-tree":"timelines","family-trees":"timelines",timeline:"timelines",chart:"charts",table:"charts",commentary:"commentaries","cultural-background":"archaeology"})[k]||k};
+Object.assign(I.en,{categories:"Browse by category",allcategories:"All material",catempty:"No published material in this category yet.",nomatches:"No material matches your search.",othermaterial:"Other material",catcoming:"No material yet"});
+Object.assign(I.sq,{categories:"Shfleto sipas kategorisë",allcategories:"Të gjitha materialet",catempty:"Ende nuk ka materiale të publikuara në këtë kategori.",nomatches:"Asnjë material nuk përputhet me kërkimin.",othermaterial:"Materiale të tjera",catcoming:"Ende pa materiale"});
 const categoryIcons={
  archaeology:'<path d="M5 20h14M7 20v-3c0-2 1-3 2-5l-1-2h8l-1 2c1 2 2 3 2 5v3M8 10V7h8v3M10 7V4h4v3"/>',
  maps:'<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/>',
@@ -416,7 +413,7 @@ const categoryIcons={
 };
 const categoryIcon=id=>`<span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24">${categoryIcons[id]||""}</svg></span>`;
 function Library(m){const rs=(CONTENT.resources||[]).filter(r=>r.status==="published");let selected="";
-m.innerHTML=`<h1>${t("lib")}</h1><h2>${t("categories")}</h2><div class="cat-grid">${CATS.map(c=>`<button class="cat-card" type="button" data-category="${c[0]}" aria-pressed="false">${categoryIcon(c[0])}<strong>${esc(c[lang==="sq"?2:1])}</strong><span>${esc(c[lang==="sq"?4:3])}</span></button>`).join("")}</div><div class="row"><button class="alt" id="allcats" aria-pressed="true">${t("allcategories")}</button></div><h2 id="rheading"></h2><div id="rl" aria-live="polite"></div>`;
+m.innerHTML=`<h1>${t("lib")}</h1><h2>${t("categories")}</h2><div class="cat-grid">${CATS.map(c=>`<button class="cat-card" type="button" data-category="${c[0]}" aria-pressed="false">${categoryIcon(c[0])}<strong>${esc(c[lang==="sq"?2:1])}</strong><span>${esc(c[lang==="sq"?4:3])}</span>${rs.some(r=>catOf(r)===c[0])?"":`<span>${t("catcoming")}</span>`}</button>`).join("")}</div><div class="row"><button class="alt" id="allcats" aria-pressed="true">${t("allcategories")}</button></div><h2 id="rheading"></h2><div id="rl" aria-live="polite"></div>`;
 const d=()=>{const cat=CATS.find(c=>c[0]===selected),filtered=rs.filter(r=>!selected||catOf(r)===selected);
 $("#rheading").textContent=cat?cat[lang==="sq"?2:1]:t("allcategories");
 $("#rl").innerHTML=filtered.length?filtered.map(r=>`<div class="card">${r.image?`<img src="${esc(r.image)}" alt="${esc(loc(r.title))}" loading="lazy">`:""}<h2>${esc(loc(r.title))}</h2><p class="mut">${esc(r.type||"")}${(r.refs||[]).length?" · "+t("appl")+": "+r.refs.map(x=>esc(lab(x))).join(", "):""}</p><p>${esc(loc(r.desc))}</p>${r.source?`<p class="mut">${esc(r.source)} ${esc(r.license||"")}</p>`:""}${r.url?`<a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${t("openfile")} →</a>`:""}</div>`).join(""):`<div class="card"><p class="mut">${selected?t("catempty"):t("empty")}</p>${!rs.length&&!selected?demoBtn():""}</div>`;
