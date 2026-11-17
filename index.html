@@ -205,7 +205,7 @@ progress{accent-color:var(--ac);border-radius:99px}footer{line-height:1.7}footer
 .save-resource{margin:.25rem 0 .5rem}
 @media(max-width:640px){.search-filter-options{grid-template-columns:repeat(2,minmax(0,1fr))}.search-filter-card span{min-height:60px}}
 
-.material-sort{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1rem 0}.material-sort span{color:var(--mut);font-weight:600}.material-sort button[aria-pressed="true"]{background:var(--soft-blue);border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.material-sort{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin:1rem 0}.material-sort span{grid-column:1 / -1;text-align:center;color:var(--mut);font-weight:600}.material-sort button{min-width:0;padding:.45rem .3rem;overflow-wrap:anywhere}.material-sort button[aria-pressed="true"]{background:var(--soft-blue);border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
 </style></head>
 <body>
 <header><a href="#/search" id="headerSearch" class="header-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></a><div class="brand-crossing"><a class="logo" href="#/home"><span id="lt">URA</span></a><svg class="header-bridge" viewBox="0 0 160 44" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="bridge-deck" d="M2 32H158M2 36H158"/><path d="M20 32V7M140 32V7M20 9C47 37 113 37 140 9M2 19L20 9M140 9L158 19M37 20V32M54 26V32M72 29V32M88 29V32M106 26V32M123 20V32"/><path d="M15 7h10M135 7h10"/></svg><select id="lg" aria-label="Language"><option value="sq">Shqip</option><option value="en">English</option></select></div><span id="page-title"></span><nav id="nv" aria-label="Main"></nav>
