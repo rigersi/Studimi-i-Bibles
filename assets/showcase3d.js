@@ -20,8 +20,8 @@ export function mountJourney(root) {
   const resize=()=>{const r=canvas.getBoundingClientRect();if(!r.width||!r.height)return;width=r.width;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};
   const update=e=>{progress=e.detail;if(visible)draw()};
   const draw=()=>{if(disposed||!width)return;renderer.clear();
-    // Leave the third image unobstructed rather than drawing extra lines or particles over it.
-    dust.visible=progress<.42||progress>.92;dustUniforms.progress.value=progress;dustUniforms.time.value=reduce?0:performance.now()*.001;camera.position.set(0,1.3,16);camera.lookAt(0,1,0);renderer.render(scene,camera)};
+    // Leave the cross-reference image unobstructed rather than drawing extra lines or particles over it.
+    dust.visible=progress<.76;dustUniforms.progress.value=progress;dustUniforms.time.value=reduce?0:performance.now()*.001;camera.position.set(0,1.3,16);camera.lookAt(0,1,0);renderer.render(scene,camera)};
   const tick=time=>{if(disposed||!visible||reduce)return;if(!time||time-lastFrame>=33){draw();lastFrame=time||0}frame=requestAnimationFrame(tick)};
   const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible){resize();draw();if(!reduce){cancelAnimationFrame(frame);tick()}}else cancelAnimationFrame(frame)},{rootMargin:'150px'});observer.observe(root);
   const lose=event=>{event.preventDefault();root.classList.add('journey-fallback');visible=false;cancelAnimationFrame(frame)};canvas.addEventListener('webglcontextlost',lose);addEventListener('resize',resize);root.addEventListener('journeyprogress',update);resize();draw();
