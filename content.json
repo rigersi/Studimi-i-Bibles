@@ -1,6 +1,4154 @@
 {
   "books": {},
-  "resources": [],
+  "resources": [
+    {
+      "id": "topic-work",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Work",
+        "sq": "Puna"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-rest",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Rest",
+        "sq": "Pushimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-diligence",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Diligence",
+        "sq": "Zelli"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-responsibility",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Responsibility",
+        "sq": "Përgjegjësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-integrity",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Integrity",
+        "sq": "Të veprosh drejt"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-money",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Money",
+        "sq": "Paratë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-giving",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Generosity and giving",
+        "sq": "Bujaria dhe dhënia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-contentment",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Contentment",
+        "sq": "Të jesh i kënaqur me atë që ke"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-possessions",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Possessions",
+        "sq": "Pasuria dhe zotërimet"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-debt",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Debt",
+        "sq": "Borxhi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-planning",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Planning",
+        "sq": "Planifikimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-stewardship",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Caring for what we have",
+        "sq": "Kujdesi për atë që kemi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-family",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Family",
+        "sq": "Familja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-marriage",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Marriage",
+        "sq": "Martesa"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-parenthood",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Parenthood",
+        "sq": "Prindërimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-children",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Children",
+        "sq": "Fëmijët"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-friendship",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Friendship",
+        "sq": "Miqësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-neighbors",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Neighbors",
+        "sq": "Të afërmit dhe fqinjët"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-community",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Life together",
+        "sq": "Jeta së bashku"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-hospitality",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Hospitality",
+        "sq": "Mikpritja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-loneliness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Loneliness",
+        "sq": "Vetmia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-encouragement",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Encouragement",
+        "sq": "Inkurajimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-reconciliation",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Reconciliation",
+        "sq": "Pajtimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-forgiveness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Forgiveness",
+        "sq": "Falja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-conflict",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Conflict",
+        "sq": "Konfliktet"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-peacemaking",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Making peace",
+        "sq": "Të sjellësh paqe"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-government",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Government and authorities",
+        "sq": "Qeveria dhe autoritetet"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-justice",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Justice",
+        "sq": "Drejtësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-mercy",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Mercy",
+        "sq": "Mëshira"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-care-for-poor",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Care for people in need",
+        "sq": "Kujdesi për njerëzit në nevojë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-oppression",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Oppression",
+        "sq": "Shtypja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-fairness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Fairness",
+        "sq": "Paanshmëria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-leadership",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Leadership",
+        "sq": "Udhëheqja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-service",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Serving others",
+        "sq": "Shërbimi ndaj të tjerëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-citizenship",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Life in society",
+        "sq": "Jeta në shoqëri"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-strangers",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Welcoming strangers",
+        "sq": "Mikpritja e të huajve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-speech",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Words and speech",
+        "sq": "Fjalët dhe të folurit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-listening",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Listening",
+        "sq": "Të dëgjuarit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-truth",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Truth and honesty",
+        "sq": "E vërteta dhe ndershmëria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-gossip",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Gossip",
+        "sq": "Thashethemet"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-anger",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Anger",
+        "sq": "Zemërimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-patience",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Patience",
+        "sq": "Durimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-kindness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Kindness",
+        "sq": "Mirësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-humility",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Humility",
+        "sq": "Përulësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-pride",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Pride",
+        "sq": "Krenaria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-self-control",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Self-control",
+        "sq": "Vetëpërmbajtja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-gratitude",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Gratitude",
+        "sq": "Falënderimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-love",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Love",
+        "sq": "Dashuria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-compassion",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Compassion",
+        "sq": "Dhembshuria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-faithfulness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Faithfulness",
+        "sq": "Besnikëria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-prayer",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Prayer",
+        "sq": "Lutja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-worship",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Worship",
+        "sq": "Adhurimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-faith",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Faith and trust",
+        "sq": "Besimi dhe mbështetja te Perëndia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-obedience",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Obedience",
+        "sq": "Bindja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-repentance",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Repentance",
+        "sq": "Pendimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-wisdom",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Wisdom",
+        "sq": "Urtësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-learning",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Learning and teaching",
+        "sq": "Të mësuarit dhe mësimdhënia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-decisions",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Making decisions",
+        "sq": "Marrja e vendimeve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-temptation",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Temptation",
+        "sq": "Tundimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-growth",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Spiritual growth",
+        "sq": "Rritja shpirtërore"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-hope",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Hope",
+        "sq": "Shpresa"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-joy",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Joy",
+        "sq": "Gëzimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-suffering",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Suffering",
+        "sq": "Vuajtja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-grief",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Grief and loss",
+        "sq": "Hidhërimi dhe humbja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-fear",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Fear",
+        "sq": "Frika"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-worry",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Worry",
+        "sq": "Shqetësimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-weakness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Weakness",
+        "sq": "Dobësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-perseverance",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Perseverance",
+        "sq": "Qëndresa"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-comfort",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Comfort",
+        "sq": "Ngushëllimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-waiting",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Waiting",
+        "sq": "Pritja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-trials",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Trials",
+        "sq": "Sprovat"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-sickness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Sickness",
+        "sq": "Sëmundja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-aging",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Growing older",
+        "sq": "Mosha e thyer"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-death",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Death",
+        "sq": "Vdekja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-creation",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Creation",
+        "sq": "Krijimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-nature",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Caring for creation",
+        "sq": "Kujdesi për krijimin"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-time",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Time",
+        "sq": "Koha"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-body",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "The body",
+        "sq": "Trupi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-daily-life",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Daily life",
+        "sq": "Jeta e përditshme"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-celebration",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Celebration",
+        "sq": "Festimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-church",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "The church",
+        "sq": "Kisha"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-unity",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Unity",
+        "sq": "Uniteti"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-sharing-faith",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Sharing faith",
+        "sq": "Ndarja e besimit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-discipleship",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Following Jesus",
+        "sq": "Të ndjekësh Jezusin"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-care-for-sick",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Caring for the sick",
+        "sq": "Kujdesi për të sëmurët"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-abraham",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Abraham",
+        "sq": "Abrahami"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-sarah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Sarah",
+        "sq": "Sara"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-isaac",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Isaac",
+        "sq": "Isaku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jacob",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jacob",
+        "sq": "Jakobi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-joseph-genesis",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Joseph (Genesis)",
+        "sq": "Jozefi (Zanafilla)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-moses",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Moses",
+        "sq": "Moisiu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-aaron",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Aaron",
+        "sq": "Aroni"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-joshua",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Joshua",
+        "sq": "Jozuehu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ruth",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ruth",
+        "sq": "Ruta"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-naomi",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Naomi",
+        "sq": "Naomi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-samuel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Samuel",
+        "sq": "Samueli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-david",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "David",
+        "sq": "Davidi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-solomon",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Solomon",
+        "sq": "Solomoni"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-esther",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Esther",
+        "sq": "Estera"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-job",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Job",
+        "sq": "Jobi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-isaiah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Isaiah",
+        "sq": "Isaia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jeremiah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jeremiah",
+        "sq": "Jeremia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-daniel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Daniel",
+        "sq": "Danieli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jonah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jonah",
+        "sq": "Jonai"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jesus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jesus",
+        "sq": "Jezusi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-mary-mother-jesus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Mary, mother of Jesus",
+        "sq": "Maria, nëna e Jezusit"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-elizabeth",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Elizabeth",
+        "sq": "Elizabeta"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-john-baptist",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "John the Baptist",
+        "sq": "Gjon Pagëzori"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-peter",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Peter",
+        "sq": "Pjetri"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-paul",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Paul",
+        "sq": "Pali"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-barnabas",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Barnabas",
+        "sq": "Barnaba"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-tabitha",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Tabitha",
+        "sq": "Tabita"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-character",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s character",
+        "sq": "Karakteri i Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-faithfulness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s faithfulness",
+        "sq": "Besnikëria e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-holiness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s holiness",
+        "sq": "Shenjtëria e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-mercy",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s mercy",
+        "sq": "Mëshira e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-justice",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s justice",
+        "sq": "Drejtësia e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-wisdom",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s wisdom",
+        "sq": "Urtësia e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-presence",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s presence",
+        "sq": "Prania e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-provision",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s provision",
+        "sq": "Përkujdesja e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-sovereignty",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s rule",
+        "sq": "Sundimi i Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-god-promises",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s promises",
+        "sq": "Premtimet e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-gods-word",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "God’s word",
+        "sq": "Fjala e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-kingdom-of-god",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "The kingdom of God",
+        "sq": "Mbretëria e Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-covenant",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Covenant",
+        "sq": "Besëlidhja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-grace",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Grace",
+        "sq": "Hiri"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-sin",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Sin",
+        "sq": "Mëkati"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-salvation",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Salvation",
+        "sq": "Shpëtimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-redemption",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Redemption",
+        "sq": "Shpengimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-reconciliation-with-god",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Reconciliation with God",
+        "sq": "Pajtimi me Perëndinë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-resurrection",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Resurrection",
+        "sq": "Ringjallja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-eternal-life",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Eternal life",
+        "sq": "Jeta e përjetshme"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-new-life",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "New life",
+        "sq": "Jeta e re"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-jesus-life",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "The life of Jesus",
+        "sq": "Jeta e Jezusit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-jesus-teaching",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "The teaching of Jesus",
+        "sq": "Mësimi i Jezusit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-holy-spirit",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "The Holy Spirit",
+        "sq": "Fryma e Shenjtë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-parents",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Honoring parents",
+        "sq": "Nderimi i prindërve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-siblings",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Brothers and sisters",
+        "sq": "Vëllezërit dhe motrat"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-grandparents",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Older and younger generations",
+        "sq": "Brezat e moshuar dhe të rinj"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-raising-children",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Raising children",
+        "sq": "Rritja e fëmijëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-widows-orphans",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Widows and orphans",
+        "sq": "Vejushat dhe jetimët"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-caring-for-family",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Caring for family",
+        "sq": "Kujdesi për familjen"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-helping-others",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Helping others",
+        "sq": "Ndihma ndaj të tjerëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-bearing-burdens",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Bearing one another’s burdens",
+        "sq": "Mbajtja e barrëve të njëri-tjetrit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-grief-support",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Comforting others",
+        "sq": "Ngushëllimi i të tjerëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-humility-toward-others",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Humility toward others",
+        "sq": "Përulësia ndaj të tjerëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-loving-enemies",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Loving enemies",
+        "sq": "Dashuria për armiqtë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-promises-and-commitments",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Keeping commitments",
+        "sq": "Mbajtja e fjalës së dhënë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-trust-between-people",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Trust between people",
+        "sq": "Besimi mes njerëzve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-restoring-relationships",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Restoring relationships",
+        "sq": "Rikthimi i marrëdhënieve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-work-and-neighbor",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Work and serving others",
+        "sq": "Puna dhe shërbimi ndaj të tjerëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-honest-work",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Honesty in work",
+        "sq": "Ndershmëria në punë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-employers-workers",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Employers and workers",
+        "sq": "Punëdhënësit dhe punonjësit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-daily-needs",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Daily needs",
+        "sq": "Nevojat e përditshme"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-poverty",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Poverty",
+        "sq": "Varfëria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-wealth",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Wealth",
+        "sq": "Pasuria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-sharing",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Sharing with others",
+        "sq": "Ndarja me të tjerët"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-food",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Food and provision",
+        "sq": "Ushqimi dhe përkujdesja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-home",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "The home",
+        "sq": "Shtëpia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-community-responsibility",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Responsibility in the community",
+        "sq": "Përgjegjësia në bashkësi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-business",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Business and trade",
+        "sq": "Biznesi dhe tregtia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-honest-scales",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Honesty in trade",
+        "sq": "Ndershmëria në tregti"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-time-and-priorities",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Time and priorities",
+        "sq": "Koha dhe përparësitë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-authority",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Authority",
+        "sq": "Autoriteti"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-wise-leadership",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Wise leadership",
+        "sq": "Udhëheqja e urtë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-servant-leadership",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Servant leadership",
+        "sq": "Udhëheqja përmes shërbimit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-judging-fairly",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Judging fairly",
+        "sq": "Gjykimi i drejtë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-partiality",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Favoritism",
+        "sq": "Anshmëria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-defending-vulnerable",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Speaking for the vulnerable",
+        "sq": "Mbrojtja e njerëzve të pambrojtur"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-retribution",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Responding to wrongdoing",
+        "sq": "Përgjigjja ndaj së keqes"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-making-peace-community",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Peace in the community",
+        "sq": "Paqja në bashkësi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-power",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Power",
+        "sq": "Pushteti"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-gentle-speech",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Gentle speech",
+        "sq": "Të folurit me butësi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-harmful-words",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Harmful words",
+        "sq": "Fjalët që lëndojnë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-honest-correction",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Giving and receiving correction",
+        "sq": "Dhënia dhe pranimi i këshillës"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-promises-speech",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Promises and words",
+        "sq": "Premtimet dhe fjala e dhënë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-complaining",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Complaining",
+        "sq": "Ankimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-boasting",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Boasting",
+        "sq": "Mburrja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-silence",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Silence",
+        "sq": "Heshtja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-confession",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Confession",
+        "sq": "Rrëfimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-patience-with-others",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Patience with others",
+        "sq": "Durimi me të tjerët"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-envy",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Envy",
+        "sq": "Zilia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-jealousy",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Jealousy",
+        "sq": "Xhelozia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-greed",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Greed",
+        "sq": "Lakmia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-bitterness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Bitterness",
+        "sq": "Hidhërimi ndaj të tjerëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-courage",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Courage",
+        "sq": "Guximi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-gentleness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Gentleness",
+        "sq": "Butësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-faithfulness-in-small-things",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Faithfulness in small things",
+        "sq": "Besnikëria në gjërat e vogla"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-study-of-scripture",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Reading and studying Scripture",
+        "sq": "Leximi dhe studimi i Shkrimit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-remembering-gods-works",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Remembering God’s works",
+        "sq": "Kujtimi i veprave të Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-praise",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Praise",
+        "sq": "Lavdërimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-lament",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Lament",
+        "sq": "Vajtimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-fasting",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Fasting",
+        "sq": "Agjërimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-praying-for-others",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Praying for others",
+        "sq": "Lutja për të tjerët"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-seeking-god",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Seeking God",
+        "sq": "Kërkimi i Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-guidance",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Seeking guidance",
+        "sq": "Kërkimi i udhëzimit"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-trust-in-difficulty",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Trusting God in difficulty",
+        "sq": "Besimi te Perëndia në vështirësi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-doubt",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Questions and doubts",
+        "sq": "Pyetjet dhe dyshimet"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-humility-before-god",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Humility before God",
+        "sq": "Përulësia para Perëndisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-hope-in-god",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Hope in God",
+        "sq": "Shpresa te Perëndia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-spiritual-maturity",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Growing in maturity",
+        "sq": "Rritja në pjekuri"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-anxiety",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Anxiety",
+        "sq": "Ankthi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-discouragement",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Discouragement",
+        "sq": "Shkurajimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-disappointment",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Disappointment",
+        "sq": "Zhgënjimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-weariness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Weariness",
+        "sq": "Lodhja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-loss-of-home",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Leaving home",
+        "sq": "Largimi nga shtëpia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-change",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Change and uncertainty",
+        "sq": "Ndryshimi dhe pasiguria"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-illness-and-family",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Illness and family",
+        "sq": "Sëmundja dhe familja"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-hope-in-loss",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Hope in loss",
+        "sq": "Shpresa në humbje"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-waiting-on-god",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Waiting on God",
+        "sq": "Pritja te Perëndia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-difficult-decisions",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Difficult decisions",
+        "sq": "Vendimet e vështira"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-endurance",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Endurance",
+        "sq": "Të qëndrosh në vështirësi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-gathering",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Gathering together",
+        "sq": "Mbledhja së bashku"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-fellowship",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Fellowship",
+        "sq": "Bashkësia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-church-service",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Serving the church",
+        "sq": "Shërbimi në kishë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-caring-for-believers",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Caring for fellow believers",
+        "sq": "Kujdesi për besimtarët e tjerë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-teaching-others",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Teaching others",
+        "sq": "Mësimi i të tjerëve"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-example",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Being an example",
+        "sq": "Të jesh shembull"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-supporting-workers",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Supporting those who serve",
+        "sq": "Mbështetja e atyre që shërbejnë"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-witness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Witness",
+        "sq": "Dëshmia"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-discipleship-together",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Growing together in faith",
+        "sq": "Rritja së bashku në besim"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-unity-and-differences",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Unity and differences",
+        "sq": "Uniteti dhe ndryshimet"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-travel",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Travel and journeys",
+        "sq": "Udhëtimet"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-work-and-rest",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Work and rest",
+        "sq": "Puna dhe pushimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-seasons",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Seasons and change",
+        "sq": "Stinët dhe ndryshimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-animals",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Animals",
+        "sq": "Kafshët"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-land",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Land and the earth",
+        "sq": "Toka dhe vendi"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-light-and-darkness",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Light and darkness",
+        "sq": "Drita dhe errësira"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-water",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Water",
+        "sq": "Uji"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-bread",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Bread and daily provision",
+        "sq": "Buka dhe nevojat e përditshme"
+      },
+      "refs": []
+    },
+    {
+      "id": "topic-celebration-and-thanksgiving",
+      "status": "published",
+      "type": "topic",
+      "category": "topics",
+      "title": {
+        "en": "Celebration and thanksgiving",
+        "sq": "Festimi dhe falënderimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-adam",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Adam",
+        "sq": "Adami"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-eve",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Eve",
+        "sq": "Eva"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-noah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Noah",
+        "sq": "Noeu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-lot",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Lot",
+        "sq": "Loti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-hagar",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Hagar",
+        "sq": "Hagari"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ishmael",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ishmael",
+        "sq": "Ishmaeli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-rebekah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Rebekah",
+        "sq": "Rebeka"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-esau",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Esau",
+        "sq": "Esau"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-leah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Leah",
+        "sq": "Lea"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-rachel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Rachel",
+        "sq": "Rakela"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-judah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Judah (son of Jacob)",
+        "sq": "Juda (biri i Jakobit)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-benjamin",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Benjamin",
+        "sq": "Benjamini"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-tamar-genesis",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Tamar (Genesis)",
+        "sq": "Tamara (Zanafilla)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-miriam",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Miriam",
+        "sq": "Miriami"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zipporah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zipporah",
+        "sq": "Sefora"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jethro",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jethro",
+        "sq": "Jetro"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-caleb",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Caleb",
+        "sq": "Kalebi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-rahab",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Rahab",
+        "sq": "Rahaba"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-deborah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Deborah",
+        "sq": "Debora"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-barak",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Barak",
+        "sq": "Baraku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-gideon",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Gideon",
+        "sq": "Gedeoni"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-samson",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Samson",
+        "sq": "Samsoni"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-hannah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Hannah",
+        "sq": "Hana"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-eli",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Eli",
+        "sq": "Eliu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-saul-king",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Saul (king of Israel)",
+        "sq": "Sauli (mbreti i Izraelit)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jonathan",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jonathan",
+        "sq": "Jonatani"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-abigail",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Abigail",
+        "sq": "Abigaila"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-nathan",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Nathan (prophet)",
+        "sq": "Natani (profeti)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-gad-prophet",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Gad (prophet)",
+        "sq": "Gadi (profeti)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-bathsheba",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Bathsheba",
+        "sq": "Batsheba"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-abishai",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Abishai",
+        "sq": "Abishai"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-joab",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Joab",
+        "sq": "Joabi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-asa",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Asa",
+        "sq": "Asa"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jehoshaphat",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jehoshaphat",
+        "sq": "Joshafati"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-hezekiah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Hezekiah",
+        "sq": "Hezekia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-josiah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Josiah",
+        "sq": "Josia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-elijah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Elijah",
+        "sq": "Elia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-elisha",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Elisha",
+        "sq": "Eliseu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-naaman",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Naaman",
+        "sq": "Naamani"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-shunammite",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "The Shunammite woman",
+        "sq": "Gruaja nga Shunemi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-huldah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Huldah",
+        "sq": "Hulda"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ezra",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ezra",
+        "sq": "Ezra"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-nehemiah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Nehemiah",
+        "sq": "Nehemia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-mordecai",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Mordecai",
+        "sq": "Mordekai"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zerubbabel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zerubbabel",
+        "sq": "Zorobabeli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-asaph",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Asaph",
+        "sq": "Asafi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-heman-ezrahite",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Heman the Ezrahite",
+        "sq": "Heman Ezrahiti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ethan-ezrahite",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ethan the Ezrahite",
+        "sq": "Etan Ezrahiti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-sons-korah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Sons of Korah",
+        "sq": "Bijtë e Korahut"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-agur",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Agur",
+        "sq": "Aguri"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-lemuel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Lemuel",
+        "sq": "Lamueli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-baruch",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Baruch",
+        "sq": "Baruku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-hosea",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Hosea",
+        "sq": "Hosea"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-joel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Joel",
+        "sq": "Joeli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-amos",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Amos",
+        "sq": "Amosi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-obadiah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Obadiah",
+        "sq": "Abdia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-micah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Micah",
+        "sq": "Mikea"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-nahum",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Nahum",
+        "sq": "Naumi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-habakkuk",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Habakkuk",
+        "sq": "Habakuku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zephaniah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zephaniah",
+        "sq": "Sofonia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-haggai",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Haggai",
+        "sq": "Hageu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zechariah-prophet",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zechariah (prophet)",
+        "sq": "Zakaria (profeti)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-malachi",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Malachi",
+        "sq": "Malakia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ezekiel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ezekiel",
+        "sq": "Ezekieli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-joseph-mary-husband",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Joseph, husband of Mary",
+        "sq": "Jozefi, burri i Marisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zechariah-john-father",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zechariah, father of John",
+        "sq": "Zakaria, ati i Gjonit"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-simeon-luke",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Simeon (Luke)",
+        "sq": "Simeoni (Luka)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-anna-prophetess",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Anna (prophetess)",
+        "sq": "Ana (profetesha)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-mary-magdalene",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Mary Magdalene",
+        "sq": "Maria Magdalena"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-martha",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Martha",
+        "sq": "Marta"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-mary-bethany",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Mary of Bethany",
+        "sq": "Maria e Betanisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-lazarus-bethany",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Lazarus of Bethany",
+        "sq": "Lazari i Betanisë"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-andrew",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Andrew",
+        "sq": "Andrea"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-james-zebedee",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "James, son of Zebedee",
+        "sq": "Jakobi, biri i Zebedeut"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-john-apostle",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "John (apostle)",
+        "sq": "Gjoni (apostulli)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-philip-apostle",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Philip (apostle)",
+        "sq": "Filipi (apostulli)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-bartholomew",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Bartholomew",
+        "sq": "Bartolomeu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-thomas",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Thomas",
+        "sq": "Thomai"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-matthew",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Matthew",
+        "sq": "Mateu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-james-alphaeus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "James, son of Alphaeus",
+        "sq": "Jakobi, biri i Alfeut"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-simon-zealot",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Simon the Zealot",
+        "sq": "Simoni Zelot"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-thaddaeus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Thaddaeus",
+        "sq": "Tadeu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-judas-iscariot",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Judas Iscariot",
+        "sq": "Juda Iskarioti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-james-brother-jesus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "James, brother of Jesus",
+        "sq": "Jakobi, vëllai i Jezusit"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jude",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jude",
+        "sq": "Juda"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-mark",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Mark",
+        "sq": "Marku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-luke",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Luke",
+        "sq": "Luka"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-stephen",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Stephen",
+        "sq": "Stefani"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-philip-evangelist",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Philip (evangelist)",
+        "sq": "Filipi (ungjilltari)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-cornelius",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Cornelius",
+        "sq": "Korneli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-lydia",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Lydia",
+        "sq": "Lidia"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-priscilla",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Priscilla",
+        "sq": "Priskila"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-aquila",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Aquila",
+        "sq": "Akuili"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-timothy",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Timothy",
+        "sq": "Timoteu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-titus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Titus",
+        "sq": "Titi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-silas",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Silas",
+        "sq": "Sila"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-apollos",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Apollos",
+        "sq": "Apoli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-philemon",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Philemon",
+        "sq": "Filemoni"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-onesimus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Onesimus",
+        "sq": "Onesimi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-phoebe",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Phoebe",
+        "sq": "Feba"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-tertius",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Tertius",
+        "sq": "Terti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-lois",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Lois",
+        "sq": "Loida"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-eunice",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Eunice",
+        "sq": "Eunika"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-joseph-arimathea",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Joseph of Arimathea",
+        "sq": "Jozefi nga Arimatea"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-nicodemus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Nicodemus",
+        "sq": "Nikodemi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zacchaeus",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zacchaeus",
+        "sq": "Zakeu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-centurion-cornelius",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "The centurion at Capernaum",
+        "sq": "Centurioni në Kapernaum"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-sosthenes",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Sosthenes",
+        "sq": "Sosteni"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-cain",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Cain",
+        "sq": "Kaini"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-abel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Abel",
+        "sq": "Abeli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-melchizedek",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Melchizedek",
+        "sq": "Melkisedeku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-bezalel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Bezalel",
+        "sq": "Becaleli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-oholiab",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Oholiab",
+        "sq": "Oholiabi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-balaam",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Balaam",
+        "sq": "Balaami"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-balak",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Balak",
+        "sq": "Balaku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-othniel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Othniel",
+        "sq": "Otnieli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ehud",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ehud",
+        "sq": "Ehudi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jephthah",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jephthah",
+        "sq": "Jeftahu"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-boaz",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Boaz",
+        "sq": "Boazi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-absalom",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Absalom",
+        "sq": "Absalomi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ahithophel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ahithophel",
+        "sq": "Ahitofeli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zadok",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zadok",
+        "sq": "Cadoku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-rehoboam",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Rehoboam",
+        "sq": "Rehoboami"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jeroboam",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jeroboam son of Nebat",
+        "sq": "Jeroboami, biri i Nebatit"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ahab",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ahab",
+        "sq": "Ahabi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jezebel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Jezebel",
+        "sq": "Izebela"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zedekiah-king",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zedekiah, king of Judah",
+        "sq": "Sedekia, mbreti i Judës"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-nebuchadnezzar",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Nebuchadnezzar",
+        "sq": "Nabukodonosori"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-belshazzar",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Belshazzar",
+        "sq": "Belshacari"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-shadrach",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Shadrach",
+        "sq": "Shadraku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-meshach",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Meshach",
+        "sq": "Meshaku"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-abednego",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Abednego",
+        "sq": "Abed Negoja"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-haman",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Haman",
+        "sq": "Hamani"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-xerxes",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Xerxes (Ahasuerus)",
+        "sq": "Kserksi"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-eliphaz",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Eliphaz the Temanite",
+        "sq": "Elifazi, temaniti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-bildad",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Bildad the Shuhite",
+        "sq": "Bildadi, shuhiti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-zophar",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Zophar the Naamathite",
+        "sq": "Cofari, namatiti"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-elihu",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Elihu (Job)",
+        "sq": "Elihui (Jobi)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-gomer-hosea",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Gomer, wife of Hosea",
+        "sq": "Gomera, gruaja e Hosesë"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-herod-great",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Herod the Great",
+        "sq": "Herodi i Madh"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-pontius-pilate",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Pontius Pilate",
+        "sq": "Ponc Pilati"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-barabbas",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Barabbas",
+        "sq": "Baraba"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-ananias-acts-5",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Ananias (Acts 5)",
+        "sq": "Hananiahu (Veprat 5)"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-sapphira",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Sapphira",
+        "sq": "Sapfira"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-gamaliel",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "Gamaliel",
+        "sq": "Gamalieli"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-samaritan-woman",
+      "status": "published",
+      "type": "person",
+      "category": "biographies",
+      "title": {
+        "en": "The Samaritan woman",
+        "sq": "Gruaja samaritane"
+      },
+      "refs": []
+    }
+  ],
   "crossrefs": [],
   "study": [],
   "verses": null
